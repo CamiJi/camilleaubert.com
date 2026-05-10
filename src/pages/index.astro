@@ -1,27 +1,88 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const expertise = [
+  {
+    title: 'AI Systems Architecture',
+    description:
+      'Designing production-grade RAG pipelines, agentic workflows, and enterprise-ready intelligent systems.',
+  },
+  {
+    title: 'Platform Engineering',
+    description:
+      'Building deterministic full-stack architectures with Laravel, React, Docker, and AWS for scale.',
+  },
+  {
+    title: 'Operational Excellence',
+    description:
+      'Aligning performance, maintainability, and business impact through industrial-grade delivery standards.',
+  },
+];
+
+const trustMarkers = [
+  '10+ years of technical expertise',
+  'Enterprise delivery for Cegos Group',
+  'Production-grade AI & platform architecture',
+];
 ---
 
 <MainLayout
   title="Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer"
   description="Portfolio of Camille Aubert, AI Solutions Architect and Lead Full-Stack Developer focused on intelligent systems, production-grade AI integration, and high-performance web platforms."
 >
-  <section class="hero">
-    <p class="eyebrow">Portfolio</p>
-    <h1>AI Solutions Architect & Lead Full-Stack Developer</h1>
-    <p class="intro">
-      With over a decade of technical expertise, I engineer intelligent systems that transform
-      complex web infrastructures into high-performance business assets. My focus is on operational
-      excellence and production-grade AI integration.
-    </p>
+  <section class="hero hero--premium">
+    <div class="hero__content">
+      <p class="eyebrow">Portfolio</p>
+      <h1>AI Solutions Architect & Lead Full-Stack Developer</h1>
+      <p class="intro">
+        With over a decade of technical expertise, I engineer intelligent systems that transform
+        complex web infrastructures into high-performance business assets. My focus is on operational
+        excellence and production-grade AI integration.
+      </p>
+
+      <div class="hero__actions">
+        <a class="button button--primary" href="/projects">View selected work</a>
+        <a class="button button--secondary" href="/contact">Start a conversation</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <p class="hero-card__label">Current focus</p>
+      <ul class="hero-card__list">
+        <li>Industrializing production-ready RAG pipelines.</li>
+        <li>Orchestrating agentic architectures for enterprise-scale services.</li>
+        <li>Optimizing high-availability web platforms for Cegos.</li>
+      </ul>
+    </aside>
   </section>
 
   <section class="content-section">
-    <h2>Core focus</h2>
-    <ul class="feature-list">
-      <li>Industrializing production-ready RAG (Retrieval-Augmented Generation) pipelines.</li>
-      <li>Orchestrating agentic architectures for enterprise-scale professional services.</li>
-      <li>Optimizing high-availability web platforms for market leaders like Cegos.</li>
+    <h2>Trusted to deliver at scale</h2>
+    <ul class="trust-list">
+      {trustMarkers.map((item) => (
+        <li>{item}</li>
+      ))}
     </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>Core expertise</h2>
+    <div class="feature-grid">
+      {expertise.map((item) => (
+        <article class="feature-card">
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-section cta-section">
+    <h2>Engineering the next layer of intelligent systems</h2>
+    <p>
+      I help organizations design robust technical foundations for AI-enabled products, scalable
+      platforms, and high-performance digital operations.
+    </p>
+    <a class="button button--primary" href="/contact">Let’s talk architecture</a>
   </section>
 </MainLayout>
