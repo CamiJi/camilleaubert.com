@@ -5,18 +5,29 @@ const links = [
   { href: '/projects', label: 'Projects' },
   { href: '/contact', label: 'Contact' },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
-  <a class="site-brand" href="/">Camille Aubert</a>
+  <div class="site-header__brand-block">
+    <a class="site-brand" href="/">Camille Aubert</a>
+    <p class="site-tagline">AI Solutions Architect &amp; Lead Full-Stack Developer</p>
+  </div>
 
   <nav aria-label="Primary navigation">
     <ul class="site-nav">
-      {links.map((link) => (
-        <li>
-          <a href={link.href}>{link.label}</a>
-        </li>
-      ))}
+      {links.map((link) => {
+        const isActive = currentPath === link.href;
+
+        return (
+          <li>
+            <a href={link.href} aria-current={isActive ? 'page' : undefined} class={isActive ? 'is-active' : undefined}>
+              {link.label}
+            </a>
+          </li>
+        );
+      })}
     </ul>
   </nav>
 </header>
