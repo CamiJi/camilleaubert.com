@@ -1,0 +1,22 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="site-header">
+  <a class="site-brand" href="/">Camille Aubert</a>
+
+  <nav aria-label="Primary navigation">
+    <ul class="site-nav">
+      {links.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
