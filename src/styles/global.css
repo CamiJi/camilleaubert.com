@@ -105,13 +105,18 @@ h2 {
   line-height: 1.2;
 }
 
+p,
+li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 .intro,
 .content-section p,
-.project-card p {
-  max-width: 42rem;
+.project-card p,
+.contact-list {
+  max-width: 48rem;
   margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.7;
   color: var(--muted);
 }
 
@@ -123,21 +128,39 @@ h2 {
   border-top: 1px solid var(--border);
 }
 
+.feature-list,
+.contact-list,
 .project-list {
   display: grid;
   gap: 1rem;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.project-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .project-card {
   display: grid;
   gap: 0.75rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
   border: 1px solid var(--border);
   background: var(--surface);
   border-radius: 1rem;
+}
+
+.project-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-card strong,
+.contact-list strong {
+  color: var(--text);
 }
 
 .site-footer {
@@ -149,7 +172,8 @@ h2 {
 }
 
 @media (max-width: 720px) {
-  .site-header {
+  .site-header,
+  .project-card__header {
     flex-direction: column;
     align-items: flex-start;
   }

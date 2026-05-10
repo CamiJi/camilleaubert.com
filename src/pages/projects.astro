@@ -3,30 +3,48 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 const projects = [
   {
-    title: 'Portfolio foundation',
-    description: 'Initial setup of the personal site with Astro, core pages, shared layout, and deployment base.',
+    title: 'Industrial RAG Infrastructure',
+    context:
+      'Deploying generative AI systems for mission-critical knowledge management within the Cegos Group.',
+    role: 'Solution Architect & Lead Developer',
+    stack: 'AWS Bedrock, OpenAI API, Python, RAG Frameworks.',
+    outcome:
+      'Achieved a 95% accuracy rate for business-critical data retrieval and automated decision-making.',
+    link: 'https://www.cegos.fr',
   },
   {
-    title: 'Content and design direction',
-    description: 'Definition of positioning, content priorities, and a first implementation roadmap.',
+    title: 'Cegos Enterprise Platform',
+    context:
+      'Directing the architectural evolution of the primary platform for Europe\'s leader in professional training.',
+    role: 'Transversal Architect / Lead Developer',
+    stack: 'Laravel, WordPress, Gutenberg, Docker, AWS.',
+    outcome:
+      'Successfully migrated to a containerized infrastructure, ensuring seamless scalability for millions of users.',
+    link: 'https://www.cegos.fr',
   },
   {
-    title: 'Future case studies',
-    description: 'This section will later host more detailed project stories with context, role, and outcomes.',
+    title: 'Technical Performance Lab',
+    context:
+      'Developed lamaisonmontparnasse.fr as a dedicated research lab for extreme SEO and conversion optimization.',
+    role: 'Full-stack Developer & Technical SEO Specialist',
+    stack: 'PHP, Custom Gutenberg Blocks, High-speed rendering.',
+    outcome:
+      'Delivered record-breaking performance scores and a highly optimized user acquisition funnel.',
+    link: 'https://lamaisonmontparnasse.fr',
   },
 ];
 ---
 
 <MainLayout
   title="Projects — Camille Aubert"
-  description="A first selection of projects and building blocks from the portfolio of Camille Aubert."
+  description="Selected projects from Camille Aubert covering industrial RAG systems, enterprise platform architecture, and high-performance web delivery."
 >
   <section class="hero">
     <p class="eyebrow">Projects</p>
-    <h1>Selected projects</h1>
+    <h1>Selected work</h1>
     <p class="intro">
-      This first version introduces the structure of the portfolio. Detailed case studies will be
-      added progressively.
+      A selection of projects focused on AI architecture, enterprise-scale platforms, and
+      performance-driven web engineering.
     </p>
   </section>
 
@@ -34,8 +52,14 @@ const projects = [
     <ul class="project-list">
       {projects.map((project) => (
         <li class="project-card">
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
+          <div class="project-card__header">
+            <h2>{project.title}</h2>
+            <a href={project.link} target="_blank" rel="noreferrer">Visit project</a>
+          </div>
+          <p><strong>Context:</strong> {project.context}</p>
+          <p><strong>Role:</strong> {project.role}</p>
+          <p><strong>Stack:</strong> {project.stack}</p>
+          <p><strong>Outcome:</strong> {project.outcome}</p>
         </li>
       ))}
     </ul>
