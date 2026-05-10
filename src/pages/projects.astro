@@ -1,5 +1,20 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const projects = [
+  {
+    title: 'Portfolio foundation',
+    description: 'Initial setup of the personal site with Astro, core pages, shared layout, and deployment base.',
+  },
+  {
+    title: 'Content and design direction',
+    description: 'Definition of positioning, content priorities, and a first implementation roadmap.',
+  },
+  {
+    title: 'Future case studies',
+    description: 'This section will later host more detailed project stories with context, role, and outcomes.',
+  },
+];
 ---
 
 <MainLayout title="Projects — Camille Aubert">
@@ -7,8 +22,19 @@ import MainLayout from '../layouts/MainLayout.astro';
     <p class="eyebrow">Projects</p>
     <h1>Selected projects</h1>
     <p class="intro">
-      This page will present a first set of featured projects, with short descriptions, roles,
-      context, and outcomes.
+      This first version introduces the structure of the portfolio. Detailed case studies will be
+      added progressively.
     </p>
+  </section>
+
+  <section class="content-section">
+    <ul class="project-list">
+      {projects.map((project) => (
+        <li class="project-card">
+          <h2>{project.title}</h2>
+          <p>{project.description}</p>
+        </li>
+      ))}
+    </ul>
   </section>
 </MainLayout>
