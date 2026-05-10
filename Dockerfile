@@ -1,22 +1,15 @@
-FROM node:20-alpine AS builder
+FROM node:22.12-alpine AS builder
 WORKDIR /app
 
-COPY package.json ./
-RUN npm install
+COPY package.json package-lock.json ./
+ENV NODE_OPTIONS=--max-old-space-size=512
+RUN npm ci
 
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine AS runner
-WORKDIR /app
-
-ENV HOST=0.0.0.0
-ENV PORT=80
-
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/dist ./dist
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
-
-CMD ["npx", "astro", "preview", "--host", "0.0.0.0", "--port", "80"]
+CMD ["nginx", "-g", "daemon off;"]
