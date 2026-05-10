@@ -14,7 +14,7 @@
     "images": ["projects/cegos-platform-1.webp", "projects/cegos-platform-2.webp", "projects/cegos-platform-3.webp"],
     "tech": ["Laravel", "React", "WordPress", "CI/CD", "AWS"],
     "platforms": ["web"],
-    "link": "",
+    "link": "https://www.cegos.fr",
     "category": "Scalable Web Architecture"
   },
   {
