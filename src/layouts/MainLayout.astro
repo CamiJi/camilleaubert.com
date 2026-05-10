@@ -8,12 +8,15 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  canonical?: string;
 }
 
+const currentPath = Astro.url.pathname;
 const {
   title = site.title,
   description = site.description,
   image = `${site.url}/og-cover.svg`,
+  canonical = `${site.url}${currentPath}`,
 } = Astro.props;
 ---
 
@@ -24,10 +27,12 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={site.url} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
