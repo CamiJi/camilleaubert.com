@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 const projects = [
   {
     title: 'Industrial RAG Infrastructure',
+    category: 'AI Systems',
     context:
       'Deploying generative AI systems for mission-critical knowledge management within the Cegos Group.',
     role: 'Solution Architect & Lead Developer',
@@ -14,6 +15,7 @@ const projects = [
   },
   {
     title: 'Cegos Enterprise Platform',
+    category: 'Platform Architecture',
     context:
       'Directing the architectural evolution of the primary platform for Europe\'s leader in professional training.',
     role: 'Transversal Architect / Lead Developer',
@@ -24,6 +26,7 @@ const projects = [
   },
   {
     title: 'Technical Performance Lab',
+    category: 'Performance & SEO',
     context:
       'Developed lamaisonmontparnasse.fr as a dedicated research lab for extreme SEO and conversion optimization.',
     role: 'Full-stack Developer & Technical SEO Specialist',
@@ -48,13 +51,26 @@ const projects = [
     </p>
   </section>
 
+  <section class="content-section content-section--tight">
+    <div class="projects-intro">
+      <p>
+        My work sits at the intersection of intelligent systems, robust platform architecture, and
+        operational performance. Each project below reflects a production-first approach built for
+        reliability, scale, and measurable impact.
+      </p>
+    </div>
+  </section>
+
   <section class="content-section">
     <ul class="project-list">
       {projects.map((project) => (
         <li class="project-card">
+          <div class="project-card__meta">
+            <span class="project-tag">{project.category}</span>
+            <a href={project.link} target="_blank" rel="noreferrer">Visit project</a>
+          </div>
           <div class="project-card__header">
             <h2>{project.title}</h2>
-            <a href={project.link} target="_blank" rel="noreferrer">Visit project</a>
           </div>
           <p><strong>Context:</strong> {project.context}</p>
           <p><strong>Role:</strong> {project.role}</p>

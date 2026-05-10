@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
   --bg: #f6f3ee;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: rgba(255, 255, 255, 0.92);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.94);
   --text: #1e1b18;
   --muted: #6f665f;
   --accent: #8b5e3c;
@@ -92,7 +92,7 @@ a:focus-visible {
 }
 
 main {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   padding-bottom: 5rem;
 }
 
@@ -130,11 +130,13 @@ h3 {
 h1 {
   font-size: clamp(2.8rem, 8vw, 5.4rem);
   line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-size: 1.7rem;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 h3 {
@@ -158,6 +160,10 @@ li {
   color: var(--muted);
 }
 
+.intro {
+  font-size: 1.12rem;
+}
+
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -179,12 +185,14 @@ li {
     background-color 150ms ease,
     border-color 150ms ease,
     color 150ms ease,
-    transform 150ms ease;
+    transform 150ms ease,
+    box-shadow 150ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
   transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(107, 69, 41, 0.12);
 }
 
 .button--primary {
@@ -244,6 +252,10 @@ li {
   border-top: 1px solid var(--border);
 }
 
+.content-section--tight {
+  margin-top: 2.2rem;
+}
+
 .contact-section {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
@@ -295,22 +307,40 @@ li {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(232, 221, 209, 0.7));
 }
 
+.projects-intro {
+  max-width: 46rem;
+}
+
 .project-list {
   list-style: none;
   padding: 0;
+  gap: 1.25rem;
 }
 
 .project-card {
   display: grid;
-  gap: 0.75rem;
-  padding: 1.5rem;
+  gap: 0.9rem;
+  padding: 1.6rem;
 }
 
+.project-card__meta,
 .project-card__header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(139, 94, 60, 0.12);
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .project-card strong,
@@ -358,6 +388,7 @@ li {
 
 @media (max-width: 720px) {
   .site-header,
+  .project-card__meta,
   .project-card__header,
   .site-footer {
     flex-direction: column;
