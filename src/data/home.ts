@@ -6,7 +6,7 @@ export const homeMeta = {
 
 export const homeContent = {
   hero: {
-    eyebrow: 'Available for senior roles',
+    eyebrow: 'AI, Architecture & Product Engineering',
     title: 'AI Solutions Architect & Lead Full-Stack Developer',
     intro:
       'I design and build reliable AI systems and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of architecture, delivery and applied AI to turn complex environments into clear, usable products.',
@@ -59,7 +59,7 @@ export const homeContent = {
       impact: 'AWS infrastructure, CI/CD and agile cross-functional delivery.',
     },
     {
-      period: 'Applied',
+      period: '',
       role: 'Production AI Systems',
       company: 'Retrieval · LLM integration · Automation',
       description:
@@ -106,7 +106,7 @@ export const homeContent = {
   ],
   contact: {
     eyebrow: 'Work together',
-    title: "Let's build reliable, intelligent products at scale.",
+    title: 'Open to strategic AI, architecture and product engineering conversations.',
     text: 'Available for senior engineering and architecture roles, technical leadership mandates, and AI systems projects where execution and reliability matter.',
     primary: { label: 'Email Camille', href: 'mailto:aubertcam@gmail.com' },
     secondary: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/camille-aubert-27760a56/' },

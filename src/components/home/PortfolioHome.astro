@@ -35,7 +35,7 @@ const { hero, positioning, careerHighlights, projects, skills, contact } = homeC
     </aside>
   </section>
 
-  <section id="strengths" class="home-section">
+  <section id="strengths" class="home-section home-section--strengths">
     <div class="section-heading">
       <p class="eyebrow">{positioning.eyebrow}</p>
       <h2>{positioning.title}</h2>
@@ -50,7 +50,7 @@ const { hero, positioning, careerHighlights, projects, skills, contact } = homeC
     </div>
   </section>
 
-  <section id="proof" class="home-section">
+  <section id="proof" class="home-section home-section--proof">
     <div class="section-heading">
       <p class="eyebrow">Credibility</p>
       <h2>Concrete track record, not theory.</h2>
@@ -58,7 +58,7 @@ const { hero, positioning, careerHighlights, projects, skills, contact } = homeC
     <div class="home-card-grid home-card-grid--three">
       {careerHighlights.map((item) => (
         <article class="home-info-card">
-          <p class="home-info-card__meta">{item.period}</p>
+          {item.period && <p class="home-info-card__meta">{item.period}</p>}
           <h3>{item.role}</h3>
           <p class="home-info-card__subtle">{item.company}</p>
           <p>{item.description}</p>
@@ -68,7 +68,7 @@ const { hero, positioning, careerHighlights, projects, skills, contact } = homeC
     </div>
   </section>
 
-  <section id="projects" class="home-section">
+  <section id="projects" class="home-section home-section--projects">
     <div class="section-heading">
       <p class="eyebrow">Selected projects</p>
       <h2>A few representative examples of the work.</h2>
@@ -87,7 +87,7 @@ const { hero, positioning, careerHighlights, projects, skills, contact } = homeC
     </div>
   </section>
 
-  <section id="skills" class="home-section home-section--skills">
+  <section id="skills" class="home-section home-section--skills home-section--skills-tone">
     <div class="section-heading">
       <p class="eyebrow">Technical range</p>
       <h2>Stack and delivery capabilities.</h2>
@@ -106,7 +106,7 @@ const { hero, positioning, careerHighlights, projects, skills, contact } = homeC
     </div>
   </section>
 
-  <section id="contact" class="home-section home-contact">
+  <section id="contact" class="home-section home-contact home-section--contact">
     <div class="home-contact__content">
       <p class="eyebrow">{contact.eyebrow}</p>
       <h2>{contact.title}</h2>
