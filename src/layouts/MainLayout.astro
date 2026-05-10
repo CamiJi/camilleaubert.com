@@ -2,12 +2,17 @@
 import '../styles/global.css';
 import SiteHeader from '../components/ui/SiteHeader.astro';
 import SiteFooter from '../components/ui/SiteFooter.astro';
+import { site } from '../data/site';
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = 'Camille Aubert' } = Astro.props;
+const {
+  title = site.title,
+  description = site.description,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,6 +21,11 @@ const { title = 'Camille Aubert' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.url} />
   </head>
   <body>
     <SiteHeader />
