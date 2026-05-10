@@ -489,8 +489,9 @@ li {
 .home-hero__focus-list {
   display: grid;
   gap: 0.8rem;
+  list-style: none;
   margin: 0;
-  padding-left: 1.1rem;
+  padding: 0;
   color: var(--muted);
 }
 

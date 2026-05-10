@@ -1,113 +1,119 @@
 export const homeMeta = {
-  title: 'Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer',
+  title: 'Camille Aubert — Full-Stack Developer & AI Systems Architect',
   description:
-    'Portfolio of Camille Aubert focused on AI systems, platform engineering, and production-grade digital delivery.',
+    'Portfolio of Camille Aubert — 10 years of full-stack experience across web architecture, platform engineering and applied AI systems.',
 };
 
 export const homeContent = {
   hero: {
-    eyebrow: 'Portfolio',
+    eyebrow: 'Available for senior roles',
     title: 'AI Solutions Architect & Lead Full-Stack Developer',
     intro:
-      'I design and ship production-grade digital systems where AI, platform reliability, and measurable performance meet.',
+      'I design and build reliable AI systems and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of architecture, delivery and applied AI to turn complex environments into clear, usable products.',
     primaryCta: { label: 'View selected work', href: '#projects' },
-    secondaryCta: { label: 'Start a conversation', href: '#contact' },
+    secondaryCta: { label: 'Get in touch', href: '#contact' },
     anchorLinks: [
-      { label: 'Career', href: '#career' },
+      { label: 'Strengths', href: '#strengths' },
+      { label: 'Proof', href: '#proof' },
       { label: 'Projects', href: '#projects' },
-      { label: 'Skills', href: '#skills' },
       { label: 'Contact', href: '#contact' },
     ],
+    panelLabel: 'Current direction',
     focus: [
-      'Industrializing production-ready RAG pipelines.',
-      'Designing agentic architectures for enterprise-scale services.',
-      'Optimizing high-availability web platforms and delivery workflows.',
+      'Open to strategic leadership roles and high-impact architecture collaborations in AI and product engineering.',
     ],
-    badge: 'Migration draft content',
   },
   positioning: {
-    eyebrow: 'Short intro',
-    title: 'Production-first architecture for intelligent products.',
-    text:
-      'I help teams move from fragmented implementation to a coherent system: a clear story, reliable delivery, and a technical foundation that can support both growth and AI-enabled features.',
-    note: 'Temporary copy structure. Replace with the final brand narrative once the migration direction is locked.',
+    eyebrow: 'Core strengths',
+    title: 'Architecture, delivery, and applied AI — in that order.',
+    strengths: [
+      {
+        title: 'Applied AI Systems',
+        text: 'Designing retrieval-based and AI-assisted systems with a focus on reliability, clarity and real-world usefulness.',
+      },
+      {
+        title: 'Scalable Web Architecture',
+        text: 'Building and evolving robust platforms across multi-site, multi-country environments with strong delivery constraints.',
+      },
+      {
+        title: 'Technical Leadership',
+        text: 'Bringing together product thinking, engineering execution and long-term technical standards.',
+      },
+    ],
   },
   careerHighlights: [
     {
-      period: '2024 - present',
-      role: 'Lead Full-Stack / AI Architecture',
-      company: 'Cegos Group',
+      period: '10 years',
+      role: 'Full-Stack Delivery',
+      company: 'PHP · Laravel · React · Modern Web',
       description:
-        'Own production-facing architecture work around AI integration, maintainable delivery, and platform evolution.',
-      impact: 'Focus on reliability, scale, and practical AI adoption.',
+        'Built production systems across a wide range of contexts — from solo delivery to team leadership, from legacy PHP to modern stacks. Strong fluency with the full delivery cycle.',
+      impact: 'Deep experience on both product and infrastructure layers.',
     },
     {
-      period: '10+ years',
-      role: 'Technical Delivery Experience',
-      company: 'Independent and enterprise environments',
+      period: 'Since 2023',
+      role: 'Cegos Group',
+      company: '13 websites · 7 countries · ecommerce & lead-gen',
       description:
-        'Shaped web platforms, operational workflows, and implementation standards across product and infrastructure layers.',
-      impact: 'Strong bias toward maintainability and business impact.',
+        'Contributing to the evolution of a large-scale multi-country digital platform — Laravel, React and WordPress — with strong performance, conversion and international delivery requirements.',
+      impact: 'AWS infrastructure, CI/CD and agile cross-functional delivery.',
     },
     {
-      period: 'Ongoing',
-      role: 'Systems Thinking',
-      company: 'Portfolio direction',
+      period: 'Applied',
+      role: 'Production AI Systems',
+      company: 'Retrieval · LLM integration · Automation',
       description:
-        'Treat the portfolio as an operating system for credibility: concise positioning, evidence, and clear next steps.',
-      impact: 'Content structure should communicate trust quickly.',
+        'Practical work on AI-assisted workflows and retrieval-based architectures, designed to be useful, measurable and maintainable in real-world production environments.',
+      impact: 'Focus on reliability and operational adoption, not experimentation.',
     },
   ],
   projects: [
     {
       category: 'AI Systems',
-      title: 'Industrial RAG Infrastructure',
+      title: 'Enterprise Retrieval Systems',
       summary:
-        'Generative AI systems for mission-critical knowledge management and decision support.',
-      impact: 'Built for accuracy, traceability, and repeatable delivery.',
+        'Designed and improved retrieval-based architectures for enterprise knowledge access and AI-assisted workflows.',
       href: '/projects',
     },
     {
       category: 'Platform Architecture',
-      title: 'Enterprise Platform Evolution',
+      title: 'Cegos Platform Ecosystem',
       summary:
-        'Containerized delivery and architectural work for a large-scale training platform.',
-      impact: 'Designed for stability, scale, and maintainability.',
+        'Contributed to the evolution of a multi-country digital platform built on Laravel, React and WordPress, with strong performance and conversion requirements.',
       href: '/projects',
     },
     {
       category: 'Performance & SEO',
-      title: 'Technical Performance Lab',
+      title: 'Performance & SEO Engineering',
       summary:
-        'High-speed implementation and conversion-focused experimentation on a public-facing site.',
-      impact: 'Optimized for fast rendering and measurable acquisition outcomes.',
+        'Built and optimized experimental and client-facing web projects focused on rendering speed, SEO quality and implementation discipline.',
       href: '/projects',
     },
   ],
   skills: [
     {
       group: 'AI & systems',
-      items: ['RAG', 'LLM orchestration', 'Automation', 'Agent workflows'],
+      items: ['RAG pipelines', 'LLM integration', 'Retrieval systems', 'Applied automation'],
     },
     {
       group: 'Platform',
-      items: ['Laravel', 'React', 'Docker', 'AWS'],
+      items: ['Laravel', 'React', 'WordPress', 'Docker', 'AWS'],
     },
     {
       group: 'Delivery',
-      items: ['CI/CD', 'Performance tuning', 'SEO', 'Maintainability'],
+      items: ['CI/CD', 'Performance tuning', 'Technical SEO', 'Ecommerce'],
     },
   ],
   contact: {
-    eyebrow: 'Contact',
-    title: 'Ready to shape the next layer of the site?',
-    text:
-      'This migration phase is about setting up a cleaner structure. The final content pass can now slot into a stable home layout without reworking the whole site.',
+    eyebrow: 'Work together',
+    title: "Let's build reliable, intelligent products at scale.",
+    text: 'Available for senior engineering and architecture roles, technical leadership mandates, and AI systems projects where execution and reliability matter.',
     primary: { label: 'Email Camille', href: 'mailto:aubertcam@gmail.com' },
-    secondary: { label: 'Open LinkedIn', href: 'https://www.linkedin.com/in/camille-aubert-27760a56/' },
-    notes: [
-      'Migration draft copy is still visible in a few places.',
-      'Case-study depth and final brand voice will be refined later.',
+    secondary: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/camille-aubert-27760a56/' },
+    availability: [
+      'Senior architecture and engineering mandates.',
+      'Applied AI projects with a production focus.',
+      'Technical leadership in complex digital environments.',
     ],
   },
 } as const;
