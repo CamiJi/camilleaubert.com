@@ -1,0 +1,26 @@
+[
+  {
+    "company": "Cegos Group",
+    "role": "Full Stack Web Developer",
+    "period": "Feb 2023 - Present",
+    "type": "Full time job",
+    "description": "Technical contribution across a multi-country digital ecosystem spanning 13 websites in 7 countries, with a strong focus on performance, conversion, and maintainable delivery in high-traffic contexts.",
+    "skills": ["Laravel", "React", "WordPress", "AWS", "CI/CD", "Agile delivery"]
+  },
+  {
+    "company": "ASSERCAR",
+    "role": "Project Manager & Web Developer",
+    "period": "Apr 2016 - Jan 2023",
+    "type": "Full time job",
+    "description": "Full-stack delivery of business applications with strong SQL depth, API integrations, and project coordination responsibilities, including training and knowledge sharing.",
+    "skills": ["PHP", "SQL", "JavaScript", "SOAP/REST APIs", "AJAX", "Responsive UX/UI"]
+  },
+  {
+    "company": "Cross-functional collaboration",
+    "role": "Applied AI & Product Engineering",
+    "period": "Current focus",
+    "type": "Strategic focus",
+    "description": "Designing retrieval-based and AI-assisted systems that connect architecture decisions to practical business usage, with emphasis on reliability and production readiness.",
+    "skills": ["RAG systems", "AI-assisted workflows", "Architecture", "Technical leadership"]
+  }
+]

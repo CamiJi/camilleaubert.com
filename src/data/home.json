@@ -1,0 +1,72 @@
+{
+  "name": "Camille Aubert",
+  "photoUrl": "favicon.svg",
+  "intro": "I design and build reliable AI systems and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of architecture, delivery and applied AI to turn complex environments into clear, usable products.",
+  "introHtml": "I design and build <span class='text-maintext font-semibold'>reliable AI systems</span> and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of <span class='text-maintext font-semibold'>architecture</span>, delivery and applied AI to turn complex environments into <span class='text-maintext font-semibold'>clear, usable products</span>.",
+  "webpageTitle": "Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer",
+  "resumeUrl": "https://www.linkedin.com/in/camille-aubert-27760a56/",
+
+  "_comment": "Only keep relevant channels for this profile. Resume is currently shared through LinkedIn while a dedicated CV asset is pending.",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/CamiJi",
+      "icon": "mdi:github",
+      "showInContact": true
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/camille-aubert-27760a56/",
+      "icon": "mdi:linkedin",
+      "showInContact": true
+    },
+    {
+      "name": "Leetcode",
+      "url": "#",
+      "icon": "devicon-plain:leetcode",
+      "showInContact": false
+    },
+    {
+      "name": "Behance",
+      "url": "#",
+      "icon": "devicon-plain:behance",
+      "showInContact": false
+    },
+    {
+      "name": "Email",
+      "url": "mailto:aubertcam@gmail.com",
+      "icon": "mdi:email",
+      "showInContact": true
+    },
+    {
+      "name": "Whatsapp",
+      "url": "",
+      "icon": "mdi:whatsapp",
+      "showInContact": false
+    },
+    {
+      "name": "Facebook",
+      "url": "#",
+      "icon": "mdi:facebook",
+      "showInContact": false
+    },
+    {
+      "name": "Messenger",
+      "url": "",
+      "icon": "mdi:facebook-messenger",
+      "showInContact": false
+    },
+    {
+      "name": "Instagram",
+      "url": "#",
+      "icon": "mdi:instagram",
+      "showInContact": false
+    },
+    {
+      "name": "Twitter",
+      "url": "#",
+      "icon": "mdi:twitter",
+      "showInContact": false
+    }
+  ]
+}

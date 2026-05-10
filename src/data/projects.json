@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Enterprise Retrieval Systems",
+    "description": "Designed and improved retrieval-based architectures for enterprise knowledge access and AI-assisted workflows.",
+    "images": ["projects/enterprise-retrieval-1.webp", "projects/enterprise-retrieval-2.webp", "projects/enterprise-retrieval-3.webp"],
+    "tech": ["RAG", "LLM Integration", "Python", "AWS"],
+    "platforms": ["web"],
+    "link": "",
+    "category": "Applied AI Systems"
+  },
+  {
+    "title": "Cegos Platform Ecosystem",
+    "description": "Contributed to the evolution of a multi-country digital platform built on Laravel, React and WordPress, with strong performance and conversion requirements.",
+    "images": ["projects/cegos-platform-1.webp", "projects/cegos-platform-2.webp", "projects/cegos-platform-3.webp"],
+    "tech": ["Laravel", "React", "WordPress", "CI/CD", "AWS"],
+    "platforms": ["web"],
+    "link": "https://www.cegos.fr",
+    "category": "Scalable Web Architecture"
+  },
+  {
+    "title": "Performance & SEO Engineering",
+    "description": "Built and optimized experimental and client-facing web projects focused on rendering speed, SEO quality and implementation discipline.",
+    "images": ["projects/performance-seo-1.webp", "projects/performance-seo-2.webp", "projects/performance-seo-3.webp"],
+    "tech": ["Performance", "SEO", "PHP", "WordPress"],
+    "platforms": ["web"],
+    "link": "",
+    "category": "Delivery & Optimization"
+  }
+]

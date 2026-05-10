@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "title": "Applied AI Systems",
+      "skills": [
+        { "name": "RAG Workflows", "level": 2, "icon": "mdi:brain" },
+        { "name": "LLM Integration", "level": 2, "icon": "mdi:robot" },
+        { "name": "Prompt Orchestration", "level": 2, "icon": "mdi:message-processing" },
+        { "name": "Knowledge Retrieval", "level": 2, "icon": "mdi:database-search" }
+      ]
+    },
+    {
+      "title": "Web Architecture",
+      "skills": [
+        { "name": "Laravel", "level": 3, "icon": "skill-icons:laravel-dark" },
+        { "name": "React", "level": 3, "icon": "skill-icons:react-dark" },
+        { "name": "WordPress", "level": 3, "icon": "skill-icons:wordpress" },
+        { "name": "PHP", "level": 3, "icon": "skill-icons:php-dark" }
+      ]
+    },
+    {
+      "title": "Platform & Cloud",
+      "skills": [
+        { "name": "Docker", "level": 3, "icon": "skill-icons:docker" },
+        { "name": "AWS", "level": 2, "icon": "skill-icons:aws-dark" },
+        { "name": "CI/CD", "level": 2, "icon": "mdi:source-branch" },
+        { "name": "API Integrations", "level": 3, "icon": "mdi:api" }
+      ]
+    },
+    {
+      "title": "Delivery & Growth",
+      "skills": [
+        { "name": "Technical SEO", "level": 3, "icon": "mdi:magnify" },
+        { "name": "Performance Engineering", "level": 3, "icon": "mdi:speedometer" },
+        { "name": "Ecommerce Platforms", "level": 2, "icon": "mdi:cart-outline" },
+        { "name": "Cross-functional Leadership", "level": 2, "icon": "mdi:account-group" }
+      ]
+    }
+  ]
+}
