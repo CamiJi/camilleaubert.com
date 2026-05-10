@@ -1,22 +1,22 @@
 {
-  "name": "John Doe",
+  "name": "Camille Aubert",
   "photoUrl": "favicon.svg",
-  "intro": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
-  "introHtml": "A brief, compelling introduction about who you are and what you do. Mention your core <span class='text-white font-bold'>philosophy</span>, your passion for building digital products, and your drive for creating <span class='text-white font-bold'>efficient</span>, <span class='text-white font-bold'>high-impact</span> solutions.",
-  "webpageTitle": "John Doe",
-  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
+  "intro": "I design and build reliable AI systems and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of architecture, delivery and applied AI to turn complex environments into clear, usable products.",
+  "introHtml": "I design and build <span class='text-maintext font-semibold'>reliable AI systems</span> and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of <span class='text-maintext font-semibold'>architecture</span>, delivery and applied AI to turn complex environments into <span class='text-maintext font-semibold'>clear, usable products</span>.",
+  "webpageTitle": "Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer",
+  "resumeUrl": "https://www.linkedin.com/in/camille-aubert-27760a56/",
 
-  "_comment": "Add your social links below. Leave the 'url' empty to hide the icon. Set 'showInContact' to true or false to control if it appears in the Contact section.",
+  "_comment": "Only keep relevant channels for this profile. Resume is currently shared through LinkedIn while a dedicated CV asset is pending.",
   "socials": [
     {
       "name": "GitHub",
-      "url": "https://github.com/[YOUR_USER_NAME]",
+      "url": "https://github.com/camilleaubert",
       "icon": "mdi:github",
       "showInContact": true
     },
     {
       "name": "LinkedIn",
-      "url": "https://linkedin.com/in/[YOUR_USER_NAME]",
+      "url": "https://www.linkedin.com/in/camille-aubert-27760a56/",
       "icon": "mdi:linkedin",
       "showInContact": true
     },
@@ -34,15 +34,15 @@
     },
     {
       "name": "Email",
-      "url": "mailto:your-mail@example.com",
+      "url": "mailto:aubertcam@gmail.com",
       "icon": "mdi:email",
       "showInContact": true
     },
     {
       "name": "Whatsapp",
-      "url": "https://wa.me/[YOUR_WHATSAPP_NUMBER]",
+      "url": "",
       "icon": "mdi:whatsapp",
-      "showInContact": true
+      "showInContact": false
     },
     {
       "name": "Facebook",
@@ -52,9 +52,9 @@
     },
     {
       "name": "Messenger",
-      "url": "#",
+      "url": "",
       "icon": "mdi:facebook-messenger",
-      "showInContact": true
+      "showInContact": false
     },
     {
       "name": "Instagram",

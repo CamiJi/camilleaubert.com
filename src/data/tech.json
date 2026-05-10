@@ -1,35 +1,39 @@
 {
   "categories": [
     {
-      "title": "Mobile Development",
+      "title": "Applied AI Systems",
       "skills": [
-        { "name": "Flutter", "level": 3, "icon": "skill-icons:flutter-dark" },
-        { "name": "Dart", "level": 3, "icon": "skill-icons:dart-dark" },
-        { "name": "Kotlin", "level": 1, "icon": "skill-icons:kotlin-dark" }
+        { "name": "RAG Workflows", "level": 2, "icon": "mdi:brain" },
+        { "name": "LLM Integration", "level": 2, "icon": "mdi:robot" },
+        { "name": "Prompt Orchestration", "level": 2, "icon": "mdi:message-processing" },
+        { "name": "Knowledge Retrieval", "level": 2, "icon": "mdi:database-search" }
       ]
     },
     {
-      "title": "Frontend",
+      "title": "Web Architecture",
       "skills": [
-        { "name": "Astro", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "HTML", "level": 2, "icon": "skill-icons:html" },
-        { "name": "CSS", "level": 2, "icon": "skill-icons:css" },
-        { "name": "Tailwind CSS", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
+        { "name": "Laravel", "level": 3, "icon": "skill-icons:laravel-dark" },
+        { "name": "React", "level": 3, "icon": "skill-icons:react-dark" },
+        { "name": "WordPress", "level": 3, "icon": "skill-icons:wordpress" },
+        { "name": "PHP", "level": 3, "icon": "skill-icons:php-dark" }
       ]
     },
     {
-      "title": "Backend",
+      "title": "Platform & Cloud",
       "skills": [
-        { "name": "FastAPI", "level": 2, "icon": "skill-icons:fastapi" },
-        { "name": "Python", "level": 2, "icon": "skill-icons:python-dark" },
-        { "name": "Firebase", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+        { "name": "Docker", "level": 3, "icon": "skill-icons:docker" },
+        { "name": "AWS", "level": 2, "icon": "skill-icons:aws-dark" },
+        { "name": "CI/CD", "level": 2, "icon": "mdi:source-branch" },
+        { "name": "API Integrations", "level": 3, "icon": "mdi:api" }
       ]
     },
     {
-      "title": "Database",
+      "title": "Delivery & Growth",
       "skills": [
-        { "name": "SQLite", "level": 3, "icon": "skill-icons:sqlite" },
-        { "name": "PostgreSQL", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "Technical SEO", "level": 3, "icon": "mdi:magnify" },
+        { "name": "Performance Engineering", "level": 3, "icon": "mdi:speedometer" },
+        { "name": "Ecommerce Platforms", "level": 2, "icon": "mdi:cart-outline" },
+        { "name": "Cross-functional Leadership", "level": 2, "icon": "mdi:account-group" }
       ]
     }
   ]
