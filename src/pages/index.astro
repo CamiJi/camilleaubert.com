@@ -7,29 +7,12 @@ import Projects from "../components/projects.astro";
 import Contact from "../components/contact.astro";
 import Career from "../components/career.astro";
 import localData from '../data/home.json';
+import type { ProfileData } from '../types.ts';
+import { fetchWithFallback } from '../lib/data.ts';
 
-interface ProfileData {
-  webpageTitle: string;
-  intro: string;
-}
-
-const isApiLive = import.meta.env.PROD; // Auto true in production
 const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
 
-let data: ProfileData; // data as ProfileData
-
-if (isApiLive && BASE_URL) {
-  try {
-    const response = await fetch(`${BASE_URL}/home`);
-    if (!response.ok) throw new Error('Network response was not ok');
-    data = await response.json();
-  } catch (error) {
-    console.error("API Fetch failed, falling back to mock data", error);
-    data = localData as ProfileData;
-  }
-} else {
-  data = localData as ProfileData;
-}
+const data = await fetchWithFallback<ProfileData>('/home', localData as ProfileData, BASE_URL);
 
 const { webpageTitle, intro } = data;
 ---
