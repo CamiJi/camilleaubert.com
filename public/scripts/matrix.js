@@ -3,7 +3,6 @@
 
 const container = document.getElementById('matrix-container');
 const characters = "{}[]()<>/\=+*01;";
-const colors = ["#FF4500", "#32CD32", "#1E90FF", "#FFD700", "#8A2BE2", "#FF1493"];
 
 function createLetter() {
   if (!container) return;
@@ -26,7 +25,7 @@ function createLetter() {
   
   container.appendChild(span);
 
-  setTimeout(() => {
+  setTimeout(function() {
     span.remove();
   }, duration * 1000);
 }
@@ -69,7 +68,7 @@ if (window.innerWidth > 768) {
 const toTopBtn = document.getElementById('to-top');
 const progressCircle = document.getElementById('progress-circle');
 const circumference = 150.796;
-const arrowIcon = toTopBtn?.querySelector('.absolute');
+const arrowIcon = toTopBtn ? toTopBtn.querySelector('.absolute') : null;
 
 function handleScroll() {
   const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -81,43 +80,43 @@ function handleScroll() {
   }
 
   if (scrollPercentage > 0.5) {
-    toTopBtn?.classList.remove('translate-y-20', 'opacity-0');
-    toTopBtn?.classList.add('translate-y-0', 'opacity-100');
+    toTopBtn.classList.remove('translate-y-20', 'opacity-0');
+    toTopBtn.classList.add('translate-y-0', 'opacity-100');
   } else {
-    toTopBtn?.classList.add('translate-y-20', 'opacity-0');
-    toTopBtn?.classList.remove('translate-y-0', 'opacity-100');
+    toTopBtn.classList.add('translate-y-20', 'opacity-0');
+    toTopBtn.classList.remove('translate-y-0', 'opacity-100');
   }
 
   if (scrollPercentage > 0.98) {
-    arrowIcon?.classList.add('animate-bounce-twice');
+    arrowIcon.classList.add('animate-bounce-twice');
   } else {
-    arrowIcon?.classList.remove('animate-bounce-twice');
+    arrowIcon.classList.remove('animate-bounce-twice');
   }
 }
 
 window.addEventListener('scroll', handleScroll, { passive: true });
 
-toTopBtn?.addEventListener('click', () => {
-  arrowIcon?.classList.add('launching');
+toTopBtn.addEventListener('click', function() {
+  arrowIcon.classList.add('launching');
 
   const startPosition = window.scrollY;
   const duration = 750;
-  let startTime: number | null = null;
-  let requestID: number;
+  let startTime = null;
+  let requestID;
 
-  const stopAnimation = () => {
+  function stopAnimation() {
     cancelAnimationFrame(requestID);
-    arrowIcon?.classList.remove('launching');
+    arrowIcon.classList.remove('launching');
     window.removeEventListener('wheel', stopAnimation);
     window.removeEventListener('touchmove', stopAnimation);
-  };
+  }
 
-  function easeOutQuad(t: number, b: number, c: number, d: number) {
+  function easeOutQuad(t, b, c, d) {
     t /= d;
     return -c * t * (t - 2) + b;
   }
 
-  function animation(currentTime: number) {
+  function animation(currentTime) {
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
     const run = easeOutQuad(timeElapsed, startPosition, -startPosition, duration);
