@@ -96,32 +96,15 @@ import CareerCard from './career-card.astro';
 </style>
 
 <script>
-  function revealCards() {
-    const cards = document.querySelectorAll('.scroll-stat');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add a slight delay based on the card's position to create a wave effect
-          const index = Array.from(cards).indexOf(entry.target);
-          setTimeout(() => {
-            entry.target.classList.add('reveal');
-          }, (index % 3) * 150); // Delay resets every row for a clean staggered look
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15, // Trigger when 15% of the card is visible
-      rootMargin: '0px 0px -10px 0px' // Trigger slightly before it hits the viewport
-    });
+  import { initReveal } from '../scripts/reveal.ts';
 
-    cards.forEach(card => observer.observe(card));
-  }
+  initReveal([
+    { selector: '.scroll-stat', staggerColumns: 3, staggerDelay: 150 },
+  ]);
 
-  // Runs on initial load
-  revealCards();
-  
-  // Necessary for Astro View Transitions if you use them
-  document.addEventListener('astro:after-swap', revealCards);
+  document.addEventListener('astro:after-swap', () => {
+    initReveal([
+      { selector: '.scroll-stat', staggerColumns: 3, staggerDelay: 150 },
+    ]);
+  });
 </script>

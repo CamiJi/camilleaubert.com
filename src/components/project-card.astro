@@ -11,6 +11,8 @@ const primaryImage = project.images?.[0] ?? 'placeholder.jpeg';
     <img
       src={primaryImage}
       alt={`${project.title} screenshot`}
+      loading="lazy"
+      decoding="async"
       onerror="this.onerror=null;this.src='placeholder.jpeg';"
       class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
     />

@@ -47,47 +47,13 @@ import projectsData from '../data/projects.json';
 </style>
 
 <script>
-  const initProjectReveal = () => {
-    const header = document.querySelector('.project-header');
-    const cards = document.querySelectorAll('.project-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target as HTMLElement;
-          
-          // Check if the intersecting element is the header
-          if (target.classList.contains('project-header')) {
-            target.classList.add('reveal');
-            observer.unobserve(target);
-          } 
-          // Check if the intersecting element is a project card
-          else if (target.classList.contains('project-card')) {
-            const index = Array.from(cards).indexOf(target);
-            
-            // Stagger effect based on row position (only for cards)
-            setTimeout(() => {
-              target.classList.add('reveal');
-            }, (index % 3) * 150);
-            
-            observer.unobserve(target);
-          }
-        }
-      });
-    }, { 
-      threshold: 0.15, 
-      rootMargin: '0px 0px -10px 0px' 
-    });
+  import { initReveal } from '../scripts/reveal.ts';
 
-    // Observe the header
-    if (header) observer.observe(header);
-    
-    // Observe all cards
-    cards.forEach(card => observer.observe(card));
-  };
+  const init = () => initReveal([
+    { selector: '.project-header', staggerColumns: 0 },
+    { selector: '.project-card', staggerColumns: 3, staggerDelay: 150 },
+  ]);
 
-  window.addEventListener('load', initProjectReveal);
-
-  // Support for Astro View Transitions
-  document.addEventListener('astro:after-swap', initProjectReveal);
+  window.addEventListener('load', init);
+  document.addEventListener('astro:after-swap', init);
 </script>

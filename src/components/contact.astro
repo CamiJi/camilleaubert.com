@@ -92,43 +92,14 @@ import localData from '../data/home.json';
 </style>
 
 <script>
-  const revealContact = () => {
-    const header = document.querySelector('.contact-header');
-    const footer = document.querySelector('.contact-footer');
-    const cards = document.querySelectorAll('.contact-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = entry.target as HTMLElement;
+  import { initReveal } from '../scripts/reveal.ts';
 
-          if (target.classList.contains('contact-card')) {
-            const index = Array.from(cards).indexOf(target);
-            // Stagger effect for the 4-column grid
-            setTimeout(() => {
-              target.classList.add('reveal');
-            }, (index % 4) * 150);
-          } else {
-            // Header and Footer reveal immediately
-            target.classList.add('reveal');
-          }
-          
-          observer.unobserve(target);
-        }
-      });
-    }, { 
-      threshold: 0.15,
-      rootMargin: '0px 0px -10px 0px'
-    });
+  const init = () => initReveal([
+    { selector: '.contact-header', staggerColumns: 0 },
+    { selector: '.contact-card', staggerColumns: 4, staggerDelay: 150 },
+    { selector: '.contact-footer', staggerColumns: 0 },
+  ]);
 
-    if (header) observer.observe(header);
-    if (footer) observer.observe(footer);
-    cards.forEach(card => observer.observe(card));
-  }
-  
-  // Runs on initial load
-  window.addEventListener('load', revealContact);
-  
-  // Support for Astro View Transitions
-  document.addEventListener('astro:after-swap', revealContact);
+  window.addEventListener('load', init);
+  document.addEventListener('astro:after-swap', init);
 </script>

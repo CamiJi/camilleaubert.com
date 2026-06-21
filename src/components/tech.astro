@@ -128,47 +128,17 @@ try {
 </style>
 
 <script>
-  function revealSkills() {
-    const header = document.querySelector('.tech-header');
-    const cards = document.querySelectorAll('.skill-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          
-          // Check if the intersecting element is the header
-          if (target.classList.contains('tech-header')) {
-            target.classList.add('reveal');
-            observer.unobserve(target);
-          }
-          // Check if the intersecting element is a skill card
-          else if (target.classList.contains('skill-card')) {
-            // Add a slight delay based on the card's position to create a wave effect
-            const index = Array.from(cards).indexOf(target);
-            setTimeout(() => {
-              target.classList.add('reveal');
-            }, (index % 6) * 50); // Delay resets every row for a clean staggered look
-            
-            observer.unobserve(target);
-          }
-        }
-      });
-    }, {
-      threshold: 0.1, // Trigger when 10% of the card is visible
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before it hits the viewport
-    });
+  import { initReveal } from '../scripts/reveal.ts';
 
-    // Observe the header
-    if (header) observer.observe(header);
+  initReveal([
+    { selector: '.tech-header', staggerColumns: 0 },
+    { selector: '.skill-card', staggerColumns: 6, staggerDelay: 50, threshold: 0.1, rootMargin: '0px 0px -50px 0px' },
+  ]);
 
-    // Observe all cards
-    cards.forEach(card => observer.observe(card));
-  }
-
-  // Runs on initial load
-  revealSkills();
-  
-  // Necessary for Astro View Transitions if you use them
-  document.addEventListener('astro:after-swap', revealSkills);
+  document.addEventListener('astro:after-swap', () => {
+    initReveal([
+      { selector: '.tech-header', staggerColumns: 0 },
+      { selector: '.skill-card', staggerColumns: 6, staggerDelay: 50, threshold: 0.1, rootMargin: '0px 0px -50px 0px' },
+    ]);
+  });
 </script>
