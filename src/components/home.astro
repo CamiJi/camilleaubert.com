@@ -105,7 +105,8 @@ const { name, photoUrl, introHtml, resumeUrl, socials } = data;
     {socials.filter((social) => social.url && social.url !== "#" && social.url !== "").map((social) => (
       <a 
         href={social.url} 
-        target="_blank" 
+        target="_blank"
+        aria-label={social.name}
         class="group relative flex flex-col items-center justify-center transition-all duration-300 hover:scale-110"
       >
         <Icon 
