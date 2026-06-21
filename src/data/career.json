@@ -1,11 +1,11 @@
 [
   {
     "company": "Cegos Group",
-    "role": "Full Stack Web Developer",
+    "role": "Lead Developer & AI Architect",
     "period": "Feb 2023 - Present",
     "type": "Full time job",
-    "description": "Technical contribution across a multi-country digital ecosystem spanning 13 websites in 7 countries, with a strong focus on performance, conversion, and maintainable delivery in high-traffic contexts.",
-    "skills": ["Laravel", "React", "WordPress", "AWS", "CI/CD", "Agile delivery"]
+    "description": "Architecting enterprise knowledge retrieval systems (RAG) to safely expose internal data to LLM layers, minimizing hallucinations and non-deterministic behavior. Leading the modernization and scaling of the corporate multi-tenant ecosystem (13 platforms across 7 countries) handling high-traffic volume on AWS and Docker environments. Driving tech-stack evolution and engineering processes, shifting team velocity through structured AI assistance and rigorous code review patterns.",
+    "skills": ["RAG", "LLM Integration", "Laravel", "React", "AWS", "Docker", "CI/CD"]
   },
   {
     "company": "ASSERCAR",

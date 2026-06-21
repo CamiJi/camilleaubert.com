@@ -1,8 +1,8 @@
 {
   "name": "Camille Aubert",
   "photoUrl": "favicon.svg",
-  "intro": "I design and build reliable AI systems and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of architecture, delivery and applied AI to turn complex environments into clear, usable products.",
-  "introHtml": "I design and build <span class='text-maintext font-semibold'>reliable AI systems</span> and high-scale web platforms. With 10 years of full-stack experience, I work at the intersection of <span class='text-maintext font-semibold'>architecture</span>, delivery and applied AI to turn complex environments into <span class='text-maintext font-semibold'>clear, usable products</span>.",
+  "intro": "Architecting robust, scalable web ecosystems and production-grade AI systems. I bridge the gap between complex enterprise data and intelligent, non-deterministic client applications. Focused on engineering secure RAG workflows, autonomous agent orchestration, and cost-efficient token economic models.",
+  "introHtml": "Architecting <span class='text-maintext font-semibold'>robust, scalable web ecosystems</span> and <span class='text-maintext font-semibold'>production-grade AI systems</span>. I bridge the gap between complex enterprise data and intelligent, non-deterministic client applications. Focused on engineering <span class='text-maintext font-semibold'>secure RAG workflows</span>, <span class='text-maintext font-semibold'>autonomous agent orchestration</span>, and <span class='text-maintext font-semibold'>cost-efficient token economic models</span>.",
   "webpageTitle": "Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer",
   "resumeUrl": "https://www.linkedin.com/in/camille-aubert-27760a56/",
 
