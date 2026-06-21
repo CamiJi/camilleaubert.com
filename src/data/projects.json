@@ -1,17 +1,26 @@
 [
   {
     "title": "Enterprise Retrieval Systems",
-    "description": "Designed and improved retrieval-based architectures for enterprise knowledge access and AI-assisted workflows.",
-    "images": ["projects/enterprise-retrieval-1.webp", "projects/enterprise-retrieval-2.webp", "projects/enterprise-retrieval-3.webp"],
-    "tech": ["RAG", "LLM Integration", "Python", "AWS"],
+    "description": "Designed and deployed an end-to-end RAG architecture for enterprise data access. Implemented advanced vector search pipelines, context window optimization strategies, and robust data isolation governance. Focused heavily on inference cost management (Token Economy) and output reliability.",
+    "images": ["projects/enterprise-retrieval-1.webp"],
+    "tech": ["RAG", "Vector Search", "Python", "AWS", "LLM Integration"],
     "platforms": ["web"],
     "link": "",
     "category": "Applied AI Systems"
   },
   {
+    "title": "Autonomous Agent Workflow & Custom RAG",
+    "description": "Conceived and developed a production-ready autonomous agent system for multi-source indexing. Built utilizing modern Model Context Protocol (MCP) principles to connect isolated databases with generative models, enabling reliable automated task execution.",
+    "images": ["projects/agent-rag-1.webp"],
+    "tech": ["MCP", "Multi-Agent", "RAG", "Python", "TypeScript"],
+    "platforms": ["web"],
+    "link": "",
+    "category": "Autonomous AI Systems"
+  },
+  {
     "title": "Cegos Platform Ecosystem",
     "description": "Contributed to the evolution of a multi-country digital platform built on Laravel, React and WordPress, with strong performance and conversion requirements.",
-    "images": ["projects/cegos-platform-1.webp", "projects/cegos-platform-2.webp", "projects/cegos-platform-3.webp"],
+    "images": ["projects/cegos-platform-1.webp"],
     "tech": ["Laravel", "React", "WordPress", "CI/CD", "AWS"],
     "platforms": ["web"],
     "link": "https://www.cegos.fr",
@@ -20,7 +29,7 @@
   {
     "title": "Performance & SEO Engineering",
     "description": "Built and optimized experimental and client-facing web projects focused on rendering speed, SEO quality and implementation discipline.",
-    "images": ["projects/performance-seo-1.webp", "projects/performance-seo-2.webp", "projects/performance-seo-3.webp"],
+    "images": ["projects/performance-seo-1.webp"],
     "tech": ["Performance", "SEO", "PHP", "WordPress"],
     "platforms": ["web"],
     "link": "",

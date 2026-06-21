@@ -1,21 +1,23 @@
 {
   "categories": [
     {
-      "title": "Applied AI Systems",
+      "title": "AI & Data",
       "skills": [
-        { "name": "RAG Workflows", "level": 2, "icon": "mdi:brain" },
-        { "name": "LLM Integration", "level": 2, "icon": "mdi:robot" },
-        { "name": "Prompt Orchestration", "level": 2, "icon": "mdi:message-processing" },
-        { "name": "Knowledge Retrieval", "level": 2, "icon": "mdi:database-search" }
+        { "name": "RAG Architecture", "level": 2, "icon": "mdi:brain" },
+        { "name": "Context Engineering", "level": 2, "icon": "mdi:message-processing" },
+        { "name": "Multi-Agent Orchestration", "level": 2, "icon": "mdi:robot" },
+        { "name": "Token Cost Optimization", "level": 2, "icon": "mdi:chart-line" },
+        { "name": "Vector Databases", "level": 2, "icon": "mdi:database-search" }
       ]
     },
     {
-      "title": "Web Architecture",
+      "title": "Backend & Architecture",
       "skills": [
         { "name": "Laravel", "level": 3, "icon": "skill-icons:laravel-dark" },
         { "name": "React", "level": 3, "icon": "skill-icons:react-dark" },
-        { "name": "WordPress", "level": 3, "icon": "skill-icons:wordpress" },
-        { "name": "PHP", "level": 3, "icon": "skill-icons:php-dark" }
+        { "name": "Enterprise Patterns", "level": 2, "icon": "mdi:shield-check" },
+        { "name": "Multi-tenant Systems", "level": 2, "icon": "mdi:office-building" },
+        { "name": "API Design", "level": 3, "icon": "mdi:api" }
       ]
     },
     {
@@ -23,8 +25,7 @@
       "skills": [
         { "name": "Docker", "level": 3, "icon": "skill-icons:docker" },
         { "name": "AWS", "level": 2, "icon": "skill-icons:aws-dark" },
-        { "name": "CI/CD", "level": 2, "icon": "mdi:source-branch" },
-        { "name": "API Integrations", "level": 3, "icon": "mdi:api" }
+        { "name": "CI/CD", "level": 2, "icon": "mdi:source-branch" }
       ]
     },
     {

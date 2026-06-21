@@ -6,7 +6,7 @@
   "webpageTitle": "Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer",
   "resumeUrl": "https://www.linkedin.com/in/camille-aubert-27760a56/",
 
-  "_comment": "Only keep relevant channels for this profile. Resume is currently shared through LinkedIn while a dedicated CV asset is pending.",
+  "_comment": "Active professional channels only. Resume is currently shared through LinkedIn while a dedicated CV asset is pending.",
   "socials": [
     {
       "name": "GitHub",
@@ -21,52 +21,10 @@
       "showInContact": true
     },
     {
-      "name": "Leetcode",
-      "url": "#",
-      "icon": "devicon-plain:leetcode",
-      "showInContact": false
-    },
-    {
-      "name": "Behance",
-      "url": "#",
-      "icon": "devicon-plain:behance",
-      "showInContact": false
-    },
-    {
       "name": "Email",
       "url": "mailto:aubertcam@gmail.com",
       "icon": "mdi:email",
       "showInContact": true
-    },
-    {
-      "name": "Whatsapp",
-      "url": "",
-      "icon": "mdi:whatsapp",
-      "showInContact": false
-    },
-    {
-      "name": "Facebook",
-      "url": "#",
-      "icon": "mdi:facebook",
-      "showInContact": false
-    },
-    {
-      "name": "Messenger",
-      "url": "",
-      "icon": "mdi:facebook-messenger",
-      "showInContact": false
-    },
-    {
-      "name": "Instagram",
-      "url": "#",
-      "icon": "mdi:instagram",
-      "showInContact": false
-    },
-    {
-      "name": "Twitter",
-      "url": "#",
-      "icon": "mdi:twitter",
-      "showInContact": false
     }
   ]
 }
