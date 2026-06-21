@@ -4,10 +4,14 @@ import { SITE_CONFIG } from '../config.ts';
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
+const siteUrl = 'https://camilleaubert.com';
+const ogImage = `${siteUrl}/og-image.webp`;
+const authorName = 'Camille Aubert';
 const baseTheme = SITE_CONFIG.baseTheme;
 const defaultTheme = `${baseTheme}-dark`;
 ---
@@ -18,7 +22,41 @@ const defaultTheme = `${baseTheme}-dark`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="canonical" href={siteUrl} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={authorName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Camille Aubert",
+        "jobTitle": "AI Solutions Architect & Lead Full-Stack Developer",
+        "url": "https://camilleaubert.com",
+        "sameAs": [
+          "https://github.com/CamiJi",
+          "https://www.linkedin.com/in/camille-aubert-27760a56/"
+        ],
+        "email": "mailto:aubertcam@gmail.com",
+        "image": "https://camilleaubert.com/og-image.webp"
+      }
+    </script>
 
     <!-- THEME TOGGLE SCRIPT -->
     <script is:inline define:vars={{ baseTheme, defaultTheme }}>
