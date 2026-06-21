@@ -1,53 +1,64 @@
 # camilleaubert.com
 
-Portfolio website for `camilleaubert.com`.
+Portfolio website for `camilleaubert.com` — built with Astro and served via Docker.
 
-## Status
-This repository currently contains project framing and documentation.
-The Astro application has not been scaffolded yet.
+## Stack
 
-## Goal
-Build a simple, maintainable portfolio site that can be deployed on the current single-server infrastructure.
+- **Astro** (static site, TypeScript)
+- **Tailwind CSS** (styling)
+- **Docker** (multi-stage: Node.js builder → Nginx Alpine)
+- **Nginx Proxy Manager** (reverse proxy on production server)
 
-## Planned stack
-- Astro
-- TypeScript
-- Docker
-- Nginx Proxy Manager on the server as reverse proxy
+## Project structure
 
-## Planned project structure
-- `src/pages` → public pages
-- `src/components` → reusable UI and page sections
-- `src/layouts` → page layouts
-- `src/content` → structured content collections
-- `public` → static assets
-- `docs` → framing, design, content, and implementation notes
+```
+src/
+├── pages/          → public routes (index, about, projects, contact, 404)
+├── components/     → reusable UI components (career, project-card, tech, etc.)
+├── layouts/        → page layouts (Layout, MainLayout)
+├── data/           → JSON content files (career, projects, tech, home)
+├── styles/         → global CSS
+└── config.ts       → site configuration
+public/             → static assets (images, robots.txt)
+docs/               → project framing, design direction, deployment runbook
+```
+
+## Related repository
+
+This repo is part of a two-repo setup:
+
+| Repo | Rôle |
+|---|---|
+| `CamiJi/camilleaubert.com` ← vous êtes ici | Application Astro (code source) |
+| `CamiJi/camilleaubert-infra` | Infrastructure, déploiement, Docker, skills Copilot |
+
+**Pour recréer l'environnement complet**, voir le [guide de setup](https://github.com/CamiJi/camilleaubert-infra#setup-depuis-un-nouvel-ordi) dans `camilleaubert-infra`.
 
 ## Local development
-Target workflow once the Astro app is created:
 
 ```bash
 npm install
-npm run dev
+npm run dev        # → http://localhost:4321
 ```
 
 ## Production build
-Target workflow once the Astro app is created:
 
 ```bash
-npm run build
+npm run build      # → dist/
 ```
 
-## Deployment model
-The application is intended to run on a single Ubuntu server with Docker Compose.
+## Deployment
 
-Target runtime:
-- container: `portfolio-astro`
-- reverse proxy target: `portfolio-astro:80`
+Le déploiement est documenté et géré dans `CamiJi/camilleaubert-infra`.
+Procédure : validation locale → `rsync` des fichiers → `docker compose up -d --build` sur le serveur.
 
-## Current documentation
-- `docs/project-framing.md`
-- `docs/design-direction.md`
+Détails dans [`camilleaubert-infra/.github/skills/deploy/SKILL.md`](https://github.com/CamiJi/camilleaubert-infra/blob/main/.github/skills/deploy/SKILL.md).
+
+## Documentation
+
+- `docs/project-framing.md` — cadrage initial du projet
+- `docs/design-direction.md` — direction visuelle
+- `docs/deployment-runbook.md` — procédure de déploiement détaillée
 - `docs/content-strategy.md`
 - `docs/repository-map.md`
 - `docs/implementation-plan.md`
