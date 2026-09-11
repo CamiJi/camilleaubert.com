@@ -68,13 +68,6 @@ const {
       Skip to main content
     </a>
 
-    <div
-      id="matrix-container"
-      aria-hidden="true"
-      class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
-      style="mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);"
-    ></div>
-
     <main id="main-content" class="px-2 sm:px-12 md:px-14 lg:px-28 max-w-360 mx-auto relative z-0">
         <slot />
     </main>
@@ -106,6 +99,8 @@ const {
       </div>
     </button>
 
-    <script is:inline defer src="/scripts/matrix.js"></script>
+    <script>
+      import '../scripts/to-top';
+    </script>
   </body>
 </html>

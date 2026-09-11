@@ -7,7 +7,7 @@ const { name, role, tagline, photoUrl, socials } = profile;
 
 <section id="home" class="flex flex-col items-center justify-center section-container md:pt-30 gap-1 min-h-[80vh] text-center">
   <div class="relative group mb-2 reveal-content" style="animation-delay: 100ms;">
-    <div class="balloon-float w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_50px_color-mix(in_srgb,var(--color-accent)_33%,transparent)]">
+    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_50px_color-mix(in_srgb,var(--color-accent)_25%,transparent)]">
       <img
         src={photoUrl}
         alt={name}
@@ -17,7 +17,6 @@ const { name, role, tagline, photoUrl, socials } = profile;
         class="w-full h-full object-cover scale-110"
       />
     </div>
-    <div class="balloon-float absolute -z-10 top-0 left-0 w-full h-full bg-accent rounded-full blur-[80px] opacity-20"></div>
   </div>
 
   <div class="reveal-content" style="animation-delay: 200ms;">
@@ -88,26 +87,6 @@ const { name, role, tagline, photoUrl, socials } = profile;
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  .balloon-float {
-    will-change: transform;
-    animation: floating-balloon 8s ease-in-out infinite;
-  }
-
-  @keyframes floating-balloon {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    33% {
-      transform: translate(3px, -8px) rotate(1deg);
-    }
-    66% {
-      transform: translate(-3px, -4px) rotate(-1deg);
-    }
-    100% {
-      transform: translate(0, 0) rotate(0deg);
     }
   }
 </style>

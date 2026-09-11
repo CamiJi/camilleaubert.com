@@ -3,38 +3,38 @@
     {
       "title": "AI & Data",
       "skills": [
-        { "name": "RAG Architecture", "level": 2, "icon": "mdi:brain" },
-        { "name": "Context Engineering", "level": 2, "icon": "mdi:message-processing" },
-        { "name": "Multi-Agent Orchestration", "level": 2, "icon": "mdi:robot" },
-        { "name": "Token Cost Optimization", "level": 2, "icon": "mdi:chart-line" },
-        { "name": "Vector Databases", "level": 2, "icon": "mdi:database-search" }
+        { "name": "RAG Architecture", "icon": "mdi:brain" },
+        { "name": "Context Engineering", "icon": "mdi:message-processing" },
+        { "name": "Multi-Agent Orchestration", "icon": "mdi:robot" },
+        { "name": "Token Cost Optimization", "icon": "mdi:chart-line" },
+        { "name": "Vector Databases", "icon": "mdi:database-search" }
       ]
     },
     {
       "title": "Backend & Architecture",
       "skills": [
-        { "name": "Laravel", "level": 3, "icon": "skill-icons:laravel-dark" },
-        { "name": "React", "level": 3, "icon": "skill-icons:react-dark" },
-        { "name": "Enterprise Patterns", "level": 2, "icon": "mdi:shield-check" },
-        { "name": "Multi-tenant Systems", "level": 2, "icon": "mdi:office-building" },
-        { "name": "API Design", "level": 3, "icon": "mdi:api" }
+        { "name": "Laravel", "icon": "skill-icons:laravel-dark" },
+        { "name": "React", "icon": "skill-icons:react-dark" },
+        { "name": "Enterprise Patterns", "icon": "mdi:shield-check" },
+        { "name": "Multi-tenant Systems", "icon": "mdi:office-building" },
+        { "name": "API Design", "icon": "mdi:api" }
       ]
     },
     {
       "title": "Platform & Cloud",
       "skills": [
-        { "name": "Docker", "level": 3, "icon": "skill-icons:docker" },
-        { "name": "AWS", "level": 2, "icon": "skill-icons:aws-dark" },
-        { "name": "CI/CD", "level": 2, "icon": "mdi:source-branch" }
+        { "name": "Docker", "icon": "skill-icons:docker" },
+        { "name": "AWS", "icon": "skill-icons:aws-dark" },
+        { "name": "CI/CD", "icon": "mdi:source-branch" }
       ]
     },
     {
       "title": "Delivery & Growth",
       "skills": [
-        { "name": "Technical SEO", "level": 3, "icon": "mdi:magnify" },
-        { "name": "Performance Engineering", "level": 3, "icon": "mdi:speedometer" },
-        { "name": "Ecommerce Platforms", "level": 2, "icon": "mdi:cart-outline" },
-        { "name": "Cross-functional Leadership", "level": 2, "icon": "mdi:account-group" }
+        { "name": "Technical SEO", "icon": "mdi:magnify" },
+        { "name": "Performance Engineering", "icon": "mdi:speedometer" },
+        { "name": "Ecommerce Platforms", "icon": "mdi:cart-outline" },
+        { "name": "Cross-functional Leadership", "icon": "mdi:account-group" }
       ]
     }
   ]
