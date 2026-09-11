@@ -8,6 +8,11 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://camilleaubert.com',
+  redirects: {
+    '/about': '/#about',
+    '/projects': '/#projects',
+    '/contact': '/#contact',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

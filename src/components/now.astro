@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon/components';
+import nowData from '../data/now.json';
+
+const { eyebrow, heading, bullets, writing } = nowData;
+---
+
+<section id="now" class="section-container max-w-3xl mx-auto">
+  <div class="now-header reveal-content">
+    <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
+      <span class="text-accent">/</span> {eyebrow}
+    </h2>
+    <p class="text-subtext font-body text-sm max-w-md pb-8">
+      {heading}
+    </p>
+  </div>
+
+  <ul class="space-y-4 mb-10">
+    {bullets.map((bullet, index) => (
+      <li class="flex gap-3 now-item reveal-content" style={`animation-delay: ${200 + index * 120}ms;`}>
+        <span class="text-accent mt-1 shrink-0">
+          <Icon name="mdi:arrow-right" class="w-4 h-4" />
+        </span>
+        <p class="text-subtext font-body leading-relaxed">{bullet}</p>
+      </li>
+    ))}
+  </ul>
+
+  <div class="space-y-3">
+    {writing.map((item) => (
+      item.url ? (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="now-item group flex items-center justify-between gap-4 bg-accent/5 border border-accent/10 rounded-xl px-5 py-4 hover:border-accent/40 hover:bg-accent/10 transition-all"
+        >
+          <div>
+            <p class="text-maintext font-body text-sm font-medium">{item.title}</p>
+            <p class="text-subtext text-xs mt-1">{item.note}</p>
+          </div>
+          <Icon name="mdi:open-in-new" class="w-5 h-5 text-subtext group-hover:text-accent transition-colors shrink-0" />
+        </a>
+      ) : (
+        <div class="now-item flex items-center justify-between gap-4 bg-accent/5 border border-accent/10 rounded-xl px-5 py-4 opacity-80">
+          <div>
+            <p class="text-maintext font-body text-sm font-medium">{item.title}</p>
+            <p class="text-accent/80 text-xs mt-1 italic">{item.note}</p>
+          </div>
+          <Icon name="mdi:pencil-outline" class="w-5 h-5 text-subtext shrink-0" />
+        </div>
+      )
+    ))}
+  </div>
+</section>

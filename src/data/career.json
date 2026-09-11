@@ -2,25 +2,24 @@
   {
     "company": "Cegos Group",
     "role": "Lead Developer & AI Architect",
-    "period": "Feb 2023 - Present",
+    "period": "Feb 2023 — Present",
     "type": "Full time job",
-    "description": "Architecting enterprise knowledge retrieval systems (RAG) to safely expose internal data to LLM layers, minimizing hallucinations and non-deterministic behavior. Leading the modernization and scaling of the corporate multi-tenant ecosystem (13 platforms across 7 countries) handling high-traffic volume on AWS and Docker environments. Driving tech-stack evolution and engineering processes, shifting team velocity through structured AI assistance and rigorous code review patterns.",
+    "description": "Leading the technical evolution of the corporate multi-tenant platform ecosystem, and making AI a core part of how the team ships software.",
+    "highlights": [
+      "Designed and shipped an enterprise RAG platform that safely exposes internal knowledge to LLM layers — built to replace the legacy enterprise search engine",
+      "Leading the modernization of the multi-tenant ecosystem (13 platforms across 7 countries) on AWS and Docker",
+      "Built the team's AI-assisted engineering workflow: ticket-driven multi-repo orchestration, AI agent procedures, structured code review",
+      "Driving tech-stack evolution across Laravel, React, WordPress"
+    ],
     "skills": ["RAG", "LLM Integration", "Laravel", "React", "AWS", "Docker", "CI/CD"]
   },
   {
     "company": "ASSERCAR",
     "role": "Project Manager & Web Developer",
-    "period": "Apr 2016 - Jan 2023",
+    "period": "Apr 2016 — Jan 2023",
     "type": "Full time job",
     "description": "Full-stack delivery of business applications with strong SQL depth, API integrations, and project coordination responsibilities, including training and knowledge sharing.",
-    "skills": ["PHP", "SQL", "JavaScript", "SOAP/REST APIs", "AJAX", "Responsive UX/UI"]
-  },
-  {
-    "company": "Cross-functional collaboration",
-    "role": "Applied AI & Product Engineering",
-    "period": "Current focus",
-    "type": "Strategic focus",
-    "description": "Designing retrieval-based and AI-assisted systems that connect architecture decisions to practical business usage, with emphasis on reliability and production readiness.",
-    "skills": ["RAG systems", "AI-assisted workflows", "Architecture", "Technical leadership"]
+    "highlights": [],
+    "skills": ["PHP", "SQL", "JavaScript", "SOAP/REST APIs", "Responsive UX/UI"]
   }
 ]

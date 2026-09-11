@@ -1,0 +1,27 @@
+{
+  "name": "Camille Aubert",
+  "role": "Lead Developer & AI Solutions Architect",
+  "tagline": "I turn complex enterprise ecosystems into intelligent, production-grade systems — RAG, agents, and AI-assisted delivery.",
+  "photoUrl": "photo.webp",
+  "webpageTitle": "Camille Aubert — AI Solutions Architect & Lead Full-Stack Developer",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/CamiJi",
+      "icon": "mdi:github",
+      "showInContact": true
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/camille-aubert-27760a56/",
+      "icon": "mdi:linkedin",
+      "showInContact": true
+    },
+    {
+      "name": "Email",
+      "url": "mailto:aubertcam@gmail.com",
+      "icon": "mdi:email",
+      "showInContact": true
+    }
+  ]
+}

@@ -2,20 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/nav.astro";
 import Home from "../components/home.astro";
-import Tech from "../components/tech.astro";
-import Projects from "../components/projects.astro";
-import Contact from "../components/contact.astro";
+import About from "../components/about.astro";
 import Career from "../components/career.astro";
-import localData from '../data/home.json';
+import Projects from "../components/projects.astro";
+import Tech from "../components/tech.astro";
+import Now from "../components/now.astro";
+import Contact from "../components/contact.astro";
+import profile from '../data/profile.json';
 
-const { webpageTitle, intro } = localData;
+const { webpageTitle, tagline } = profile;
 ---
 
-<Layout title={webpageTitle} description={intro}>
+<Layout title={webpageTitle} description={tagline}>
   	<Nav />
 	<Home />
+	<About />
 	<Career />
 	<Projects />
 	<Tech />
+	<Now />
 	<Contact />
 </Layout>

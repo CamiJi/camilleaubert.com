@@ -1,0 +1,25 @@
+---
+import aboutData from '../data/about.json';
+
+const { eyebrow, heading, paragraphs } = aboutData;
+---
+
+<section id="about" class="section-container max-w-3xl mx-auto">
+  <div class="about-header reveal-content">
+    <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
+      <span class="text-accent">/</span> {eyebrow}
+    </h2>
+  </div>
+
+  <h3 class="text-2xl md:text-3xl font-heading font-bold text-maintext mt-8 reveal-content">
+    {heading}
+  </h3>
+
+  <div class="mt-6 space-y-4">
+    {paragraphs.map((paragraph, index) => (
+      <p class="text-subtext font-body text-base md:text-lg leading-relaxed reveal-content" style={`animation-delay: ${200 + index * 120}ms;`}>
+        {paragraph}
+      </p>
+    ))}
+  </div>
+</section>
