@@ -43,3 +43,12 @@ Still to define:
 - exact icon set
 - photography style and selection
 - whether dark references influence the final palette
+
+## Resolved (2026-09 redesign)
+
+All the open decisions above are now locked — see [redesign-2026-09.md](redesign-2026-09.md):
+- **Palette:** Neutral + Iris (bg `#0b0b10`, accent `#8d8af0`), dark only
+- **Typography:** Satoshi Variable (self-hosted), headings + body
+- **Layout:** section-based one-page with card/bento-flavored grids
+- **Icons:** astro-icon with mdi + skill-icons packs
+- **Motion:** restrained reveals only; matrix rain and floating effects removed (they were on the "Avoid" list)

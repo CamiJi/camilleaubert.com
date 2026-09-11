@@ -1,3 +1,5 @@
+# ⚠️ Historical — superseded by [redesign-2026-09.md](redesign-2026-09.md)
+
 # Template Migration Audit
 
 Date: 2026-05-10

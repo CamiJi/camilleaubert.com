@@ -32,6 +32,13 @@ The tone must be:
 - Education section
 - Contact section
 
+## Implemented structure (2026-09 redesign)
+
+The redesign settled the final one-page structure — see [redesign-2026-09.md](redesign-2026-09.md):
+Hero → About (story) → Career (highlights) → Projects (pro + side, status badges) → Tech Stack (no levels) → Now (current focus + LinkedIn writing strip) → Contact.
+
+The "Training" and "Education" sections were dropped in favor of the Now/Writing strip (LinkedIn posts and articles).
+
 ## Content constraints
 - Keep it concise.
 - Keep it premium.

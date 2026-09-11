@@ -1,3 +1,5 @@
+# ⚠️ Historical — superseded by [redesign-2026-09.md](redesign-2026-09.md)
+
 # Audit Tickets — camilleaubert.com
 
 > **Date :** 2026-06-21
