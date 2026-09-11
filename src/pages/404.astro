@@ -1,22 +1,25 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<MainLayout
+<Layout
   title="404 — Page not found"
   description="The page you are looking for could not be found. Return to the homepage of Camille Aubert."
 >
-  <section class="hero">
-    <p class="eyebrow">404</p>
-    <h1>Page not found</h1>
-    <p class="intro">
+  <section class="section-container min-h-[70vh] flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+    <p class="text-accent text-xs uppercase tracking-widest font-semibold font-body">404</p>
+    <h1 class="text-4xl md:text-5xl font-heading font-bold text-maintext mt-3">Page not found</h1>
+    <p class="text-subtext font-body text-lg leading-relaxed mt-6">
       The page you are looking for does not exist or may have been moved. You can return to the
       homepage or continue exploring the portfolio.
     </p>
-
-    <div class="hero__actions">
-      <a class="button button--primary" href="/">Back to home</a>
-      <a class="button button--secondary" href="/projects">View projects</a>
+    <div class="flex gap-4 mt-8">
+      <a href="/" class="px-6 py-2 border border-accent/50 bg-accent/10 rounded-full text-maintext font-body text-sm transition-all hover:scale-105">
+        Back to home
+      </a>
+      <a href="/#projects" class="px-6 py-2 border border-accent/20 rounded-full text-subtext font-body text-sm transition-all hover:text-maintext hover:border-accent/40">
+        View projects
+      </a>
     </div>
   </section>
-</MainLayout>
+</Layout>

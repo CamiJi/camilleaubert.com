@@ -1,35 +1,46 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<MainLayout
+<Layout
   title="About — Camille Aubert"
-  description="Learn more about Camille Aubert, Senior Full-stack Developer and Solutions Architect focused on AI systems, scalable architecture, and industrial-grade delivery."
+  description="Learn more about Camille Aubert, Lead Developer & AI Solutions Architect focused on AI systems, scalable architecture, and industrial-grade delivery."
 >
-  <section class="hero">
-    <p class="eyebrow">About</p>
-    <h1>Engineering reliable intelligence for production environments.</h1>
-    <p class="intro">
-      I am a Senior Full-stack Developer and Solutions Architect committed to the “1% excellence”
+  <section class="section-container max-w-3xl mx-auto pt-16 md:pt-24">
+    <p class="text-accent text-xs uppercase tracking-widest font-semibold font-body">About</p>
+    <h1 class="text-4xl md:text-5xl font-heading font-bold text-maintext mt-3 leading-tight">
+      Engineering reliable intelligence for production environments.
+    </h1>
+    <p class="text-subtext font-body text-lg leading-relaxed mt-6">
+      I am a Lead Developer and Solutions Architect committed to the "1% excellence"
       philosophy. I specialize in deploying AI as a core performance multiplier within industrial
       environments, bridging the gap between cutting-edge research and reliable production systems.
     </p>
   </section>
 
-  <section class="content-section content-section--tight">
-    <h2>Approach</h2>
-    <p>
+  <section class="section-container max-w-3xl mx-auto content-section">
+    <h2 class="text-2xl font-heading font-bold text-maintext">Approach</h2>
+    <p class="text-subtext font-body leading-relaxed mt-3">
       Architecture is the new productivity. I build deterministic, scalable systems that shift focus
       from manual code execution to the orchestration of autonomous intelligent agents.
     </p>
   </section>
 
-  <section class="content-section">
-    <h2>What I do</h2>
-    <ul class="feature-list">
-      <li>AI Systems Architecture (RAG, LLM, Multi-agent orchestration).</li>
-      <li>High-Performance Full-Stack Development (PHP/Laravel, React).</li>
-      <li>Industrial Infrastructure Automation (Docker, AWS, CI/CD).</li>
+  <section class="section-container max-w-3xl mx-auto content-section">
+    <h2 class="text-2xl font-heading font-bold text-maintext">What I do</h2>
+    <ul class="mt-4 space-y-3">
+      <li class="flex gap-3 text-subtext font-body leading-relaxed">
+        <span class="text-accent mt-0.5">→</span>
+        AI Systems Architecture (RAG, LLM, Multi-agent orchestration).
+      </li>
+      <li class="flex gap-3 text-subtext font-body leading-relaxed">
+        <span class="text-accent mt-0.5">→</span>
+        High-Performance Full-Stack Development (PHP/Laravel, React).
+      </li>
+      <li class="flex gap-3 text-subtext font-body leading-relaxed">
+        <span class="text-accent mt-0.5">→</span>
+        Industrial Infrastructure Automation (Docker, AWS, CI/CD).
+      </li>
     </ul>
   </section>
-</MainLayout>
+</Layout>

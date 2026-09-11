@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
@@ -17,7 +17,7 @@ const projects = [
     title: 'Cegos Enterprise Platform',
     category: 'Platform Architecture',
     context:
-      'Directing the architectural evolution of the primary platform for Europe\'s leader in professional training.',
+      "Directing the architectural evolution of the primary platform for Europe's leader in professional training.",
     role: 'Transversal Architect / Lead Developer',
     stack: 'Laravel, WordPress, Gutenberg, Docker, AWS.',
     outcome:
@@ -38,46 +38,48 @@ const projects = [
 ];
 ---
 
-<MainLayout
+<Layout
   title="Projects — Camille Aubert"
   description="Selected projects from Camille Aubert covering industrial RAG systems, enterprise platform architecture, and high-performance web delivery."
 >
-  <section class="hero">
-    <p class="eyebrow">Projects</p>
-    <h1>Selected work</h1>
-    <p class="intro">
+  <section class="section-container max-w-3xl mx-auto pt-16 md:pt-24">
+    <p class="text-accent text-xs uppercase tracking-widest font-semibold font-body">Projects</p>
+    <h1 class="text-4xl md:text-5xl font-heading font-bold text-maintext mt-3 leading-tight">Selected work</h1>
+    <p class="text-subtext font-body text-lg leading-relaxed mt-6">
       A selection of projects focused on AI architecture, enterprise-scale platforms, and
       performance-driven web engineering.
     </p>
   </section>
 
-  <section class="content-section content-section--tight">
-    <div class="projects-intro">
-      <p>
-        My work sits at the intersection of intelligent systems, robust platform architecture, and
-        operational performance. Each project below reflects a production-first approach built for
-        reliability, scale, and measurable impact.
-      </p>
-    </div>
+  <section class="section-container max-w-3xl mx-auto content-section">
+    <p class="text-subtext font-body leading-relaxed">
+      My work sits at the intersection of intelligent systems, robust platform architecture, and
+      operational performance. Each project below reflects a production-first approach built for
+      reliability, scale, and measurable impact.
+    </p>
   </section>
 
-  <section class="content-section">
-    <ul class="project-list">
-      {projects.map((project) => (
-        <li class="project-card">
-          <div class="project-card__meta">
-            <span class="project-tag">{project.category}</span>
-            <a href={project.link} target="_blank" rel="noreferrer">Visit project</a>
+  <section class="section-container max-w-3xl mx-auto content-section space-y-8 pb-24">
+    {projects.map((project) => (
+      <div class="bg-accent/5 border border-accent/10 rounded-2xl p-6 md:p-8 hover:border-accent/40 transition-all">
+        <div class="flex justify-between items-start gap-4">
+          <div>
+            <span class="text-accent text-[10px] uppercase tracking-widest font-bold">{project.category}</span>
+            <h2 class="text-xl font-heading font-bold text-maintext mt-1">{project.title}</h2>
           </div>
-          <div class="project-card__header">
-            <h2>{project.title}</h2>
-          </div>
-          <p><strong>Context:</strong> {project.context}</p>
-          <p><strong>Role:</strong> {project.role}</p>
-          <p><strong>Stack:</strong> {project.stack}</p>
-          <p><strong>Outcome:</strong> {project.outcome}</p>
-        </li>
-      ))}
-    </ul>
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noreferrer" class="text-subtext hover:text-accent transition-colors text-sm shrink-0">
+              Visit project ↗
+            </a>
+          )}
+        </div>
+        <dl class="mt-4 space-y-2 text-sm font-body">
+          <div class="flex gap-2"><dt class="text-maintext font-medium shrink-0">Context:</dt><dd class="text-subtext">{project.context}</dd></div>
+          <div class="flex gap-2"><dt class="text-maintext font-medium shrink-0">Role:</dt><dd class="text-subtext">{project.role}</dd></div>
+          <div class="flex gap-2"><dt class="text-maintext font-medium shrink-0">Stack:</dt><dd class="text-subtext">{project.stack}</dd></div>
+          <div class="flex gap-2"><dt class="text-maintext font-medium shrink-0">Outcome:</dt><dd class="text-subtext">{project.outcome}</dd></div>
+        </dl>
+      </div>
+    ))}
   </section>
-</MainLayout>
+</Layout>

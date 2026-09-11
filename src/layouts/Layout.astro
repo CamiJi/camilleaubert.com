@@ -1,19 +1,21 @@
 ---
-import '../styles/global.css'
-import { SITE_CONFIG } from '../config.ts';
+import '../styles/global.css';
+import { site } from '../data/site';
 
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  canonical?: string;
 }
 
-const { title, description } = Astro.props;
-
-const siteUrl = 'https://camilleaubert.com';
-const ogImage = `${siteUrl}/og-image.webp`;
-const authorName = 'Camille Aubert';
-const baseTheme = SITE_CONFIG.baseTheme;
-const defaultTheme = `${baseTheme}-dark`;
+const currentPath = Astro.url.pathname;
+const {
+  title,
+  description,
+  image = `${site.url}/og-image.webp`,
+  canonical = `${site.url}${currentPath === '/' ? '' : currentPath}`,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +24,7 @@ const defaultTheme = `${baseTheme}-dark`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
-    <link rel="canonical" href={siteUrl} />
+    <link rel="canonical" href={canonical} />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -30,59 +32,45 @@ const defaultTheme = `${baseTheme}-dark`;
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={authorName} />
+    <meta property="og:site_name" content={site.name} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={image} />
 
     <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Camille Aubert",
-        "jobTitle": "AI Solutions Architect & Lead Full-Stack Developer",
-        "url": "https://camilleaubert.com",
-        "sameAs": [
-          "https://github.com/CamiJi",
-          "https://www.linkedin.com/in/camille-aubert-27760a56/"
-        ],
-        "email": "mailto:aubertcam@gmail.com",
-        "image": "https://camilleaubert.com/og-image.webp"
-      }
-    </script>
-
-    <!-- THEME TOGGLE SCRIPT -->
-    <script is:inline define:vars={{ baseTheme, defaultTheme }}>
-      const savedTheme = localStorage.getItem('theme');
-
-      if (savedTheme && savedTheme.startsWith(baseTheme)) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else {
-        document.documentElement.setAttribute('data-theme', defaultTheme);
-        localStorage.setItem('theme', defaultTheme);
-      }
-    </script>
-
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": site.name,
+      "jobTitle": "AI Solutions Architect & Lead Full-Stack Developer",
+      "url": site.url,
+      "sameAs": [
+        "https://github.com/CamiJi",
+        "https://www.linkedin.com/in/camille-aubert-27760a56/"
+      ],
+      "email": "mailto:aubertcam@gmail.com",
+      "image": `${site.url}/og-image.webp`
+    })} />
   </head>
-  <body class="bg-container relative min-h-screen overflow-x-hidden antialiased">
+
+  <body class="relative min-h-screen overflow-x-hidden antialiased">
     <!-- Skip to content -->
-    <a 
-      href="#main-content" 
+    <a
+      href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none"
     >
       Skip to main content
     </a>
 
-    <div 
+    <div
       id="matrix-container"
-      aria-hidden="true" 
+      aria-hidden="true"
       class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
       style="mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);"
     ></div>
@@ -102,7 +90,7 @@ const defaultTheme = `${baseTheme}-dark`;
           id="progress-circle"
           cx="28" cy="28" r="24"
           fill="none"
-          stroke="currentColor" 
+          stroke="currentColor"
           stroke-width="3"
           stroke-dasharray="150.7"
           stroke-dashoffset="150.7"
@@ -110,7 +98,7 @@ const defaultTheme = `${baseTheme}-dark`;
           class="text-accent transition-all duration-100"
         ></circle>
       </svg>
-      
+
       <div class="absolute text-accent group-hover:scale-110 transition-transform">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
           <path d="M13.0001 7.82843V20H11.0001V7.82843L5.63614 13.1924L4.22192 11.7782L12.0001 4L19.7783 11.7782L18.3641 13.1924L13.0001 7.82843Z"></path>
@@ -118,6 +106,6 @@ const defaultTheme = `${baseTheme}-dark`;
       </div>
     </button>
 
-    <script defer src="/scripts/matrix.js"></script>
+    <script is:inline defer src="/scripts/matrix.js"></script>
   </body>
 </html>

@@ -7,14 +7,8 @@ import Projects from "../components/projects.astro";
 import Contact from "../components/contact.astro";
 import Career from "../components/career.astro";
 import localData from '../data/home.json';
-import type { ProfileData } from '../types.ts';
-import { fetchWithFallback } from '../lib/data.ts';
 
-const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
-
-const data = await fetchWithFallback<ProfileData>('/home', localData as ProfileData, BASE_URL);
-
-const { webpageTitle, intro } = data;
+const { webpageTitle, intro } = localData;
 ---
 
 <Layout title={webpageTitle} description={intro}>

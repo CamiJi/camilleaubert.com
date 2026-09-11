@@ -13,20 +13,7 @@ interface Category {
   skills: Skill[];
 }
 
-const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
-let categories: Category[];
-
-try {
-  if (BASE_URL) {
-    const response = await fetch(`${BASE_URL}/tech`);
-    const data = await response.json();
-    categories = data.categories;
-  } else {
-    categories = localTechData.categories;
-  }
-} catch {
-  categories = localTechData.categories;
-}
+const categories = localTechData.categories as Category[];
 ---
 
 <section id="tech" class="section-container overflow-hidden">
