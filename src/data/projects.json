@@ -18,7 +18,7 @@
     "images": ["projects/nestor-groom-1.webp"],
     "tech": ["RAG", "Laravel", "DeepSeek", "OpenAI Embeddings", "MySQL"],
     "platforms": ["web"],
-    "link": "",
+    "link": "https://nestor.camilleaubert.com/",
     "category": "Side Project"
   },
   {
@@ -40,7 +40,7 @@
     "images": ["projects/env-switcher-1.webp"],
     "tech": ["Chrome Extension", "JavaScript", "Developer Tooling"],
     "platforms": ["google-chrome"],
-    "link": "",
+    "link": "https://camiji.github.io/cegos-env-switcher/#installation",
     "category": "Side Project"
   },
   {
@@ -53,16 +53,5 @@
     "platforms": ["web"],
     "link": "https://www.cegos.fr",
     "category": "Scalable Web Architecture"
-  },
-  {
-    "title": "Performance & SEO Lab",
-    "kind": "client",
-    "status": "Client work",
-    "description": "Built and optimized lamaisonmontparnasse.fr as a dedicated lab for extreme SEO and conversion optimization — record-breaking performance scores and a highly optimized acquisition funnel.",
-    "images": ["projects/performance-seo-1.webp"],
-    "tech": ["Performance", "SEO", "PHP", "WordPress"],
-    "platforms": ["web"],
-    "link": "https://lamaisonmontparnasse.fr",
-    "category": "Delivery & Optimization"
   }
 ]

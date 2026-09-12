@@ -35,7 +35,7 @@ const primaryImage = project.images?.[0] ?? 'placeholder.jpeg';
         <h3 class="text-xl font-heading font-bold text-maintext mt-1">{project.title}</h3>
       </div>
       {project.link && (
-        <a href={project.link} target="_blank" rel="noreferrer" class="text-accent/75 hover:text-accent transition-colors">
+        <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-accent/75 hover:text-accent transition-colors" aria-label={`Open ${project.title} in a new tab`}>
           <Icon name="mdi:open-in-new" class="w-6 h-6" />
         </a>
       )}

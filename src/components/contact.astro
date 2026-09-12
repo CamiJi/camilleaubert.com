@@ -19,23 +19,48 @@ import profile from '../data/profile.json';
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
         {profile.socials
         .filter((social) => social.showInContact && social.url && social.url !== "#" && social.url !== "")
-        .map((social) => (
-          <!-- Added 'contact-card' and 'opacity-0' here -->
-          <a 
-            href={social.url} 
-            target="_blank" 
+        .map((social) => {
+          const isEmail = social.url.startsWith('mailto:');
+          const EmailCard = isEmail ? 'div' : 'a';
+          return (
+          <EmailCard
+            href={isEmail ? undefined : social.url}
+            target={isEmail ? undefined : '_blank'}
+            rel={isEmail ? undefined : 'noopener noreferrer'}
             class="contact-card opacity-0 group p-8 bg-accent/5 border border-accent/10 rounded-2xl hover:border-accent/40 hover:bg-accent/10 transition-all duration-300"
           >
-            <Icon 
-              name={social.icon} 
-              class="w-10 h-10 text-accent mb-4 mx-auto group-hover:scale-110 transition-transform" 
+            <Icon
+              name={social.icon}
+              class="w-10 h-10 text-accent mb-4 mx-auto group-hover:scale-110 transition-transform"
             />
             <h3 class="text-maintext font-bold mb-1">{social.name}</h3>
             <p class="text-subtext text-xs truncate px-2">
               {social.url.replace('https://', '').replace('mailto:', '').replace('wa.me/', '+')}
             </p>
-          </a>
-        ))}
+            {isEmail && (
+              <div class="flex items-center justify-center gap-2 mt-4">
+                <a
+                  href={social.url}
+                  class="inline-flex items-center gap-1 rounded-full border border-accent/20 px-3 py-1 text-[11px] text-subtext hover:text-maintext hover:border-accent/40 transition-all"
+                  aria-label="Write an email"
+                >
+                  <Icon name="mdi:email-send-outline" class="w-3.5 h-3.5" />
+                  Write
+                </a>
+                <button
+                  type="button"
+                  data-copy-email={social.url.replace('mailto:', '')}
+                  class="copy-email inline-flex items-center gap-1 rounded-full border border-accent/20 px-3 py-1 text-[11px] text-subtext hover:text-maintext hover:border-accent/40 transition-all"
+                  aria-label="Copy email address"
+                >
+                  <Icon name="mdi:content-copy" class="w-3.5 h-3.5" />
+                  <span class="copy-label">Copy</span>
+                </button>
+              </div>
+            )}
+          </EmailCard>
+          );
+        })}
       </div>
 
       <!-- /* FOOTER */ -->
@@ -94,4 +119,20 @@ import profile from '../data/profile.json';
 
   window.addEventListener('load', init);
   document.addEventListener('astro:after-swap', init);
+
+  document.querySelectorAll('.copy-email').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const email = btn.getAttribute('data-copy-email');
+      if (!email) return;
+      try {
+        await navigator.clipboard.writeText(email);
+        const label = btn.querySelector('.copy-label');
+        if (label) {
+          const original = label.textContent;
+          label.textContent = 'Copied!';
+          setTimeout(() => (label.textContent = original), 1500);
+        }
+      } catch { /* clipboard unavailable */ }
+    });
+  });
 </script>
