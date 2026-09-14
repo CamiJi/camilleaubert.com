@@ -27,11 +27,29 @@ Sub-pages: `/writing/` (feed) + `/writing/[slug]/` (individual posts — mini-bl
 ## Automation (2026-09)
 
 - **Auto-deploy on push to `main`** via `.github/workflows/deploy.yml` (GitHub Actions):
-  refresh GitHub snapshot → `npm ci` + build → rsync (source files, never `--delete` on root)
-  → `docker compose up -d --build` → HTTP check. Secret: `DEPLOY_SSH_KEY`.
-- **GitHub activity snapshot**: `scripts/refresh-github-snapshot.mjs` fetches contributions
-  (jogruber API) + recent repos, writes `src/data/github-snapshot.json` — refreshed at every
-  CI build, fallback data if the API is down.
+  refresh GitHub snapshot → install Satoshi TTF (OG generation) → `npm ci` + build → rsync
+  (source files, never `--delete` on root) → `docker compose up -d --build` → HTTP check.
+  Secrets: `DEPLOY_SSH_KEY`, `CF_BEACON_TOKEN` (optional — see Web Analytics below).
+- **GitHub activity snapshot**: `scripts/refresh-github-snapshot.mjs` fetches the official
+  github.com calendar (primary) → jogruber API (fallback) → existing snapshot (last resort).
+  Refreshed at every CI build.
+- **Per-post OG images**: `/writing/[slug]/og.png` generated at build (sharp + Satoshi),
+  used as `og:image` on post pages.
+
+## Writing (mini-blog)
+
+- Content Collection `writing` (`src/content/writing/*.md`), typed frontmatter:
+  `title`, `date`, `excerpt`, `linkedinUrl?`, `draft?`
+- Feed page `/writing/` (RSS: `/rss.xml`) + individual pages `/writing/[slug]/`
+- **Publish a post**: create the `.md`, write in EN, copy the same text to LinkedIn,
+  push → live in ~2-3 min. To link a post to its LinkedIn release: add `linkedinUrl`.
+
+## Web Analytics (Cloudflare)
+
+Zero-cookie, free, 1 script tag. To activate:
+1. Cloudflare dashboard → Analytics & Logs → Web Analytics → copy the beacon token
+2. Add GitHub secret `CF_BEACON_TOKEN` (or local `.env`: `PUBLIC_CF_BEACON_TOKEN=…`)
+3. Push — the beacon loads only if the token is set (nothing hardcoded)
 
 ## Content model (`src/data/`)
 

@@ -16,6 +16,8 @@ const {
   image = `${site.url}/og-image.webp`,
   canonical = `${site.url}${currentPath === '/' ? '' : currentPath}`,
 } = Astro.props;
+
+const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
 
 <!doctype html>
@@ -109,5 +111,14 @@ const {
     <script>
       import '../scripts/to-top';
     </script>
+
+    {beaconToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${beaconToken}"}`}
+      ></script>
+    )}
   </body>
 </html>
