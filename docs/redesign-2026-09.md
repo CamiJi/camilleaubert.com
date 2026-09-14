@@ -46,10 +46,17 @@ Sub-pages: `/writing/` (feed) + `/writing/[slug]/` (individual posts — mini-bl
 
 ## Web Analytics (Cloudflare)
 
-Zero-cookie, free, 1 script tag. To activate:
-1. Cloudflare dashboard → Analytics & Logs → Web Analytics → copy the beacon token
-2. Add GitHub secret `CF_BEACON_TOKEN` (or local `.env`: `PUBLIC_CF_BEACON_TOKEN=…`)
-3. Push — the beacon loads only if the token is set (nothing hardcoded)
+Free, zero-cookie (no consent banner needed), no backend.
+
+**Configured (2026-09-14) : automatic injection.** Because `camilleaubert.com` is proxied
+by Cloudflare (orange cloud), the beacon is injected server-side by Cloudflare itself
+(Web Analytics → "Enable" — automatic injection). **No token, no script tag, no secret.**
+
+Fallback path — if the site ever stops being proxied by Cloudflare:
+1. Cloudflare dashboard → Web Analytics → switch to "Enable with JS Snippet installation"
+2. Copy the beacon token
+3. Add GitHub secret `CF_BEACON_TOKEN` (or local `.env`: `PUBLIC_CF_BEACON_TOKEN=…`)
+4. The Layout loads the beacon only when the token env var is set (nothing hardcoded)
 
 ## Content model (`src/data/`)
 
