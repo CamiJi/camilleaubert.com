@@ -91,7 +91,7 @@ const fmtPushed = (d: string) => {
         {activity.contributions.map((c) => (
           <div
             class={`${LEVEL_STYLES[c.level] ?? LEVEL_STYLES[0]} rounded-[2px]`}
-            title={`${c.count} contribution${c.count === 1 ? '' : 's'} on ${c.date}`}
+            title={c.count >= 0 ? `${c.count} contribution${c.count === 1 ? '' : 's'} on ${c.date}` : c.date}
           />
         ))}
       </div>
