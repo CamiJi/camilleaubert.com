@@ -7,3 +7,5 @@ dist
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+# originaux photos (les versions traitées sont dans public/)
+photo-inbox/

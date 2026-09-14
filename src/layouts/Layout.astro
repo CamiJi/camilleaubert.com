@@ -64,7 +64,18 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
         "https://www.linkedin.com/in/camille-aubert-27760a56/"
       ],
       "email": "mailto:aubertcam@gmail.com",
-      "image": `${site.url}/camille-aubert-portrait.webp`,
+      "image": [
+        `${site.url}/camille-aubert-portrait.webp`,
+        {
+          "@type": "ImageObject",
+          "url": `${site.url}/camille-aubert-cegos-office.webp`,
+          "contentUrl": `${site.url}/camille-aubert-cegos-office.webp`,
+          "width": 1280,
+          "height": 1600,
+          "caption": "Camille Aubert at the Cegos office, wearing a headset during a technical review",
+          "name": "Camille Aubert — Lead Developer & AI Solutions Architect at Cegos"
+        }
+      ],
       "alternateName": ["Camiji", "Kamos"],
       "worksFor": {
         "@type": "Organization",
