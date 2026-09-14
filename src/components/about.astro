@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import aboutData from '../data/about.json';
 
 const { eyebrow, heading, paragraphs } = aboutData;
@@ -21,5 +22,15 @@ const { eyebrow, heading, paragraphs } = aboutData;
         {paragraph}
       </p>
     ))}
+  </div>
+
+  <div class="mt-8 reveal-content">
+    <a
+      href="/about/"
+      class="group inline-flex items-center gap-2 text-accent font-body text-sm hover:text-maintext transition-colors"
+    >
+      Read the full story — Burgundy to enterprise AI
+      <Icon name="mdi:arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+    </a>
   </div>
 </section>

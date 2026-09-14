@@ -1,0 +1,185 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../layouts/Layout.astro';
+import profile from '../data/profile.json';
+
+const timeline = [
+  { period: '2003', title: 'Humanities baccalauréat', place: 'Chalon-sur-Saône, Bourgogne', detail: 'Lycée Émiland Gauthey — sport-études handball.' },
+  { period: '2003 — 2008', title: 'Université de Bourgogne', place: 'Dijon', detail: 'Sociology & social intervention — Licence.' },
+  { period: '2008 — 2010', title: 'Master’s, Madrid & New Delhi', place: 'Grenoble · Madrid · New Delhi', detail: 'Master’s across three universities, including an Erasmus semester in Madrid, finishing in India.' },
+  { period: '2010 — 2011', title: 'Shanti Travel', place: 'New Delhi & Ladakh, India', detail: 'Logistics Manager — ground logistics in the Himalayas. Where they nicknamed me “Camiji”.' },
+  { period: '2012 — 2014', title: 'Marco Vasco', place: 'Paris', detail: 'Travel designer — tailor-made trips to China, Indonesia and Mongolia.' },
+  { period: '2015 — 2016', title: 'Webforce3', place: 'Nanterre', detail: 'Web developer training — the professional reconversion that changed everything.' },
+  { period: '2016 — 2023', title: 'ASSERCAR', place: 'Paris / Île-de-France', detail: 'Web developer, then Project Manager — business applications, PHP/SQL depth, from unversioned code to structured production.' },
+  { period: '2023 — Present', title: 'Cegos', place: 'Paris / Île-de-France', detail: 'Full-stack developer → Lead Developer & AI Solutions Architect — enterprise platforms at scale, RAG in production, AI-assisted delivery.' },
+];
+---
+
+<Layout
+  title="About — Camille Aubert, Lead Developer & AI Solutions Architect in Paris"
+  description="From Burgundy to enterprise AI via Madrid and New Delhi. Camille Aubert — Lead Developer & AI Solutions Architect at Cegos, Paris. Full story, education and career."
+>
+  <article class="section-container max-w-3xl mx-auto pt-12 md:pt-20 pb-24 about-page">
+    <a href="/" class="no-print text-subtext hover:text-accent transition-colors font-body text-sm flex items-center gap-1.5">
+      <Icon name="mdi:arrow-left" class="w-4 h-4" />
+      Back to home
+    </a>
+
+    <button
+      type="button"
+      onclick="window.print()"
+      class="no-print mt-6 inline-flex items-center gap-2 rounded-full border border-accent/20 px-5 py-2 text-sm text-subtext font-body hover:text-maintext hover:border-accent/40 transition-all"
+    >
+      <Icon name="mdi:printer" class="w-4 h-4" />
+      Save as PDF
+    </button>
+
+    <!-- Hero -->
+    <header class="mt-10 flex flex-col md:flex-row items-center md:items-start gap-8">
+      <img
+        src="/camille-aubert-portrait.webp"
+        alt="Camille Aubert, Lead Developer & AI Solutions Architect at Cegos, Paris — portrait"
+        width="384"
+        height="384"
+        fetchpriority="high"
+        decoding="async"
+        class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-2 border-accent/40 shrink-0"
+      />
+      <div>
+        <p class="text-accent text-xs uppercase tracking-widest font-semibold font-body">About</p>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-maintext mt-3 leading-tight tracking-tight">
+          From Burgundy to enterprise AI, via three continents.
+        </h1>
+        <p class="text-subtext font-body text-lg leading-relaxed mt-5">
+          I’m {profile.name} — Lead Developer & AI Solutions Architect at Cegos, based in
+          Fontenay-le-Fleury (Île-de-France). Online, I’ve been <strong class="text-maintext">CamiJi</strong>
+          since my India years.
+        </p>
+      </div>
+    </header>
+
+    <!-- Story -->
+    <section class="mt-14 space-y-10">
+      <div>
+        <h2 class="text-2xl font-heading font-bold text-maintext">The winding path</h2>
+        <p class="text-subtext font-body text-base md:text-lg leading-relaxed mt-3">
+          I grew up in Givry and Chalon-sur-Saône, in Burgundy. Humanities baccalauréat, then
+          sociology at the Université de Bourgogne in Dijon — followed by Grenoble, an Erasmus
+          semester in Madrid, and a Master’s finished in New Delhi.
+        </p>
+        <p class="text-subtext font-body text-base md:text-lg leading-relaxed mt-4">
+          Then the travel industry swallowed me whole: ground logistics in Delhi and the Ladakh
+          mountains, then tailor-made trips to China, Indonesia and Mongolia designed from Paris.
+          Three continents, thousands of travellers — and not a single line of code yet.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-heading font-bold text-maintext">The reconversion</h2>
+        <p class="text-subtext font-body text-base md:text-lg leading-relaxed mt-3">
+          In 2015, I retrained as a web developer at Webforce3 (Nanterre) — and never looked back.
+          Since 2016: business applications at ASSERCAR in Paris, growing from developer to project
+          manager, building real SQL depth along the way.
+        </p>
+        <p class="text-subtext font-body text-base md:text-lg leading-relaxed mt-4">
+          Since 2023 at Cegos: Laravel, React and WordPress at enterprise scale — and today,
+          leading the technical shift toward applied AI. Enterprise RAG in production, agent
+          orchestration, and an AI-assisted delivery workflow across repositories.
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="mt-14">
+      <h2 class="text-2xl font-heading font-bold text-maintext">Education & career</h2>
+      <div class="mt-6 space-y-0 relative">
+        {timeline.map((item, index) => (
+          <div class="relative pl-8 pb-8 last:pb-0">
+            {index < timeline.length - 1 && (
+              <div class="absolute left-[5px] top-4 bottom-0 w-px bg-accent/20"></div>
+            )}
+            <div class={`absolute left-0 top-1.5 w-[11px] h-[11px] rounded-full border-2 border-background ${index === timeline.length - 1 ? 'bg-accent' : 'bg-accent/50'}`}></div>
+            <p class="text-accent font-mono text-xs tracking-widest uppercase">{item.period}</p>
+            <p class="text-maintext font-heading font-bold mt-1">{item.title}</p>
+            <p class="text-accent/80 text-sm font-body">{item.place}</p>
+            <p class="text-subtext font-body text-sm leading-relaxed mt-1">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Languages & interests -->
+    <section class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="bg-accent/5 border border-accent/10 rounded-2xl p-6">
+        <h2 class="text-lg font-heading font-bold text-maintext">Languages</h2>
+        <ul class="mt-4 space-y-2">
+          <li class="flex justify-between gap-4 text-sm font-body">
+            <span class="text-maintext">French</span><span class="text-subtext">Native</span>
+          </li>
+          <li class="flex justify-between gap-4 text-sm font-body">
+            <span class="text-maintext">English</span><span class="text-subtext">Fluent — expat years in India & Asia</span>
+          </li>
+          <li class="flex justify-between gap-4 text-sm font-body">
+            <span class="text-maintext">Spanish</span><span class="text-subtext">Fluent — Madrid & South America</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-accent/5 border border-accent/10 rounded-2xl p-6">
+        <h2 class="text-lg font-heading font-bold text-maintext">Beyond the keyboard</h2>
+        <p class="text-subtext font-body text-sm leading-relaxed mt-4">
+          Lifelong multisport: <strong class="text-maintext">20 years of handball</strong>, one
+          <strong class="text-maintext">marathon</strong> and one <strong class="text-maintext">ultra-trail (50K+)</strong> —
+          plus windsurfing, rollerblading, and cycling. I bike-commute to the office whenever the
+          Parisian weather cooperates.
+        </p>
+        <p class="text-subtext font-body text-sm leading-relaxed mt-3">
+          Otherwise: WWII and Roman history, and a vegetable garden that keeps me humble.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <footer class="mt-14 pt-8 border-t border-accent/10 no-print">
+      <div class="bg-accent/5 border border-accent/10 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <p class="text-maintext font-body text-sm font-medium">Want the short version?</p>
+          <p class="text-subtext font-body text-xs mt-1">The one-page portfolio, projects and contact — all there.</p>
+        </div>
+        <a
+          href="/"
+          class="shrink-0 inline-flex items-center gap-2 px-5 py-2 border border-accent/50 bg-accent/10 rounded-full text-maintext font-body text-sm hover:scale-105 transition-all"
+        >
+          Back to home
+          <Icon name="mdi:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </footer>
+  </article>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  @media print {
+    :global(html), :global(body) {
+      background: white !important;
+      color: #111 !important;
+    }
+    :global(#main-nav), :global(#to-top), .no-print {
+      display: none !important;
+    }
+    :global(main) {
+      padding: 0 !important;
+      max-width: none !important;
+    }
+    .about-page :global(*) {
+      color: #111 !important;
+      border-color: #ddd !important;
+      box-shadow: none !important;
+    }
+    .about-page :global([class*="bg-accent"]) {
+      background: #f7f7fa !important;
+    }
+  }
+</style>
