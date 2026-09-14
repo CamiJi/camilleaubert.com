@@ -22,6 +22,16 @@
 `#home` → `#about` → `#career` → `#projects` → `#tech` → `#now` → `#contact`
 
 Nav anchors: Home, About, Career, Projects, Tech, Contact. 404 kept as standalone page.
+Sub-pages: `/writing/` (feed) + `/writing/[slug]/` (individual posts — mini-blog via Content Collections).
+
+## Automation (2026-09)
+
+- **Auto-deploy on push to `main`** via `.github/workflows/deploy.yml` (GitHub Actions):
+  refresh GitHub snapshot → `npm ci` + build → rsync (source files, never `--delete` on root)
+  → `docker compose up -d --build` → HTTP check. Secret: `DEPLOY_SSH_KEY`.
+- **GitHub activity snapshot**: `scripts/refresh-github-snapshot.mjs` fetches contributions
+  (jogruber API) + recent repos, writes `src/data/github-snapshot.json` — refreshed at every
+  CI build, fallback data if the API is down.
 
 ## Content model (`src/data/`)
 
@@ -44,9 +54,11 @@ Types in `src/types.ts`.
 
 ## Pending
 
-1. **Real screenshots** for Nestor le Groom + Env Switcher (interim generated covers in `public/projects/`)
-2. **REX article URL** (LinkedIn, post-RAG launch) → fill `now.json` writing entry
-3. **Deploy** — separate thread once SSH `camille-prod` is configured on this machine (see `camilleaubert-infra`, read-only)
+1. **REX article** (LinkedIn, post-RAG launch) → flip `draft: false` in
+   `src/content/writing/2026-09-14-rag-rex.md` + add `linkedinUrl`
+2. **First deploy of the writing/CI phase** → then auto-deploy takes over on every push to `main`
+3. Writing workflow: edit/create `.md` in `src/content/writing/` (possible directly on github.com
+   from a phone) → push → live in ~2-3 min. Copy the same text to LinkedIn manually.
 
 ## Superseded docs (historical)
 

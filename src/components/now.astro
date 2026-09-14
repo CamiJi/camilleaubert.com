@@ -1,8 +1,18 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
 import nowData from '../data/now.json';
+import GithubActivity from './github-activity.astro';
+import profile from '../data/profile.json';
 
-const { eyebrow, heading, bullets, writing } = nowData;
+const { eyebrow, heading, bullets } = nowData;
+
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 ---
 
 <section id="now" class="section-container max-w-3xl mx-auto">
@@ -15,7 +25,7 @@ const { eyebrow, heading, bullets, writing } = nowData;
     </p>
   </div>
 
-  <ul class="space-y-4 mb-10">
+  <ul class="space-y-4 mb-12">
     {bullets.map((bullet, index) => (
       <li class="flex gap-3 now-item reveal-content" style={`animation-delay: ${200 + index * 120}ms;`}>
         <span class="text-accent mt-1 shrink-0">
@@ -26,30 +36,62 @@ const { eyebrow, heading, bullets, writing } = nowData;
     ))}
   </ul>
 
-  <div class="space-y-3">
-    {writing.map((item) => (
-      item.url ? (
+  <div class="mb-12 now-item">
+    <p class="text-maintext font-body text-sm font-semibold uppercase tracking-[0.2em] text-subtext mb-4">
+      GitHub activity
+    </p>
+    <GithubActivity />
+  </div>
+
+  <div class="now-item">
+    <div class="flex items-baseline justify-between gap-4 mb-4">
+      <p class="text-maintext font-body text-sm font-semibold uppercase tracking-[0.2em] text-subtext">
+        Latest writing
+      </p>
+      <a href="/writing/" class="text-accent hover:text-maintext transition-colors text-xs flex items-center gap-1 shrink-0">
+        All posts
+        <Icon name="mdi:arrow-right" class="w-3.5 h-3.5" />
+      </a>
+    </div>
+
+    <div class="space-y-4">
+      {posts.map((post) => (
         <a
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="now-item group flex items-center justify-between gap-4 bg-accent/5 border border-accent/10 rounded-xl px-5 py-4 hover:border-accent/40 hover:bg-accent/10 transition-all"
+          href={`/writing/${post.id}/`}
+          class="group block bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6 hover:border-accent/40 hover:bg-accent/10 transition-all"
         >
-          <div>
-            <p class="text-maintext font-body text-sm font-medium">{item.title}</p>
-            <p class="text-subtext text-xs mt-1">{item.note}</p>
+          <div class="flex items-center gap-3 mb-3">
+            <img
+              src={profile.photoUrl}
+              alt=""
+              width="384"
+              height="384"
+              loading="lazy"
+              decoding="async"
+              class="w-9 h-9 rounded-full object-cover"
+            />
+            <div class="text-left">
+              <p class="text-maintext font-body text-sm font-medium leading-tight">{profile.name}</p>
+              <p class="text-subtext font-body text-xs leading-tight">
+                {fmtDate(post.data.date)} <span class="text-subtext/60">· Writing</span>
+              </p>
+            </div>
           </div>
-          <Icon name="mdi:open-in-new" class="w-5 h-5 text-subtext group-hover:text-accent transition-colors shrink-0" />
+          <h3 class="text-maintext font-heading font-bold text-lg text-left group-hover:text-accent transition-colors">
+            {post.data.title}
+          </h3>
+          <p class="text-subtext font-body text-sm leading-relaxed mt-2 text-left">
+            {post.data.excerpt}
+          </p>
+          <p class="text-accent font-body text-xs mt-4 flex items-center gap-1.5">
+            Read the post
+            <Icon name="mdi:arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </p>
         </a>
-      ) : (
-        <div class="now-item flex items-center justify-between gap-4 bg-accent/5 border border-accent/10 rounded-xl px-5 py-4 opacity-80">
-          <div>
-            <p class="text-maintext font-body text-sm font-medium">{item.title}</p>
-            <p class="text-accent/80 text-xs mt-1 italic">{item.note}</p>
-          </div>
-          <Icon name="mdi:pencil-outline" class="w-5 h-5 text-subtext shrink-0" />
-        </div>
-      )
-    ))}
+      ))}
+      {posts.length === 0 && (
+        <p class="text-subtext font-body text-sm">First field notes coming soon.</p>
+      )}
+    </div>
   </div>
 </section>

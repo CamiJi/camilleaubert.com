@@ -1,0 +1,140 @@
+---
+import { Icon } from 'astro-icon/components';
+import snapshot from '../data/github-snapshot.json';
+
+const USER = 'CamiJi';
+
+type Contribution = { date: string; count: number; level: number };
+type Repo = { name: string; url: string; description: string; pushedAt: string };
+
+interface SnapshotShape {
+  fetchedAt: string;
+  totalContributions: number;
+  contributions: Contribution[];
+  repos: Repo[];
+}
+
+async function fetchJson(url: string, timeoutMs = 5000): Promise<unknown> {
+  const res = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+async function getActivity(): Promise<SnapshotShape> {
+  try {
+    const [contributions, repos] = await Promise.all([
+      fetchJson(`https://github-contributions-api.jogruber.de/v4/${USER}?y=last`) as Promise<any>,
+      fetchJson(`https://api.github.com/users/${USER}/repos?sort=pushed&per_page=3`) as Promise<any>,
+    ]);
+    return {
+      fetchedAt: new Date().toISOString(),
+      totalContributions: contributions.total?.lastYear ?? contributions.total?.last365Days ?? 0,
+      contributions: contributions.contributions ?? [],
+      repos: repos.map((r: any) => ({
+        name: r.name,
+        url: r.html_url,
+        description: r.description ?? '',
+        pushedAt: r.pushed_at,
+      })),
+    };
+  } catch {
+    return snapshot as SnapshotShape;
+  }
+}
+
+const activity = await getActivity();
+
+const LEVEL_STYLES: Record<number, string> = {
+  0: 'bg-[#16161d]',
+  1: 'bg-accent/25',
+  2: 'bg-accent/45',
+  3: 'bg-accent/70',
+  4: 'bg-accent',
+};
+
+const fmtDate = (d: string | Date) =>
+  new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+const fmtPushed = (d: string) => {
+  const days = Math.floor((Date.now() - new Date(d).getTime()) / 86_400_000);
+  if (days <= 0) return 'pushed today';
+  if (days === 1) return 'pushed yesterday';
+  return `pushed ${fmtDate(d)}`;
+};
+---
+
+<div class="grid lg:grid-cols-[1.7fr_1fr] gap-6">
+  <!-- Contribution graph -->
+  <div class="bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6">
+    <div class="flex items-baseline justify-between gap-4 mb-4">
+      <p class="text-maintext font-body text-sm font-medium">
+        <span class="text-accent font-semibold">{activity.totalContributions}</span> contributions on GitHub
+        <span class="text-subtext">· last 12 months</span>
+      </p>
+      <a
+        href={`https://github.com/${USER}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-subtext hover:text-accent transition-colors text-xs flex items-center gap-1 shrink-0"
+      >
+        github.com/{USER}
+        <Icon name="mdi:arrow-top-right" class="w-3.5 h-3.5" />
+      </a>
+    </div>
+
+    <div class="overflow-x-auto pb-1 -mx-1 px-1">
+      <div
+        class="gh-grid grid gap-[3px] w-min"
+        style="grid-template-rows: repeat(7, 9px); grid-auto-flow: column; grid-auto-columns: 9px;"
+        aria-label="GitHub contribution graph"
+      >
+        {activity.contributions.map((c) => (
+          <div
+            class={`${LEVEL_STYLES[c.level] ?? LEVEL_STYLES[0]} rounded-[2px]`}
+            title={`${c.count} contribution${c.count === 1 ? '' : 's'} on ${c.date}`}
+          />
+        ))}
+      </div>
+    </div>
+    <div class="flex items-center justify-end gap-1.5 mt-3">
+      <span class="text-[10px] text-subtext">Less</span>
+      {Object.values(LEVEL_STYLES).map((style) => (
+        <div class={`${style} w-[9px] h-[9px] rounded-[2px]`} />
+      ))}
+      <span class="text-[10px] text-subtext">More</span>
+    </div>
+  </div>
+
+  <!-- Recent repos -->
+  <div class="bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6">
+    <p class="text-maintext font-body text-sm font-medium mb-4">
+      Recently pushed <span class="text-subtext">· live repos</span>
+    </p>
+    <ul class="space-y-4">
+      {activity.repos.map((repo) => (
+        <li>
+          <a href={repo.url} target="_blank" rel="noopener noreferrer" class="group">
+            <p class="text-accent font-body text-sm font-medium group-hover:underline underline-offset-4">
+              {repo.name}
+            </p>
+            <p class="text-subtext font-body text-xs leading-snug mt-0.5 line-clamp-2">
+              {repo.description || 'Private / internal work'}
+            </p>
+            <p class="text-subtext/70 font-body text-[10px] mt-1">{fmtPushed(repo.pushedAt)}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .gh-grid {
+    margin: 0 auto;
+  }
+  @media (max-width: 1023px) {
+    .gh-grid {
+      margin: 0;
+    }
+  }
+</style>

@@ -2,20 +2,8 @@
   "eyebrow": "Now",
   "heading": "What I'm up to",
   "bullets": [
-    "Shipping an enterprise RAG platform to production — a full write-up is coming on LinkedIn.",
+    "Shipping an enterprise RAG platform to production — the full write-up is in Writing.",
     "Building AI automation that runs delivery workflows end-to-end: ticket in, deployed feature out, across repositories.",
     "Exploring multi-agent orchestration and MCP."
-  ],
-  "writing": [
-    {
-      "title": "How we replaced our enterprise search engine with RAG — field notes",
-      "url": "",
-      "note": "Coming soon on LinkedIn"
-    },
-    {
-      "title": "More posts & articles",
-      "url": "https://www.linkedin.com/in/camille-aubert-27760a56/recent-activity/all/",
-      "note": "On LinkedIn"
-    }
   ]
 }
