@@ -7,8 +7,8 @@ import profile from '../../data/profile.json';
 const posts = (await getCollection('writing', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const fmtDate = (d: Date) =>
-  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const fmtDate = (d: Date, lang: 'en' | 'fr' = 'en') =>
+  d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 ---
 
 <Layout
@@ -24,14 +24,24 @@ const fmtDate = (d: Date) =>
       The longer form of what goes out on LinkedIn — RAG architectures, AI-assisted
       engineering, and platform work, written as they happen.
     </p>
-    <a
-      href="/rss.xml"
-      class="mt-5 inline-flex items-center gap-1.5 text-subtext hover:text-accent transition-colors font-body text-xs"
-      title="RSS feed"
-    >
-      <Icon name="mdi:rss" class="w-4 h-4" />
-      Subscribe via RSS
-    </a>
+    <div class="mt-5 flex items-center gap-5">
+      <a
+        href="/rss.xml"
+        class="inline-flex items-center gap-1.5 text-subtext hover:text-accent transition-colors font-body text-xs"
+        title="RSS feed (English)"
+      >
+        <Icon name="mdi:rss" class="w-4 h-4" />
+        RSS (EN)
+      </a>
+      <a
+        href="/rss-fr.xml"
+        class="inline-flex items-center gap-1.5 text-subtext hover:text-accent transition-colors font-body text-xs"
+        title="Flux RSS (français)"
+      >
+        <Icon name="mdi:rss" class="w-4 h-4" />
+        RSS (FR)
+      </a>
+    </div>
   </section>
 
   <section class="section-container max-w-3xl mx-auto content-section space-y-4 pb-24">
@@ -52,10 +62,13 @@ const fmtDate = (d: Date) =>
           />
           <div>
             <p class="text-maintext font-body text-sm font-medium leading-tight">{profile.name}</p>
-            <p class="text-subtext font-body text-xs leading-tight">{fmtDate(post.data.date)}</p>
+            <p class="text-subtext font-body text-xs leading-tight">{fmtDate(post.data.date, post.data.lang ?? 'en')}</p>
           </div>
+          <span class="ml-auto shrink-0 text-[10px] uppercase tracking-widest font-body px-2 py-0.5 rounded-full border border-accent/30 text-accent">
+            {(post.data.lang ?? 'en') === 'fr' ? 'FR' : 'EN'}
+          </span>
           {post.data.linkedinUrl && (
-            <span class="ml-auto text-subtext text-[10px] uppercase tracking-widest flex items-center gap-1">
+            <span class="text-subtext text-[10px] uppercase tracking-widest flex items-center gap-1">
               Also on LinkedIn
               <Icon name="mdi:linkedin" class="w-3.5 h-3.5" />
             </span>
@@ -68,7 +81,7 @@ const fmtDate = (d: Date) =>
           {post.data.excerpt}
         </p>
         <p class="text-accent font-body text-xs mt-5 flex items-center gap-1.5">
-          Read the post
+          {(post.data.lang ?? 'en') === 'fr' ? "Lire l'article" : 'Read the post'}
           <Icon name="mdi:arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
         </p>
       </a>

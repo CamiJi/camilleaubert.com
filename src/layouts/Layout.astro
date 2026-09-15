@@ -7,6 +7,10 @@ interface Props {
   description: string;
   image?: string;
   canonical?: string;
+  /** Page language (site chrome is English; articles can be EN or FR) */
+  lang?: 'en' | 'fr';
+  /** Alternate language versions of this page for hreflang (self included separately) */
+  alternates?: { lang: 'en' | 'fr'; href: string }[];
 }
 
 const currentPath = Astro.url.pathname;
@@ -15,16 +19,21 @@ const {
   description,
   image = `${site.url}/og-image.webp`,
   canonical = `${site.url}${currentPath === '/' ? '' : currentPath}`,
+  lang = 'en',
+  alternates = [],
 } = Astro.props;
 
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <script is:inline>document.documentElement.classList.add('js')</script>
+    {alternates.map((alt) => (
+      <link rel="alternate" hreflang={alt.lang} href={alt.href} />
+    ))}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/png" href="/favicon.png" />

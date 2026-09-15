@@ -1,14 +1,14 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('writing', ({ data }) => !data.draft && (data.lang ?? 'en') === 'en'))
+const posts = (await getCollection('writing', ({ data }) => !data.draft && (data.lang ?? 'en') === 'fr'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 export function GET(context) {
   return rss({
-    title: 'Camille Aubert — Writing',
+    title: 'Camille Aubert — Articles',
     description:
-      'Field notes on RAG architectures, AI-assisted engineering, and running enterprise platforms.',
+      "Retours d'expérience sur les architectures RAG, l'ingénierie assistée par IA et l'exploitation de plateformes en production.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
@@ -16,6 +16,6 @@ export function GET(context) {
       pubDate: post.data.date,
       link: `/writing/${post.id}/`,
     })),
-    customData: '<language>en-us</language>',
+    customData: '<language>fr-fr</language>',
   });
 }

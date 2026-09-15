@@ -10,6 +10,10 @@ const writing = defineCollection({
     excerpt: z.string(),
     linkedinUrl: z.string().url().optional(),
     draft: z.boolean().default(false),
+    /** Article language. Site chrome stays English; articles can be EN or FR. */
+    lang: z.enum(['en', 'fr']).default('en'),
+    /** Post id (filename without .md) of the counterpart in the other language. */
+    translationOf: z.string().optional(),
   }),
 });
 
