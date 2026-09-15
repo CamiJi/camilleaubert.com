@@ -86,6 +86,25 @@
   border-radius: 4px;
 }
 
+/* Progressive enhancement — scroll-reveal hidden states.
+   The `js` class is added to <html> by an inline script in Layout.astro.
+   Without JS these rules never apply, so all content stays visible.
+   (Placed here — not in component styles — because Astro scopes
+   component CSS and `html` would never match a scoped `.js` selector.) */
+html.js .contact-header,
+html.js .contact-footer,
+html.js .tech-header,
+html.js .project-header {
+  opacity: 0;
+  transform: translateY(20px);
+}
+html.js .contact-card,
+html.js .skill-card,
+html.js .scroll-stat {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
 /* Custom Scrollbar for a cleaner look */
 ::-webkit-scrollbar {
   width: 8px;

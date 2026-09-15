@@ -7,7 +7,7 @@ import profile from '../data/profile.json';
 <section id="contact" class="section-container">
   <div class="container mx-auto">
     <div class="space-y-12">
-      <div class="contact-header opacity-0 mb-16">
+      <div class="contact-header mb-16">
         <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
             <span class="text-accent">/</span> Contact Me
           </h2>
@@ -27,7 +27,7 @@ import profile from '../data/profile.json';
             href={isEmail ? undefined : social.url}
             target={isEmail ? undefined : '_blank'}
             rel={isEmail ? undefined : 'noopener noreferrer'}
-            class="contact-card opacity-0 group p-8 bg-accent/5 border border-accent/10 rounded-2xl hover:border-accent/40 hover:bg-accent/10 transition-all duration-300"
+            class="contact-card group p-8 bg-accent/5 border border-accent/10 rounded-2xl hover:border-accent/40 hover:bg-accent/10 transition-all duration-300"
           >
             <Icon
               name={social.icon}
@@ -64,7 +64,7 @@ import profile from '../data/profile.json';
       </div>
 
       <!-- /* FOOTER */ -->
-      <div class="contact-footer opacity-0 pt-20 border-t border-white/5">
+      <div class="contact-footer pt-20 border-t border-white/5">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
           <p class="text-subtext text-sm font-body order-2 md:order-1">
             {profile.name} © 2026
@@ -86,16 +86,16 @@ import profile from '../data/profile.json';
 </section>
 
 <style>
+  /* Hidden reveal states live in global.css under `html.js` (see note there) */
+
   /* Header & Footer Initial State */
   .contact-header,
   .contact-footer {
-    transform: translateY(20px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* Cards Initial State */
   .contact-card {
-    transform: translateY(20px) scale(0.95);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 

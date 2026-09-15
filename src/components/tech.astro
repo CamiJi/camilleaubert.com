@@ -37,8 +37,8 @@ const categories = localTechData.categories as Category[];
           
           <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-5 sm:gap-8">
             {category.skills.map((skill) => (
-              /* 'skill-card' and 'opacity-0' class already maintain reveal animation */
-              <div class="skill-card opacity-0 group relative flex items-stretch min-h-14 rounded-xl bg-accent/5 border border-accent/15 hover:border-accent/40 hover:bg-accent/10 transition-all duration-300">
+              /* 'skill-card' class maintains reveal animation (hidden state is .js-scoped in CSS) */
+              <div class="skill-card group relative flex items-stretch min-h-14 rounded-xl bg-accent/5 border border-accent/15 hover:border-accent/40 hover:bg-accent/10 transition-all duration-300">
                 
                 <div class="shrink-0 w-12 flex items-center justify-center rounded-l-xl bg-accent/15 transition-colors group-hover:bg-accent/20">
                   <Icon name={skill.icon} class="w-7 h-7 group-hover:scale-110 transition-transform" />
@@ -59,16 +59,15 @@ const categories = localTechData.categories as Category[];
 </section>
 
 <style>
+  /* Hidden reveal states live in global.css under `html.js` (see note there) */
+
   /* Header Initial State */
   .tech-header {
-    opacity: 0;
-    transform: translateY(20px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* Initial state of the card */
   .skill-card {
-    transform: translateY(20px) scale(0.95);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 

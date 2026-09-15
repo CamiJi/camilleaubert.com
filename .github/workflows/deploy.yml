@@ -58,7 +58,7 @@ jobs:
         run: |
           rsync -az --delete ./src/ camille-prod:/home/ubuntu/apps/portfolio/src/
           rsync -az --delete ./public/ camille-prod:/home/ubuntu/apps/portfolio/public/
-          rsync -az ./package.json ./package-lock.json ./astro.config.mjs camille-prod:/home/ubuntu/apps/portfolio/
+          rsync -az ./package.json ./package-lock.json ./astro.config.mjs ./Dockerfile ./nginx.conf camille-prod:/home/ubuntu/apps/portfolio/
 
       - name: Rebuild and restart container
         run: ssh camille-prod "cd /home/ubuntu/apps/portfolio && docker compose up -d --build"

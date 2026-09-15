@@ -61,10 +61,14 @@ const primaryImage = project.images?.[0] ?? 'placeholder.jpeg';
 </div>
 
 <style is:global>
-  .project-card {
+  /* Hidden initial state only when JS is available to reveal (progressive enhancement) */
+  html.js .project-card {
     opacity: 0;
     visibility: hidden;
     transform: translateY(40px);
+  }
+
+  .project-card {
     transition: 
       opacity 0.8s ease-out, 
       transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),

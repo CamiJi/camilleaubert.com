@@ -63,6 +63,7 @@ The following files must exist in `/home/ubuntu/apps/portfolio` for deployment t
 
 - `docker-compose.yml`
 - `Dockerfile`
+- `nginx.conf`
 - `package.json`
 - `package-lock.json`
 - `astro.config.mjs`
@@ -92,7 +93,7 @@ networks:
 File: `/home/ubuntu/apps/portfolio/Dockerfile`
 
 ```dockerfile
-FROM node:20-alpine AS builder
+FROM node:22.12-alpine AS builder
 WORKDIR /app
 
 COPY package.json package-lock.json ./
@@ -104,10 +105,16 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
+
+The `nginx.conf` served from the repo sets HTTP caching (`immutable` hashed
+assets, revalidated HTML), baseline security headers, gzip and the pretty
+`404.html`. Any change to `Dockerfile` or `nginx.conf` must be synced to the
+server (the CI deploy workflow does it automatically).
 
 ## Local pre-deploy checklist
 
@@ -146,6 +153,7 @@ rsync -avz ./public/ camille-prod:/home/ubuntu/apps/portfolio/public/
 rsync -avz ./package.json camille-prod:/home/ubuntu/apps/portfolio/
 rsync -avz ./package-lock.json camille-prod:/home/ubuntu/apps/portfolio/
 rsync -avz ./astro.config.mjs camille-prod:/home/ubuntu/apps/portfolio/
+rsync -avz ./Dockerfile ./nginx.conf camille-prod:/home/ubuntu/apps/portfolio/
 rsync -avz ./README.md camille-prod:/home/ubuntu/apps/portfolio/
 ```
 
@@ -235,6 +243,7 @@ rsync -avz ./public/ camille-prod:/home/ubuntu/apps/portfolio/public/
 rsync -avz ./package.json camille-prod:/home/ubuntu/apps/portfolio/
 rsync -avz ./package-lock.json camille-prod:/home/ubuntu/apps/portfolio/
 rsync -avz ./astro.config.mjs camille-prod:/home/ubuntu/apps/portfolio/
+rsync -avz ./Dockerfile ./nginx.conf camille-prod:/home/ubuntu/apps/portfolio/
 ssh camille-prod "cd /home/ubuntu/apps/portfolio && docker compose up -d --build"
 curl -k -I https://camilleaubert.com
 ```
