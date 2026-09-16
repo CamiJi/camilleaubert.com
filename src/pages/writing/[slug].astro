@@ -18,6 +18,10 @@ const ogImage = `${site.url}/writing/${post.id}/og.png`;
 const postLang = post.data.lang ?? 'en';
 const isFr = postLang === 'fr';
 
+// Dates pour le JSON-LD (format ISO string, utilisé par Google dans le schema)
+const datePublished = post.data.date.toISOString().split('T')[0];
+const dateModified = post.data.dateModified?.toISOString().split('T')[0] || datePublished;
+
 // Counterpart article in the other language (paired via `translationOf`)
 let alternate: { lang: 'en' | 'fr'; href: string } | null = null;
 if (post.data.translationOf) {
@@ -48,6 +52,8 @@ const readingTime = `${Math.max(1, Math.round(post.body.split(/\s+/).length / 20
   image={ogImage}
   lang={postLang}
   alternates={alternates}
+  datePublished={datePublished}
+  dateModified={dateModified}
 >
   <article class="section-container max-w-3xl mx-auto pt-12 md:pt-20 pb-24">
     <div class="flex items-center justify-between gap-4">

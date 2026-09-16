@@ -1,7 +1,8 @@
 ---
 title: "We replaced our SaaS search engine with a homegrown RAG (and AI multiplied us)"
 date: 2026-09-14
-excerpt: "For years, search on our e-commerce platform ran on an external SaaS engine — opaque, rigid, impossible to evolve. In late 2025, I proposed a homegrown RAG engine on our existing stack. Live since late summer: ~47 tickets, a team of four, 10,000 indexed documents and ~47 ms per search. Here is the unfiltered debrief."
+dateModified: 2026-09-14
+excerpt: "For years, search on our e-commerce platform ran on an external SaaS engine — opaque, rigid, impossible to evolve. In late 2025, I proposed a homegrown RAG engine on our existing stack. Live since late summer: roughly 47 tickets, a team of four, and a way of working that AI has profoundly changed. Here is the debrief, unfiltered."
 lang: en
 translationOf: 2026-09-14-rag-rex
 ---

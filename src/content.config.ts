@@ -7,6 +7,8 @@ const writing = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
+    /** Date de dernière modification au format ISO (YYYY-MM-DD). Si omis, vaut la même chose que `date`. */
+    dateModified: z.coerce.date().optional(),
     excerpt: z.string(),
     linkedinUrl: z.string().url().optional(),
     draft: z.boolean().default(false),
