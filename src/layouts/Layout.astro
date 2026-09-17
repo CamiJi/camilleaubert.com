@@ -11,6 +11,9 @@ interface Props {
   lang?: 'en' | 'fr';
   /** Alternate language versions of this page for hreflang (self included separately) */
   alternates?: { lang: 'en' | 'fr'; href: string }[];
+  /** Freshness signals for Google (ISO date YYYY-MM-DD, articles only) */
+  datePublished?: string;
+  dateModified?: string;
 }
 
 const currentPath = Astro.url.pathname;
@@ -21,6 +24,8 @@ const {
   canonical = `${site.url}${currentPath === '/' ? '' : currentPath}`,
   lang = 'en',
   alternates = [],
+  datePublished,
+  dateModified,
 } = Astro.props;
 
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
@@ -128,11 +133,8 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     </script>
 
     <!-- Dates de fraîcheur pour Google (métadata reconnus) -->
-    <meta property="datePublished" content="${datePublished}" />
-    <meta property="dateModified" content="${dateModified}" />
-  <!-- Dates de fraîcheur pour Google (métadata reconnus) -->
-    <meta property="datePublished" content="2026-09-12" />
-    <meta property="dateModified" content="2026-09-12" />
+    {datePublished && <meta property="datePublished" content={datePublished} />}
+    {dateModified && <meta property="dateModified" content={dateModified} />}
   </head>
 
   <body class="relative min-h-screen overflow-x-hidden antialiased">
