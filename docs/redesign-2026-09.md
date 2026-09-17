@@ -85,6 +85,10 @@ Types in `src/types.ts`.
 3. Writing workflow: edit/create `.md` in `src/content/writing/` (possible directly on github.com
    from a phone) → push → live in ~2-3 min. Copy the same text to LinkedIn manually.
 
+## Visual generation
+
+- Images IA : voir [image-generation-prompts.md](image-generation-prompts.md) — pré-prompt B (Neutral + Iris, dark only) pour covers/OG, pré-prompt A (Cegos DS) réservé aux visuels LinkedIn Cegos.
+
 ## Superseded docs (historical)
 
 - `audit-tickets.md` — backlog C1–C5/T1–T5, fully executed 2026-06

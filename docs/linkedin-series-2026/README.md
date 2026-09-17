@@ -27,10 +27,13 @@ Après publication de chaque post : noter l'URL LinkedIn dans le fichier
 correspondant (champ `URL LinkedIn (après publication)`) puis ajouter la même
 URL au frontmatter `linkedinUrl` de l'article si pertinent.
 
-## Illustrations — règle simple
+## Illustrations — règle simple + pré-prompts
 
 **Rien d'interne** : pas de captures des outils internes avec URLs système.
 Tout ce qui est public sur cegos.fr ou re-dessiné est sans risque.
+
+**Format LinkedIn 2026 : `1080 × 1350 px` portrait `4:5`, PNG sRGB < 5 Mo.**
+Voir pré-prompts complets (Cegos + site) : [../image-generation-prompts.md](../image-generation-prompts.md) — préfixe à coller dans ton IA image, texte ajouté après dans Canva (Ryker/Raleway).
 
 | Post | Illustration principale | Variante |
 |------|------------------------|----------|
