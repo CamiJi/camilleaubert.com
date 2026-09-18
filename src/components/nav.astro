@@ -39,46 +39,44 @@ const navItems: NavItem[] = [
   }
 ];
 ---
-<div class="flex justify-center w-full">
+<!-- Centering wrapper: flex-based, so no translate hack can break it (fixes the mobile overflow bug) -->
+<div class="dock-wrap">
   <nav
     id="main-nav"
-    class="fixed left-1/2 -translate-x-1/2 z-20 border-[1.2px] border-transparent transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+    aria-label="Primary"
+    class="reveal-content"
   >
-    <div class="container mx-auto flex justify-center items-center p-3 reveal-content" style="animation-delay: 700ms;">
-      <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-1"
-      >
-        {
-          navItems.map((item) => (
-            <li class="flex-1 md:flex-none">
-              <a
-                href={item.href}
-                class="flex flex-col items-center gap-1 text-accent transition-colors text-xs md:text-base relative group"
-              >
-                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 nav-indicator hidden md:block" />
-                <span class="md:hidden flex items-center justify-center w-6 h-6">
-                  <Icon 
-                    name={item.icon} 
-                    class="nav-icon w-full h-full text-accent/50 group-hover:text-accent transition-colors duration-300" 
-                  />
-                </span>
-                <span class="hidden md:inline-block">{item.label}</span>
-                <span class="md:hidden text-xs">{item.label}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <ul class="flex items-center gap-0.5 md:gap-2">
+      {
+        navItems.map((item) => (
+          <li class="flex items-center justify-center">
+            <a
+              href={item.href}
+              class="dock-link group"
+              aria-label={item.label}
+            >
+              <span class="dock-icon" aria-hidden="true">
+                <Icon
+                  name={item.icon}
+                  class="nav-icon w-5 h-5"
+                />
+              </span>
+              <span class="dock-label">{item.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
 </div>
 
 <style>
-    /* Reveal whole section when website loads */
+  /* Reveal whole dock when website loads */
   .reveal-content {
     opacity: 0;
     transform: translateY(20px);
     animation: revealIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 700ms;
   }
   @keyframes revealIn {
     to {
@@ -87,136 +85,173 @@ const navItems: NavItem[] = [
     }
   }
 
+  /* Wrapper owns positioning/centering — the nav itself never carries a translate,
+     so hide/show transforms can't shift it sideways ever again. */
+  .dock-wrap {
+    position: fixed;
+    inset-inline: 0;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    padding-inline: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
   nav {
+    pointer-events: auto;
+    width: fit-content;
+    max-width: calc(100vw - 1.5rem);
+    border: 1.2px solid transparent;
+    border-radius: 9999px;
     background-color: transparent;
-    border-color: transparent;
     backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    will-change: transform;
     transition:
       background-color 0.4s ease,
       backdrop-filter 0.4s ease,
-      border-radius 0.4s ease,
       border-color 0.4s ease,
-      width 0.4s ease;
+      width 0.4s ease,
+      transform 0.45s cubic-bezier(0.32, 0.72, 0, 1),
+      opacity 0.35s ease;
   }
 
-   nav.scrolling {
-    background-color: color-mix(in srgb, var(--color-background), transparent 75%);
+  nav.scrolling {
+    background-color: color-mix(in srgb, var(--color-background) 72%, transparent);
     border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
-    
-    border-radius: 9999px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
   }
 
-  nav a.active .nav-indicator {
-    transform: translateY(-50%) scale(1);
-    opacity: 0;
-  }
-
-  /* Base state for the link text */
-  nav a {
-    transition: transform 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
-  }
-
-  /* Active state */
-  nav a.active {
-    color: var(--color-maintext) !important;
-    font-weight: 700;
-    transform: scale(1.1);
-  }
-
-  /* Glow effect */
-  nav a.active span {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--color-maintext) 30%, transparent);
-  }
-
-  /* Ensure the scale doesn't jitter the layout */
-  nav li {
+  /* Links — 44px touch targets */
+  .dock-link {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding-inline: 11px;
+    border-radius: 9999px;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    line-height: 1;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
 
-  /* Icon style for mobile view */
+  .dock-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+
   .nav-icon {
-    transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+    opacity: 0.55;
+    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease, color 0.3s ease;
   }
 
-  nav a.active .nav-icon {
-    color: var(--color-maintext) !important;
-    transform: scale(1.2);
+  /* Mobile label: collapsed by default, expands on the active item only.
+     Saves room for 6 items on 360px screens. */
+  .dock-label {
+    max-width: 0;
+    opacity: 0;
+    margin-left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.35s ease, opacity 0.25s ease, margin-left 0.35s ease;
+  }
+
+  .dock-link.active {
+    background-color: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    color: var(--color-maintext);
+    font-weight: 700;
+  }
+
+  .dock-link.active .dock-label {
+    max-width: 5rem;
+    opacity: 1;
+    margin-left: 6px;
+  }
+
+  .dock-link.active .nav-icon {
+    opacity: 1;
+    color: var(--color-maintext);
+    transform: scale(1.15);
     filter: drop-shadow(0 0 8px var(--color-maintext));
   }
 
-  @media (max-width: 767px) {
-    nav {
-      width: 100% !important;
-      bottom: 0;
-      border-radius: 1.5rem 1.5rem 0 0;
-      background-color: color-mix(in srgb, var(--color-background), transparent 10%);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid color-mix(in srgb, var(--color-maintext) 15%, transparent);
-    }
-
-    nav.scrolling {
-      border-radius: 1.5rem 1.5rem 0 0;
-      width: 100% !important;
-    }
-
-    /* Hiding bottom bar while scroling on mobile */
-    #main-nav {
-      /* Force Hardware Acceleration (Fixes the white flash) */
-      will-change: transform;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      /* Force it into its own GPU layer permanently */
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-      
-      /* Smooth transition */
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-
-      /* Ensure no default background is fighting the blur */
-      background-clip: padding-box;
-    }
-
-    #main-nav.nav-hidden {
-      /* transform: translateY(110%) !important; */
-      transform: translate3d(0, 110%, 0) !important;
-      
-      /* Optional: Turn off blur when hidden to save GPU cycles */
-      backdrop-filter: blur(0px);
-    }
+  .dock-link:not(.active):hover {
+    color: var(--color-maintext);
   }
 
-  /* Hover effect */
-  nav a:not(.active):hover {
-    color: var(--color-maintext) !important;
+  .dock-link:not(.active):hover .nav-icon {
+    opacity: 1;
+    transform: scale(1.05);
   }
 
-  nav a:not(.active):hover span {
-    transform: scale(0.95);
-    text-shadow: 0 0 15px var(--color-accent-60);
-  }
-  
-  nav a:not(.active):hover .nav-icon {
-    transform: scale(0.95);
-    color: var(--color-maintext) !important;
-  }
+  /* Le dock reste toujours visible (décision UX : navigation persistante,
+     voir explication). La transition transform/opacity est conservée
+     pour le reveal d'entrée. */
 
+  /* Space so the floating dock never covers the contact section end */
   @media (max-width: 767px) {
     body {
-      padding-bottom: 70px;
+      padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  /* Desktop: top pill with full labels, icons hidden (as before) */
+  @media (min-width: 768px) {
+    .dock-wrap {
+      top: 1.5rem;
+      bottom: auto;
+    }
+
+    .dock-icon {
+      display: none;
+    }
+
+    .dock-link {
+      min-width: 0;
+      font-size: 1rem;
+      padding: 0.65rem 1.1rem;
+    }
+
+    .dock-label {
+      max-width: none;
+      opacity: 1;
+      overflow: visible;
+    }
+
+    .dock-link.active .dock-label {
+      margin-left: 0;
     }
   }
 </style>
 
 <script>
-  //scroll morphing effect, changing width & border radius
   const nav = document.getElementById("main-nav");
+  const navLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>("nav a[href^='#']")
+  );
 
   const maxScroll = 1000;
-  let lastScrollY = window.scrollY;
+  const isDesktop = () => window.innerWidth >= 768;
   let rafId: number | null = null;
+
+  function setActive(hash: string) {
+    navLinks.forEach((link) => {
+      const isActive = link.getAttribute("href") === hash;
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
 
   function updateNav() {
     const currentScrollY = window.scrollY;
@@ -224,32 +259,25 @@ const navItems: NavItem[] = [
     if (currentScrollY > 0) {
       nav?.classList.add("scrolling");
 
-      const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
-      const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
-
-      const minWidth = 620;
-      const maxWidth = window.innerWidth * 0.8;
-      const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
-
-      if (window.innerWidth >= 768) {
-        nav?.style.setProperty("width", `${currentWidth}px`);
+      if (isDesktop() && nav) {
+        // Morphing pill: shrink width while scrolling (desktop only)
+        const scrollProgress = Math.min(currentScrollY / maxScroll, 1);
+        const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
+        const minWidth = 620;
+        const maxWidth = window.innerWidth * 0.8;
+        nav.style.setProperty(
+          "width",
+          `${Math.max(maxWidth - (maxWidth - minWidth) * easeProgress, minWidth)}px`
+        );
       }
     } else {
       nav?.classList.remove("scrolling");
-      // nav?.style.setProperty("width", "80%");
-    }
-    if (window.innerWidth < 768) {
-      // Small buffer (e.g. 10px) to prevent accidental hiding on "jittery" scrolls
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling Down - Hide Nav
-        nav?.classList.add("nav-hidden");
-      } else {
-        // Scrolling Up - Show Nav
-        nav?.classList.remove("nav-hidden");
-      }
+      // Clear the morph so the pill returns to fit-content at the top
+      nav?.style.removeProperty("width");
     }
 
-    lastScrollY = currentScrollY;
+    // Dock toujours visible : pas de masquage au scroll (cf. note UX).
+    // Seul l'état "scrolling" (glass intensifié) subsiste.
     rafId = null;
   }
 
@@ -263,45 +291,43 @@ const navItems: NavItem[] = [
     { passive: true }
   );
 
-  //smooth scrolling to a linked section
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+  window.addEventListener("resize", () => {
+    // Crossing the breakpoint must not keep a desktop inline width on mobile
+    if (!isDesktop()) nav?.style.removeProperty("width");
+  });
+
+  // Smooth scrolling to a linked section + instant active feedback
+  navLinks.forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
       e.preventDefault();
-      const target = e.currentTarget as HTMLAnchorElement;
-      const targetId = target.getAttribute("href")?.substring(1) || "";
-      const targetElement = document.getElementById(targetId);
+      const href = anchor.getAttribute("href") || "";
+      const targetElement = document.getElementById(href.substring(1));
       if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-        });
+        setActive(href);
+        targetElement.scrollIntoView({ behavior: "smooth" });
       }
     });
   });
 
-  //highlight section by observing visible one on the screen by 50%
+  // Highlight the section crossing the middle band of the viewport,
+  // so exactly one dock item is active at a time.
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.5 };
+    if (!sections.length) return;
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => link.classList.remove("active"));
-          const id = entry.target.getAttribute("id");
-          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-          if (activeLink) {
-            activeLink.classList.add("active");
-          }
-        }
-      });
-    };
+    // Default state before any intersection fires
+    if (!document.querySelector("nav a.active")) setActive("#home");
 
     const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.getAttribute("id")}`);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
     );
     sections.forEach((section) => observer.observe(section));
   });
 </script>
-
