@@ -14,7 +14,7 @@ Avec les agents IA, mon quotidien a changé. Je lance souvent plusieurs agents s
 
 Voici comment je fais, simplement.
 
-![Console de pilotage et trois flux hiérarchisés](/writing/dev-multithreading-hierarchise/hero-3-fils.png)
+![Un développeur et ses trois agents hiérarchisés : prod, POC et récit](/writing/dev-multithreading-hierarchise/dev-3-agents-cartoon.png)
 
 ## Les 30 minutes d'attente
 

@@ -14,7 +14,7 @@ With AI agents, my everyday work has changed. I often run several agents on diff
 
 Here is how I do it, simply.
 
-![Control desk splitting into three ranked flows](/writing/dev-multithreading-hierarchise/hero-3-fils.png)
+![One developer and three ranked agents: prod, POC and writing](/writing/dev-multithreading-hierarchise/dev-3-agents-cartoon.png)
 
 ## The 30 minutes of waiting
 
