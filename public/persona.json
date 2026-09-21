@@ -1,0 +1,87 @@
+{
+  "$comment": "Structured identity for AI agents and assistants — camilleaubert.com. Dense, verifiable facts only.",
+  "@context": {
+    "name": "https://schema.org/name",
+    "jobTitle": "https://schema.org/jobTitle",
+    "url": "https://schema.org/url",
+    "email": "https://schema.org/email",
+    "sameAs": "https://schema.org/sameAs",
+    "knowsAbout": "https://schema.org/knowsAbout",
+    "alumniOf": "https://schema.org/alumniOf",
+    "worksFor": "https://schema.org/worksFor"
+  },
+  "name": "Camille Aubert",
+  "alternateName": ["Camiji", "Kamos"],
+  "jobTitle": "Lead Developer & AI Solutions Architect",
+  "description": "Lead Developer & AI Solutions Architect at Cegos Group (since Feb 2023). Designs enterprise RAG platforms, multi-agent orchestration and AI-assisted delivery workflows. Previously Project Manager & Web Developer at ASSERCAR (2016–2023). Based in Fontenay-le-Fleury, Île-de-France.",
+  "location": "Fontenay-le-Fleury, Île-de-France, France",
+  "languages": ["fr", "en", "es"],
+  "url": "https://camilleaubert.com",
+  "worksFor": {
+    "name": "Cegos Group",
+    "role": "Lead Developer & AI Architect",
+    "since": "2023-02",
+    "highlights": [
+      "Designed and shipped an enterprise RAG platform replacing the legacy enterprise search engine",
+      "Leading modernization of a multi-tenant ecosystem (13 platforms, 7 countries) on AWS and Docker",
+      "Built the team's AI-assisted engineering workflow: ticket-driven multi-repo orchestration, AI agent procedures"
+    ]
+  },
+  "previousRole": {
+    "name": "ASSERCAR",
+    "role": "Project Manager & Web Developer",
+    "years": "2016–2023"
+  },
+  "alumniOf": ["Université de Bourgogne", "Webforce3"],
+  "knowsAbout": [
+    "RAG Architecture",
+    "Context Engineering",
+    "Multi-Agent Orchestration",
+    "Token Cost Optimization",
+    "Vector Databases",
+    "Laravel",
+    "React",
+    "Enterprise Patterns",
+    "Multi-tenant Systems",
+    "API Design",
+    "Docker",
+    "AWS",
+    "CI/CD",
+    "Technical SEO",
+    "Performance Engineering"
+  ],
+  "projects": [
+    {
+      "title": "Enterprise RAG Platform",
+      "status": "In production",
+      "description": "Replaced the enterprise search engine with a retrieval-augmented platform exposing internal knowledge to LLM layers."
+    },
+    {
+      "title": "Nestor le Groom",
+      "status": "POC · Live",
+      "description": "RAG + LLM assistant for independent hotels, built end-to-end.",
+      "url": "https://nestor.camilleaubert.com/"
+    },
+    {
+      "title": "Autonomous Agent Workflow & Custom RAG",
+      "status": "Production-ready",
+      "description": "Autonomous multi-source indexing agent system on MCP principles."
+    },
+    {
+      "title": "Cegos Env Switcher",
+      "status": "Open source",
+      "description": "Chrome extension switching Cegos platforms between production, preproduction and localhost."
+    }
+  ],
+  "writing": "Long-form REX on enterprise RAG, agent orchestration and AI-assisted delivery, in French and English: https://camilleaubert.com/writing/",
+  "contact": {
+    "email": "aubertcam@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/camille-aubert-27760a56/",
+    "github": "https://github.com/CamiJi",
+    "form": "https://camilleaubert.com/#contact"
+  },
+  "sameAs": [
+    "https://github.com/CamiJi",
+    "https://www.linkedin.com/in/camille-aubert-27760a56/"
+  ]
+}
