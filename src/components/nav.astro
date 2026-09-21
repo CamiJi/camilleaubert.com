@@ -58,7 +58,7 @@ const navItems: NavItem[] = [
               <span class="dock-icon" aria-hidden="true">
                 <Icon
                   name={item.icon}
-                  class="nav-icon w-5 h-5"
+                  class="nav-icon w-4.5 h-4.5"
                 />
               </span>
               <span class="dock-label">{item.label}</span>
@@ -104,6 +104,9 @@ const navItems: NavItem[] = [
     max-width: calc(100vw - 1.5rem);
     border: 1.2px solid transparent;
     border-radius: 9999px;
+    /* Clip symétrique : si le contenu dépasse un jour, la pill reste centrée
+       au lieu de baver à droite. */
+    overflow: hidden;
     background-color: transparent;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
@@ -125,14 +128,19 @@ const navItems: NavItem[] = [
     box-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
   }
 
-  /* Links — 44px touch targets */
+  /* Links — 44px de haut ; largeur flexible pour tenir à 6 dès 320px.
+     min-width: 0 en cascade (li + lien) pour autoriser la compression. */
+  nav li {
+    min-width: 0;
+  }
+
   .dock-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 44px;
+    min-width: 0;
     min-height: 44px;
-    padding-inline: 11px;
+    padding-inline: 8px;
     border-radius: 9999px;
     color: var(--color-accent);
     font-size: 0.75rem;
@@ -170,7 +178,7 @@ const navItems: NavItem[] = [
   }
 
   .dock-link.active .dock-label {
-    max-width: 5rem;
+    max-width: 4rem;
     opacity: 1;
     margin-left: 6px;
   }
@@ -199,6 +207,16 @@ const navItems: NavItem[] = [
   @media (max-width: 767px) {
     body {
       padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  /* Très petits écrans (< 360px) : resserre encore pour rester centré */
+  @media (max-width: 359px) {
+    .dock-link {
+      padding-inline: 6px;
+    }
+    .dock-link {
+      font-size: 0.6875rem;
     }
   }
 
