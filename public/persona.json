@@ -12,14 +12,14 @@
   },
   "name": "Camille Aubert",
   "alternateName": ["Camiji", "Kamos"],
-  "jobTitle": "Lead Developer & AI Solutions Architect",
-  "description": "Lead Developer & AI Solutions Architect at Cegos Group (since Feb 2023). Designs enterprise RAG platforms, multi-agent orchestration and AI-assisted delivery workflows. Previously Project Manager & Web Developer at ASSERCAR (2016–2023). Based in Fontenay-le-Fleury, Île-de-France.",
+  "jobTitle": "AI Solutions Architect",
+  "description": "AI Solutions Architect at Cegos Group (since Feb 2023). Designs enterprise RAG platforms, multi-agent orchestration and AI-assisted delivery workflows. Previously Project Manager & Web Developer at ASSERCAR (2016–2023). Based in Fontenay-le-Fleury, Île-de-France.",
   "location": "Fontenay-le-Fleury, Île-de-France, France",
   "languages": ["fr", "en", "es"],
   "url": "https://camilleaubert.com",
   "worksFor": {
     "name": "Cegos Group",
-    "role": "Lead Developer & AI Architect",
+    "role": "AI Solutions Architect",
     "since": "2023-02",
     "highlights": [
       "Designed and shipped an enterprise RAG platform replacing the legacy enterprise search engine",

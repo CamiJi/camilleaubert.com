@@ -79,7 +79,7 @@ export const GET: APIRoute = async ({ props }) => {
   <rect x='110' y='${330 + titleLines.length * 76 - 40}' width='170' height='4' fill='url(#rule)'/>
 
   <text x='110' y='${H - 90}' font-family='Satoshi Variable' font-weight='500' font-size='26' fill='#9a9aa8'>${escapeXml(post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }))}</text>
-  <text x='110' y='${H - 46}' font-family='Satoshi Variable' font-weight='400' font-size='22' fill='#9a9aa8' fill-opacity='0.7'>Camille Aubert · Lead Developer &amp; AI Solutions Architect</text>
+  <text x='110' y='${H - 46}' font-family='Satoshi Variable' font-weight='400' font-size='22' fill='#9a9aa8' fill-opacity='0.7'>Camille Aubert · AI Solutions Architect</text>
 </svg>`;
 
   const png = await sharp(Buffer.from(svg)).png({ quality: 90 }).toBuffer();

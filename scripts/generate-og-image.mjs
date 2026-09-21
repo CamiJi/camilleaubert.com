@@ -27,7 +27,7 @@ const card = Buffer.from(`
   <rect width="${W}" height="${H}" fill="#0b0b10"/>
   <rect width="${W}" height="${H}" fill="url(#glow)"/>
   <g font-family="Satoshi, sans-serif">
-    <text x="90" y="200" font-size="26" font-weight="700" letter-spacing="3" fill="#8d8af0">LEAD DEVELOPER &amp; AI SOLUTIONS ARCHITECT</text>
+    <text x="90" y="200" font-size="30" font-weight="700" letter-spacing="3" fill="#8d8af0">AI SOLUTIONS ARCHITECT</text>
     <text x="86" y="310" font-size="90" font-weight="700" fill="#ededf2">Camille Aubert</text>
     <rect x="92" y="348" width="200" height="4" fill="#8d8af0" opacity="0.8"/>
     <text x="90" y="420" font-size="31" font-weight="500" fill="#9a9aa8">Enterprise RAG &#183; Agents &#183; AI-assisted delivery</text>

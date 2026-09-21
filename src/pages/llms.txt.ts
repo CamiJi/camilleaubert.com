@@ -15,7 +15,7 @@ export async function GET() {
   const lines = [
     `# ${site.name} — camilleaubert.com`,
     '',
-    `> ${site.name} — Lead Developer & AI Solutions Architect at Cegos Group. Enterprise RAG platforms, multi-agent orchestration, AI-assisted delivery. Writing (REX, FR/EN) and open-source side projects. Fontenay-le-Fleury, France.`,
+    `> ${site.name} — AI Solutions Architect at Cegos Group. Enterprise RAG platforms, multi-agent orchestration, AI-assisted delivery. Writing (REX, FR/EN) and open-source side projects. Fontenay-le-Fleury, France.`,
     '',
     '## Pages',
     '',
