@@ -7,7 +7,9 @@ import profile from '../data/profile.json';
 
 const { eyebrow, heading, bullets } = nowData;
 
-const posts = (await getCollection('writing', ({ data }) => !data.draft))
+/* Home is English-only: show the 2 latest EN posts so FR/EN twins
+   (same date) never appear as duplicates. */
+const posts = (await getCollection('writing', ({ data }) => !data.draft && (data.lang ?? 'en') === 'en'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 2);
 
