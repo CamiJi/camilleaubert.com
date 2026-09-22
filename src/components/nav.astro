@@ -220,11 +220,18 @@ const navItems: NavItem[] = [
     }
   }
 
-  /* Desktop: top pill with full labels, icons hidden (as before) */
+  /* Desktop (≥768px) : ancienne version — barre 80 % en haut qui se
+     resserre en pill glass au scroll (morph JS : 80 % → 620 px).
+     Le mobile (<768px) n'est PAS touché par ce bloc. */
   @media (min-width: 768px) {
     .dock-wrap {
       top: 1.5rem;
       bottom: auto;
+    }
+
+    nav {
+      width: 80%;
+      overflow: visible;
     }
 
     .dock-icon {
@@ -243,8 +250,15 @@ const navItems: NavItem[] = [
       overflow: visible;
     }
 
+    /* Ancien état actif desktop : pas de pastille, label en gras + glow */
+    .dock-link.active {
+      background-color: transparent;
+      transform: scale(1.08);
+    }
+
     .dock-link.active .dock-label {
       margin-left: 0;
+      text-shadow: 0 0 10px color-mix(in srgb, var(--color-maintext) 30%, transparent);
     }
   }
 </style>
