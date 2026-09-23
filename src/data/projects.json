@@ -53,5 +53,16 @@
     "platforms": ["web"],
     "link": "https://www.cegos.fr",
     "category": "Scalable Web Architecture"
+  },
+  {
+    "title": "earlyreflect — Portfolio Sound Designer",
+    "kind": "side",
+    "status": "In production",
+    "description": "Portfolio rebuild for a senior sound designer (Quantic Dream, Ubisoft, Don't Nod) — from a hierarchy-less free WordPress.com blog to a bilingual EN/FR static Astro site on GitHub Pages: €0 hosting, ~9 KB per page, zero JS on load, facade embeds with zero cookies, an AI-discoverability kit (llms.txt, persona.json), and a Markdown workflow where the client now publishes himself — first PR merged via his own Copilot.",
+    "images": ["/projects/earlyreflect-1.webp", "/projects/earlyreflect-2.webp", "/projects/earlyreflect-3.webp"],
+    "tech": ["Astro", "Tailwind CSS 4", "TypeScript", "GitHub Pages", "GitHub Actions"],
+    "platforms": ["web"],
+    "link": "https://earlyreflect.com",
+    "category": "Side Project"
   }
 ]
