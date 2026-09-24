@@ -8,6 +8,8 @@ translationOf: 2026-09-23-copilot-is-the-new-wordpress
 draft: false
 ---
 
+![Illustration de couverture : une fiche Markdown traversant un nœud agent vers une fenêtre navigateur](/writing/copilot-is-the-new-wordpress/cover-iris.jpg)
+
 Hier, mon client a mergé sa première pull request. Ce n'est pas un développeur. C'est un sound designer.
 
 Il s'est créé un compte GitHub, a ouvert une PR qui branchait son formulaire de contact, et l'a mergée lui-même — aidé par Copilot, dès son premier jour d'autonomie. Le message de commit est dans l'historique du repo, co-signé par Copilot, mergé de sa propre main. Ce moment, c'est tout le propos de cet article.

@@ -8,6 +8,8 @@ translationOf: 2026-09-23-copilot-est-le-nouveau-wordpress
 draft: false
 ---
 
+![Cover illustration: a Markdown card flowing through an agent node into a browser window](/writing/copilot-is-the-new-wordpress/cover-iris.jpg)
+
 Yesterday, my client merged his first pull request. He is not a developer. He is a sound designer.
 
 He created a GitHub account, opened a PR that wired up his contact form, and merged it himself — with Copilot's help, on his first day of autonomy. The commit message is in the repo history, co-authored by Copilot, merged by his own hand. That moment is the whole point of this article.
