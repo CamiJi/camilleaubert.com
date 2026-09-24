@@ -8,7 +8,7 @@ translationOf: 2026-09-23-copilot-is-the-new-wordpress
 draft: false
 ---
 
-![Illustration de couverture : une fiche Markdown traversant un nœud agent vers une fenêtre navigateur](/writing/copilot-is-the-new-wordpress/cover-iris.jpg)
+![Couverture cartoon : un robot joyeux poussant dehors le vieux logo WordPress poussiéreux](/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg)
 
 Hier, mon client a mergé sa première pull request. Ce n'est pas un développeur. C'est un sound designer.
 

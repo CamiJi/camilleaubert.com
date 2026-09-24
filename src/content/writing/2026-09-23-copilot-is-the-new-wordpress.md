@@ -8,7 +8,7 @@ translationOf: 2026-09-23-copilot-est-le-nouveau-wordpress
 draft: false
 ---
 
-![Cover illustration: a Markdown card flowing through an agent node into a browser window](/writing/copilot-is-the-new-wordpress/cover-iris.jpg)
+![Cartoon cover: a cheerful robot pushing the dusty old WordPress logo away](/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg)
 
 Yesterday, my client merged his first pull request. He is not a developer. He is a sound designer.
 
