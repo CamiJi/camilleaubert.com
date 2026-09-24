@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Image sitemap — camilleaubert.com
+     Déclare explicitement les images de contenu à Google Images.
+     @astrojs/sitemap ne liste que les <loc> de pages : ce fichier complète
+     avec les balises <image:image> que Google attend.
+     Référencé depuis /robots.txt. Fichier statique : penser à le mettre à
+     jour quand une image de contenu est ajoutée/retirée. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://camilleaubert.com/about/</loc>
+    <image:image>
+      <image:loc>https://camilleaubert.com/camille-aubert-portrait.webp</image:loc>
+      <image:title>Camille Aubert — AI Solutions Architect at Cegos, Paris</image:title>
+      <image:caption>Camille Aubert, AI Solutions Architect at Cegos, Paris — portrait</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/camille-aubert-india-motorcycle.webp</image:loc>
+      <image:title>Camille Aubert in India — travel industry years</image:title>
+      <image:caption>Camille Aubert on a Royal Enfield motorcycle in the streets of Delhi, India — his travel industry years before becoming a web developer. Delhi, 2010 — Himalayan logistics, and the years that earned him the nickname “Camiji”.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/camille-aubert-cegos-office.webp</image:loc>
+      <image:title>Camille Aubert — AI Solutions Architect at Cegos</image:title>
+      <image:caption>Camille Aubert, AI Solutions Architect at Cegos, wearing a headset at the office during a technical review. At the Cegos office, Paris — headset on, between two technical reviews.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/camille-aubert-workstation-full.webp</image:loc>
+      <image:title>Camille Aubert's home workstation — Fontenay-le-Fleury</image:title>
+      <image:caption>Camille Aubert's full home workstation in Fontenay-le-Fleury — wooden desk, rattan chair and garden window where he develops Laravel, React and AI solutions.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://camilleaubert.com/</loc>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/enterprise-retrieval-1.webp</image:loc>
+      <image:title>Enterprise retrieval system — applied AI project</image:title>
+      <image:caption>Enterprise retrieval system exposing company knowledge safely to LLMs — applied AI project by Camille Aubert.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/nestor-groom-1.webp</image:loc>
+      <image:title>Nestor le groom — side project</image:title>
+      <image:caption>Nestor le groom — side project by Camille Aubert.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/agent-rag-1.webp</image:loc>
+      <image:title>Agent RAG — applied AI project</image:title>
+      <image:caption>Agent RAG — applied AI system by Camille Aubert.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/env-switcher-1.webp</image:loc>
+      <image:title>Environment switcher — developer tooling</image:title>
+      <image:caption>Environment switcher — developer tooling by Camille Aubert.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/cegos-platform-1.webp</image:loc>
+      <image:title>Cegos multi-country platform ecosystem</image:title>
+      <image:caption>Cegos multi-country platform ecosystem — Laravel, React and WordPress at enterprise scale.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/earlyreflect-1.webp</image:loc>
+      <image:title>Earlyreflect — bilingual static site rebuild</image:title>
+      <image:caption>Earlyreflect portfolio rebuild — bilingual static Astro site by Camille Aubert.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/earlyreflect-2.webp</image:loc>
+      <image:title>Earlyreflect — bilingual static site rebuild</image:title>
+      <image:caption>Earlyreflect portfolio rebuild — bilingual static Astro site by Camille Aubert.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/projects/earlyreflect-3.webp</image:loc>
+      <image:title>Earlyreflect — bilingual static site rebuild</image:title>
+      <image:caption>Earlyreflect portfolio rebuild — bilingual static Astro site by Camille Aubert.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://camilleaubert.com/writing/2026-09-17-from-single-task-to-hierarchical-multithreading/</loc>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/dev-multithreading-hierarchise/dev-3-agents-cartoon.png</image:loc>
+      <image:title>One developer and three ranked agents</image:title>
+      <image:caption>One developer and three ranked agents: prod, POC and writing.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/dev-multithreading-hierarchise/30-minutes-b.png</image:loc>
+      <image:title>Using agent waiting time productively</image:title>
+      <image:caption>Using agent waiting time to move forward on simpler tasks.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/dev-multithreading-hierarchise/worktree-ou-chaos.png</image:loc>
+      <image:title>Three isolated worktrees</image:title>
+      <image:caption>Three isolated worktrees, production sealed at the center.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://camilleaubert.com/writing/2026-09-17-dev-multithreading-hierarchise/</loc>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/dev-multithreading-hierarchise/dev-3-agents-cartoon.png</image:loc>
+      <image:title>Un développeur et ses trois agents hiérarchisés</image:title>
+      <image:caption>Un développeur et ses trois agents hiérarchisés : prod, POC et récit.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/dev-multithreading-hierarchise/30-minutes-b.png</image:loc>
+      <image:title>Utiliser le temps d'attente de l'agent</image:title>
+      <image:caption>Utiliser le temps d'attente de l'agent pour avancer sur des tâches simples.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/dev-multithreading-hierarchise/worktree-ou-chaos.png</image:loc>
+      <image:title>Trois worktrees isolés</image:title>
+      <image:caption>Trois worktrees isolés, production sanctuarisée au centre.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://camilleaubert.com/writing/2026-09-23-copilot-is-the-new-wordpress/</loc>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg</image:loc>
+      <image:title>Cartoon cover — robot pushing WordPress away</image:title>
+      <image:caption>Cartoon cover: a cheerful robot pushing the dusty old WordPress logo away.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/copilot.png</image:loc>
+      <image:title>GitHub Copilot app — agent mode</image:title>
+      <image:caption>The GitHub Copilot app: ask anything, agent mode, linked to the repo.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/actions-vert.png</image:loc>
+      <image:title>Green GitHub Actions deploy runs</image:title>
+      <image:caption>Deploy runs on the earlyreflect repo: green GitHub Actions runs, about a minute each.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/site-fini-hero.png</image:loc>
+      <image:title>Finished site — earlyreflect.com homepage</image:title>
+      <image:caption>The finished site: earlyreflect.com homepage with hero, client logos and work credits.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://camilleaubert.com/writing/2026-09-23-copilot-est-le-nouveau-wordpress/</loc>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg</image:loc>
+      <image:title>Couverture cartoon — le robot chasse WordPress</image:title>
+      <image:caption>Couverture cartoon : un robot joyeux poussant dehors le vieux logo WordPress poussiéreux.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/copilot.png</image:loc>
+      <image:title>L'app GitHub Copilot — mode agent</image:title>
+      <image:caption>L'app GitHub Copilot : une invite, le mode agent, relié au repo.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/actions-vert.png</image:loc>
+      <image:title>Runs de déploiement GitHub Actions verts</image:title>
+      <image:caption>Runs de déploiement sur le repo earlyreflect : des GitHub Actions vertes, environ une minute chacune.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://camilleaubert.com/writing/copilot-is-the-new-wordpress/site-fini-hero.png</image:loc>
+      <image:title>Site fini — page d'accueil earlyreflect.com</image:title>
+      <image:caption>Le site fini : page d'accueil d'earlyreflect.com avec hero, logos clients et crédits.</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -29,6 +29,78 @@ const {
 } = Astro.props;
 
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+
+// Sérialisé via set:html — un bloc <script is:inline> brut n'interpole PAS
+// les expressions Astro (le JSON partait en prod avec ${site.url} en littéral).
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${site.url}/#person`,
+  name: site.name,
+  jobTitle: 'AI Solutions Architect',
+  url: site.url,
+  sameAs: ['https://github.com/CamiJi', 'https://www.linkedin.com/in/camille-aubert-27760a56/'],
+  email: 'mailto:aubertcam@gmail.com',
+  image: [
+    {
+      '@type': 'ImageObject',
+      url: `${site.url}/camille-aubert-portrait.webp`,
+      contentUrl: `${site.url}/camille-aubert-portrait.webp`,
+      width: 384,
+      height: 384,
+      caption: 'Camille Aubert, AI Solutions Architect at Cegos, Paris — portrait',
+      name: 'Camille Aubert — AI Solutions Architect at Cegos, Paris',
+    },
+    {
+      '@type': 'ImageObject',
+      url: `${site.url}/camille-aubert-cegos-office.webp`,
+      contentUrl: `${site.url}/camille-aubert-cegos-office.webp`,
+      width: 1280,
+      height: 1600,
+      caption: 'Camille Aubert at the Cegos office, wearing a headset during a technical review',
+      name: 'Camille Aubert — AI Solutions Architect at Cegos',
+    },
+    {
+      '@type': 'ImageObject',
+      url: `${site.url}/camille-aubert-india-motorcycle.webp`,
+      contentUrl: `${site.url}/camille-aubert-india-motorcycle.webp`,
+      width: 1600,
+      height: 1200,
+      caption:
+        'Camille Aubert on a Royal Enfield motorcycle in the streets of Delhi, India — his travel industry years',
+      name: 'Camille Aubert in India — travel industry years',
+    },
+    {
+      '@type': 'ImageObject',
+      url: `${site.url}/camille-aubert-workstation-full.webp`,
+      contentUrl: `${site.url}/camille-aubert-workstation-full.webp`,
+      width: 1200,
+      height: 1600,
+      caption:
+        "Camille Aubert's full home workstation in Fontenay-le-Fleury — wooden desk, rattan chair and garden window, Laravel, React and AI development",
+      name: "Camille Aubert's workstation",
+    },
+  ],
+  alternateName: ['Camiji', 'Kamos'],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Cegos Group',
+  },
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Université de Bourgogne' },
+    { '@type': 'EducationalOrganization', name: 'Webforce3' },
+  ],
+  homeLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Fontenay-le-Fleury',
+      addressRegion: 'Île-de-France',
+      addressCountry: 'FR',
+    },
+  },
+  knowsLanguage: ['fr', 'en', 'es'],
+};
 ---
 
 <!doctype html>
@@ -71,73 +143,14 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     <meta name="twitter:image" content={image} />
 
     <!-- Structured Data -->
-    <script is:inline type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": site.name,
-        "jobTitle": "AI Solutions Architect",
-        "url": site.url,
-        "sameAs": [
-          "https://github.com/CamiJi",
-          "https://www.linkedin.com/in/camille-aubert-27760a56/"
-        ],
-        "email": "mailto:aubertcam@gmail.com",
-        "image": [
-          `${site.url}/camille-aubert-portrait.webp`,
-          {
-            "@type": "ImageObject",
-            "url": `${site.url}/camille-aubert-cegos-office.webp`,
-            "contentUrl": `${site.url}/camille-aubert-cegos-office.webp`,
-            "width": 1280,
-            "height": 1600,
-            "caption": "Camille Aubert at the Cegos office, wearing a headset during a technical review",
-            "name": "Camille Aubert — AI Solutions Architect at Cegos"
-          },
-          {
-            "@type": "ImageObject",
-            "url": `${site.url}/camille-aubert-india-motorcycle.webp`,
-            "contentUrl": `${site.url}/camille-aubert-india-motorcycle.webp`,
-            "width": 1600,
-            "height": 1200,
-            "caption": "Camille Aubert on a Royal Enfield motorcycle in the streets of Delhi, India — his travel industry years",
-            "name": "Camille Aubert in India — travel industry years"
-          },
-          {
-            "@type": "ImageObject",
-            "url": `${site.url}/camille-aubert-workstation-full.webp`,
-            "contentUrl": `${site.url}/camille-aubert-workstation-full.webp`,
-            "width": 1200,
-            "height": 1600,
-            "caption": "Camille Aubert's full home workstation in Fontenay-le-Fleury — wooden desk, rattan chair and garden window, Laravel, React and AI development",
-            "name": "Camille Aubert's workstation"
-          }
-        ],
-        "alternateName": ["Camiji", "Kamos"],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Cegos Group"
-        },
-        "alumniOf": [
-          { "@type": "CollegeOrUniversity", "name": "Université de Bourgogne" },
-          { "@type": "EducationalOrganization", "name": "Webforce3" }
-        ],
-        "homeLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Fontenay-le-Fleury",
-            "addressRegion": "Île-de-France",
-            "addressCountry": "FR"
-          }
-        },
-        "knowsLanguage": ["fr", "en", "es"]
-      }
-    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 
     <!-- Dates de fraîcheur pour Google (métadata reconnus) -->
     {datePublished && <meta property="datePublished" content={datePublished} />}
     {dateModified && <meta property="dateModified" content={dateModified} />}
+
+    <!-- JSON-LD spécifique à la page (AboutPage, Article…) -->
+    <slot name="head" />
   </head>
 
   <body class="relative min-h-screen overflow-x-hidden antialiased">

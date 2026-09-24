@@ -2,6 +2,69 @@
 import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
 import profile from '../data/profile.json';
+import { site } from '../data/site';
+
+const pageUrl = `${site.url}/about/`;
+const pageTitle = 'About — Camille Aubert, AI Solutions Architect in Paris';
+const pageDescription =
+  'From Burgundy to enterprise AI via Madrid and New Delhi. Camille Aubert — AI Solutions Architect at Cegos, Paris. Full story, education and career.';
+
+const portrait = {
+  '@type': 'ImageObject',
+  '@id': `${pageUrl}#portrait`,
+  url: `${site.url}/camille-aubert-portrait.webp`,
+  contentUrl: `${site.url}/camille-aubert-portrait.webp`,
+  width: 384,
+  height: 384,
+  caption: 'Camille Aubert, AI Solutions Architect at Cegos, Paris — portrait',
+  name: 'Camille Aubert — AI Solutions Architect at Cegos, Paris',
+};
+const india = {
+  '@type': 'ImageObject',
+  '@id': `${pageUrl}#india-motorcycle`,
+  url: `${site.url}/camille-aubert-india-motorcycle.webp`,
+  contentUrl: `${site.url}/camille-aubert-india-motorcycle.webp`,
+  width: 1600,
+  height: 1200,
+  caption:
+    'Camille Aubert on a Royal Enfield motorcycle in the streets of Delhi, India — his travel industry years before becoming a web developer. Delhi, 2010 — Himalayan logistics, and the years that earned him the nickname “Camiji”.',
+  name: 'Camille Aubert in India — travel industry years',
+};
+const office = {
+  '@type': 'ImageObject',
+  '@id': `${pageUrl}#cegos-office`,
+  url: `${site.url}/camille-aubert-cegos-office.webp`,
+  contentUrl: `${site.url}/camille-aubert-cegos-office.webp`,
+  width: 1280,
+  height: 1600,
+  caption:
+    'Camille Aubert, AI Solutions Architect at Cegos, wearing a headset at the office during a technical review. At the Cegos office, Paris — headset on, between two technical reviews.',
+  name: 'Camille Aubert — AI Solutions Architect at Cegos',
+};
+const workstation = {
+  '@type': 'ImageObject',
+  '@id': `${pageUrl}#workstation`,
+  url: `${site.url}/camille-aubert-workstation-full.webp`,
+  contentUrl: `${site.url}/camille-aubert-workstation-full.webp`,
+  width: 1200,
+  height: 1600,
+  caption:
+    "Camille Aubert's full home workstation in Fontenay-le-Fleury — wooden desk, rattan chair and garden window where he develops Laravel, React and AI solutions.",
+  name: "Camille Aubert's home workstation — Fontenay-le-Fleury",
+};
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': `${pageUrl}#page`,
+  url: pageUrl,
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: 'en',
+  isPartOf: { '@type': 'WebSite', '@id': `${site.url}/#website`, url: site.url, name: site.title },
+  about: { '@id': `${site.url}/#person` },
+  primaryImageOfPage: portrait,
+  image: [portrait, india, office, workstation],
+};
 
 const timeline = [
   { period: '2003', title: 'Humanities baccalauréat', place: 'Chalon-sur-Saône, Bourgogne', detail: 'Lycée Émiland Gauthey — sport-études handball.' },
@@ -16,9 +79,12 @@ const timeline = [
 ---
 
 <Layout
-  title="About — Camille Aubert, AI Solutions Architect in Paris"
-  description="From Burgundy to enterprise AI via Madrid and New Delhi. Camille Aubert — AI Solutions Architect at Cegos, Paris. Full story, education and career."
+  title={pageTitle}
+  description={pageDescription}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(aboutJsonLd)} />
+  </Fragment>
   <article class="section-container max-w-3xl mx-auto pt-12 md:pt-20 pb-24 about-page">
     <a href="/" class="no-print text-subtext hover:text-accent transition-colors font-body text-sm flex items-center gap-1.5">
       <Icon name="mdi:arrow-left" class="w-4 h-4" />
