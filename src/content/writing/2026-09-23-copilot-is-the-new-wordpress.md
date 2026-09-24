@@ -4,6 +4,7 @@ date: 2026-09-23
 dateModified: 2026-09-23
 excerpt: "Yesterday my non-developer client merged his first pull request. His portfolio — 17 projects, two languages, free hosting — publishes with a git push. WordPress democratized publishing; agents democratize the rest."
 lang: en
+translationOf: 2026-09-23-copilot-est-le-nouveau-wordpress
 draft: false
 ---
 
