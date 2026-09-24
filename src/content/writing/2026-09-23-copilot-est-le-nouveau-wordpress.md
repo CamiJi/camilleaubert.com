@@ -50,6 +50,8 @@ Et voici ce que ces runs produisent :
 
 ![Le site fini : page d'accueil d'earlyreflect.com avec hero, logos clients et crédits](/writing/copilot-is-the-new-wordpress/site-fini-hero.png)
 
+Voir le site en ligne : [earlyreflect.com](https://earlyreflect.com)
+
 Et voici la partie honnête de la chronologie : le plan de départ, c'était un portage WordPress. Le premier tour de retours le disait noir sur blanc — le site Astro devait servir de maquette de design, et j'avais chiffré le portage à cinq à sept jours de travail. Puis le client s'est mis à utiliser le workflow statique, a mergé sa propre PR dès le premier jour, et le portage est devenu inutile. La maquette est devenue le site. Ce n'était jamais prévu, et c'est le signal le plus fort de toute cette histoire.
 
 ## Ce que WordPress fait encore mieux

@@ -50,6 +50,8 @@ And this is what those runs produce:
 
 ![The finished site: earlyreflect.com homepage with hero, client logos and work credits](/writing/copilot-is-the-new-wordpress/site-fini-hero.png)
 
+See it live: [earlyreflect.com](https://earlyreflect.com)
+
 And here is the honest part of the timeline: the initial plan was a WordPress port. The first round of feedback even said so explicitly — the Astro site was supposed to be a design reference, and I had estimated the port at five to seven days of work. Then the client started using the static workflow, merged his own PR on day one, and the port became unnecessary. The maquette became the site. That was never in the plan, and it is the strongest signal in this whole story.
 
 ## What WordPress still does better
