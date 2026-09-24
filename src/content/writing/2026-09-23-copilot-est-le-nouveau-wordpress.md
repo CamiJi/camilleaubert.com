@@ -16,7 +16,7 @@ Il s'est créé un compte GitHub, a ouvert une PR qui branchait son formulaire d
 
 J'ai raconté la boucle de déploiement de ce même site dans [This website deploys itself](/writing/2026-09-12-this-website-deploys-itself/). Ceci en est la suite, avec un vrai client pour prouver que ça marche hors de mon propre setup.
 
-![Pull request n°1 sur le repo earlyreflect : le client a mergé lui-même le formulaire de contact Formspree dans main](/writing/copilot-is-the-new-wordpress/pr-copilot-mergee.png)
+![L'app GitHub Copilot : une invite, le mode agent, relié au repo](/writing/copilot-is-the-new-wordpress/copilot.png)
 
 ## WordPress 2005, Copilot 2026
 

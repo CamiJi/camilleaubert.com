@@ -16,7 +16,7 @@ He created a GitHub account, opened a PR that wired up his contact form, and mer
 
 I wrote about the deployment loop behind this very site in [This website deploys itself](/writing/2026-09-12-this-website-deploys-itself/). This is the sequel, with a real client to prove it works outside my own setup.
 
-![Pull request #1 on the earlyreflect repo: the client merged the Formspree contact form into main himself](/writing/copilot-is-the-new-wordpress/pr-copilot-mergee.png)
+![The GitHub Copilot app: ask anything, agent mode, linked to the repo](/writing/copilot-is-the-new-wordpress/copilot.png)
 
 ## WordPress 2005, Copilot 2026
 
