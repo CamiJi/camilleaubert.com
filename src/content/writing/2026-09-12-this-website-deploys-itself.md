@@ -1,7 +1,11 @@
 ---
 title: This website deploys itself
 date: 2026-09-12
+dateModified: 2026-09-12
 excerpt: Every push to main goes live in production within minutes — no manual step. Here is the agent-driven workflow behind this portfolio, and why I think this is how every personal site should be run.
+lang: en
+translationOf: 2026-09-12-ce-site-se-deploie-tout-seul
+draft: false
 ---
 
 I rebuilt this portfolio in four phases. The design is sober, the stack is minimal, and the whole thing is a static build served by Nginx on a small AWS instance. But the part I'm most happy with is invisible: **the deployment loop**.
