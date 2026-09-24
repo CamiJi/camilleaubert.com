@@ -14,6 +14,8 @@ He created a GitHub account, opened a PR that wired up his contact form, and mer
 
 I wrote about the deployment loop behind this very site in [This website deploys itself](/writing/2026-09-12-this-website-deploys-itself/). This is the sequel, with a real client to prove it works outside my own setup.
 
+![Pull request #1 on the earlyreflect repo: the client merged the Formspree contact form into main himself](/writing/copilot-is-the-new-wordpress/pr-copilot-mergee.png)
+
 ## WordPress 2005, Copilot 2026
 
 WordPress won by democratizing a layer. Before it, publishing on the web meant knowing HTML, FTP, and a server. After it, anyone could publish — at the price of maintaining a CMS: updates, plugins, backups, security holes, hosting bills.
@@ -37,6 +39,14 @@ Here is what replaced it:
 - **Weight:** 62 HTML pages (51 content pages + 11 redirect stubs), ~10 KB of HTML per page on average, 37 KB of CSS total, 86 KB of self-hosted fonts, **zero JavaScript files shipped**, zero cookies, zero trackers.
 - **Publishing workflow:** duplicate a card, fill it in, push. The site rebuilds and goes live in one to two minutes. He ships roughly one game every six months — each release is about ten minutes of his time.
 - **Contact form:** Formspree on its free tier, spam filtering on, email address obfuscated and never displayed in plain text.
+
+That loop is visible to anyone: the Actions tab is a wall of green runs, about a minute each — several of them pushed by the client himself.
+
+![Deploy runs on the earlyreflect repo: green GitHub Actions runs, about a minute each](/writing/copilot-is-the-new-wordpress/actions-vert.png)
+
+And this is what those runs produce:
+
+![The finished site: earlyreflect.com homepage with hero, client logos and work credits](/writing/copilot-is-the-new-wordpress/site-fini-hero.png)
 
 And here is the honest part of the timeline: the initial plan was a WordPress port. The first round of feedback even said so explicitly — the Astro site was supposed to be a design reference, and I had estimated the port at five to seven days of work. Then the client started using the static workflow, merged his own PR on day one, and the port became unnecessary. The maquette became the site. That was never in the plan, and it is the strongest signal in this whole story.
 

@@ -14,6 +14,8 @@ Il s'est créé un compte GitHub, a ouvert une PR qui branchait son formulaire d
 
 J'ai raconté la boucle de déploiement de ce même site dans [This website deploys itself](/writing/2026-09-12-this-website-deploys-itself/). Ceci en est la suite, avec un vrai client pour prouver que ça marche hors de mon propre setup.
 
+![Pull request n°1 sur le repo earlyreflect : le client a mergé lui-même le formulaire de contact Formspree dans main](/writing/copilot-is-the-new-wordpress/pr-copilot-mergee.png)
+
 ## WordPress 2005, Copilot 2026
 
 WordPress a gagné en démocratisant une couche. Avant lui, publier sur le web voulait dire connaître le HTML, le FTP et un serveur. Après lui, tout le monde pouvait publier — au prix d'un CMS à entretenir : mises à jour, plugins, sauvegardes, failles de sécurité, factures d'hébergement.
@@ -37,6 +39,14 @@ Voici ce qui l'a remplacé :
 - **Poids :** 62 pages HTML (51 pages de contenu + 11 stubs de redirection), ~10 Ko de HTML par page en moyenne, 37 Ko de CSS au total, 86 Ko de polices auto-hébergées, **zéro fichier JavaScript livré**, zéro cookie, zéro traceur.
 - **Workflow de publication :** dupliquer une fiche, la remplir, pusher. Le site se reconstruit et passe en ligne en une à deux minutes. Il sort à peu près un jeu tous les six mois — chaque sortie lui prend une dizaine de minutes.
 - **Formulaire de contact :** Formspree sur son offre gratuite, anti-spam activé, adresse email obfusquée et jamais affichée en clair.
+
+Cette boucle est visible par tous : l'onglet Actions est un mur de runs verts, environ une minute chacun — dont plusieurs poussés par le client lui-même.
+
+![Runs de déploiement sur le repo earlyreflect : des GitHub Actions vertes, environ une minute chacune](/writing/copilot-is-the-new-wordpress/actions-vert.png)
+
+Et voici ce que ces runs produisent :
+
+![Le site fini : page d'accueil d'earlyreflect.com avec hero, logos clients et crédits](/writing/copilot-is-the-new-wordpress/site-fini-hero.png)
 
 Et voici la partie honnête de la chronologie : le plan de départ, c'était un portage WordPress. Le premier tour de retours le disait noir sur blanc — le site Astro devait servir de maquette de design, et j'avais chiffré le portage à cinq à sept jours de travail. Puis le client s'est mis à utiliser le workflow statique, a mergé sa propre PR dès le premier jour, et le portage est devenu inutile. La maquette est devenue le site. Ce n'était jamais prévu, et c'est le signal le plus fort de toute cette histoire.
 
