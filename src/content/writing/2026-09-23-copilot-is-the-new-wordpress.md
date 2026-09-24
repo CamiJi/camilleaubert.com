@@ -18,17 +18,21 @@ I wrote about the deployment loop behind this very site in [This website deploys
 
 ![The GitHub Copilot app: ask anything, agent mode, linked to the repo](/writing/copilot-is-the-new-wordpress/copilot.png)
 
+That's the whole interface he needs: no dashboard, no menus to learn. A conversation box connected to the site. He describes what he wants in his own words, Copilot changes the site from the inside. Even from a phone.
+
 ## WordPress 2005, Copilot 2026
 
 WordPress won by democratizing a layer. Before it, publishing on the web meant knowing HTML, FTP, and a server. After it, anyone could publish — at the price of maintaining a CMS: updates, plugins, backups, security holes, hosting bills.
 
-Copilot and coding agents are democratizing a different layer: the modern static web. Same promise, new stack:
+Copilot and coding agents are democratizing a different layer: the modern static web. Same promise, better deal:
 
-- **The repo is the CMS.** Content lives in Markdown files, versioned, diffable, reviewable.
-- **The agent is the editor.** The client describes what he wants in plain language; the agent edits the files.
-- **The push is the publication.** Every push to `main` rebuilds and redeploys the site in under two minutes.
+- **It's free.** No hosting bill, no paid plan, no plugin license. Zero per month, indefinitely.
+- **There's nothing to learn.** No admin panel, no menus, no training. The client changes the site from the inside, by talking to it: "add this game", "change that picture", "proofread my bio". Copilot edits, the site updates itself minutes later. Even from a phone.
+- **There's nothing to maintain.** No updates, no security patches, no backups to babysit. Static pages can't be broken into the way a CMS can.
 
-The end client gets the same autonomy WordPress gave him — without the thing WordPress made him maintain.
+And one honest clarification about roles: **a developer lays the foundations once** — design, structure, automatic publishing. That's a few days of work. After that, the client needs no developer, no training, no maintenance contract. His whole job: fill in a ready-made card, send it online.
+
+The client gets the same autonomy WordPress promised him — without the machine WordPress made him feed.
 
 ## The concrete case
 
@@ -36,15 +40,15 @@ The client is Mathieu Fiorentini, senior sound designer. His credits include Hea
 
 Here is what replaced it:
 
-- **Stack:** Astro 6 + Tailwind 4, 100% static, served by GitHub Pages, HTTPS via Let's Encrypt. Hosting cost: zero per month.
-- **Content:** 17 projects, bilingual EN/FR — each project is two Markdown cards, one per language. English at the root, French under `/fr/`.
-- **Weight:** 62 HTML pages (51 content pages + 11 redirect stubs), ~10 KB of HTML per page on average, 37 KB of CSS total, 86 KB of self-hosted fonts, **zero JavaScript files shipped**, zero cookies, zero trackers.
-- **Publishing workflow:** duplicate a card, fill it in, push. The site rebuilds and goes live in one to two minutes. He ships roughly one game every six months — each release is about ten minutes of his time.
-- **Contact form:** Formspree on its free tier, spam filtering on, email address obfuscated and never displayed in plain text.
+- **Hosting:** free, secure connection included. Monthly cost: zero — indefinitely.
+- **Content:** 17 projects in two languages, English and French. Each project is a simple text card: title, studio, years, picture.
+- **Speed and privacy:** pages are featherweight and load instantly. No cookies, no trackers, nothing to maintain.
+- **Publishing:** to add a game, he fills in a ready-made card and sends it online. Live two minutes later. He releases roughly one game every six months — about ten minutes of his time each.
+- **Contact form included,** spam filter on, email address hidden from spambots.
 
-That loop is visible to anyone: the Actions tab is a wall of green runs, about a minute each — several of them pushed by the client himself.
+Every update leaves a public trace: a history of green checkmarks, one per publication — several started by the client himself.
 
-![Deploy runs on the earlyreflect repo: green GitHub Actions runs, about a minute each](/writing/copilot-is-the-new-wordpress/actions-vert.png)
+![Publication history: green checkmarks, one per site update, about a minute each](/writing/copilot-is-the-new-wordpress/actions-vert.png)
 
 And this is what those runs produce:
 
@@ -52,15 +56,15 @@ And this is what those runs produce:
 
 See it live: [earlyreflect.com](https://earlyreflect.com)
 
-And here is the honest part of the timeline: the initial plan was a WordPress port. The first round of feedback even said so explicitly — the Astro site was supposed to be a design reference, and I had estimated the port at five to seven days of work. Then the client started using the static workflow, merged his own PR on day one, and the port became unnecessary. The maquette became the site. That was never in the plan, and it is the strongest signal in this whole story.
+And here is the honest part: the initial plan was a WordPress port — five to seven days of work estimated. Then the client started using this workflow, published his own update on day one, and the port became unnecessary. The draft became the site. That was never the plan, and it is the strongest signal in this whole story.
 
 ## What WordPress still does better
 
 Intellectual honesty first. For a portfolio updated twice a year, static plus agent wins. But WordPress still wins on:
 
-- **Instant visual editing.** In WordPress, you see the change as you make it. Here, the client edits text and waits a minute to see the result. The local preview exists (`npm run dev`), but it is one more step.
-- **The plugin ecosystem.** Need a booking calendar, a shop, member accounts? Someone already wrote the plugin. In the static world, every one of those is a small project.
-- **Non-technical onboarding.** WordPress's admin is ugly but familiar. A repo, even with a guide, is unfamiliar the first time. My client needed one guided day; a WordPress user needs none.
+- **Instant visual editing.** In WordPress, you see the change as you make it. Here, the client writes his text and sees the result a minute later. A live preview exists on his computer, but it's one more step.
+- **The plugin ecosystem.** Need a booking calendar, a shop, member accounts? Someone already wrote the plugin. In the static world, each of those is a small project.
+- **Non-technical onboarding.** WordPress's admin is ugly but familiar. This workflow was unfamiliar the first time. My client needed one guided day; a WordPress user needs none.
 
 If your site needs dynamic features or five editors with roles, stop reading and keep WordPress. This article is about the other 90%: the showcase sites, portfolios and landing pages that use a CMS as an expensive text file.
 
@@ -68,9 +72,9 @@ If your site needs dynamic features or five editors with roles, stop reading and
 
 Nobody chooses WordPress for the maintenance. It comes with the bundle, and the bundle is:
 
-- **Updates, forever.** Core, theme, plugins — each with its own schedule and its own way of breaking the site.
-- **Security as a background worry.** The most deployed CMS on earth is the most scanned. A static site has no login page, no database, no PHP to exploit. There is nothing to hack except the GitHub account, which has two-factor auth.
-- **Backups you actually have to test.** With a repo, every version of every page is in history. `git log` is the backup, and it restores with one command.
+- **Updates, forever.** The system, the theme, the plugins — each with its own schedule and its own way of breaking the site.
+- **Security as a background worry.** The most deployed CMS on earth is the most scanned. A static site has no login page, no database, nothing to exploit. There is nothing to hack except the account itself, guarded by a second login check.
+- **Backups you actually have to test.** With this setup, every version of every page is kept automatically — restoring an old version takes seconds.
 - **The plan ladder.** The free WordPress.com plan allows neither custom themes nor plugins. A custom design like this one requires the Business plan — roughly 25 to 35 euros a month. The static equivalent costs nothing to host.
 
 For two content updates a year, that is a lot of standing cost for very little publishing.
@@ -79,17 +83,17 @@ For two content updates a year, that is a lot of standing cost for very little p
 
 This is the section that makes the rest believable. Everything below really happened, most of it on the day of the domain switch:
 
-1. **The free-plan wall.** As said above: no custom theme, no plugin on WordPress.com free. That constraint is what killed the port option economically before the workflow killed it practically.
-2. **The wildcard CNAME.** After pointing the domain at GitHub Pages, the HTTPS certificate stayed stuck on "Certificate Requested" for hours, serving a `*.github.io` certificate instead. Cause: a leftover wildcard `CNAME *` record in the DNS zone, silently breaking Let's Encrypt validation. Fix: delete the wildcard, reset the custom domain in settings. Issuance took minutes after that.
-3. **The double slash.** Switching the site base from a project subpath to the domain root produced `//images/` URLs and broken redirect destinations. Fixed with a small asset helper and normalized redirect paths — two commits, caught by the static audit script before anyone noticed.
-4. **Fake redirects.** GitHub Pages is static hosting: there are no server-side 301s. The 11 legacy URLs (old portfolio paths plus eight slugs still indexed from the WordPress sitemap) redirect through stub pages with meta-refresh. It works for visitors and search engines, but it is not a real 301, and I will not pretend otherwise.
+1. **The free-plan wall.** As said above: no custom theme, no plugin on the free plan. That constraint killed the port option on price before the workflow killed it in practice.
+2. **The stuck certificate.** After pointing the domain to the new hosting, the security certificate stayed stuck for hours. Cause: a leftover wildcard entry in the domain settings, silently blocking validation. Fix: delete the entry, reset the domain setting. Certificate issued within minutes.
+3. **The broken images.** Moving to the final domain broke image addresses (stray double slashes). Caught automatically before anyone noticed, fixed in two updates.
+4. **The fake redirects.** Free hosting can't do proper permanent redirects. The 11 old addresses forward through simple relay pages. It works for visitors and search engines, but it's not the real thing, and I won't pretend otherwise.
 
-Remaining: updating Search Console to the new domain, the French CV (currently a placeholder), and key art for a few projects pending rights clearance. That todo list is now the client's, written in plain language, in his own repo. That is the point.
+Remaining: telling Google about the new address, the French CV (a placeholder for now), and artwork for a few projects pending rights clearance. That todo list is now the client's, written in plain language. That is the point.
 
 ## The repo is the new CMS
 
-WordPress's historic achievement was letting non-developers publish without coding. That achievement stands. But the price — a dynamic CMS to feed, patch and pay for, just to serve pages that change twice a year — no longer makes sense for showcase sites.
+WordPress's historic achievement was letting non-developers publish without coding. That achievement stands. But for a showcase site, the new deal is unbeatable, and it has three parts: **it's free**, **you change the site from the inside by talking to it**, and **a developer is only needed once**, to lay the foundations.
 
-The new division of labour is simpler: the client owns Markdown cards and plain-language requests, the agent owns the files, the pipeline owns the deployment. One prompt plus one push, and the site is live in five minutes. One filled-in card plus one push, and the new project is online in two.
+After that: no admin to learn, no updates to run, no bills to pay. Fill in a card, send it online — the client's whole job, about ten minutes twice a year.
 
-My client's first merged PR is dated yesterday. He has never been more autonomous, and there is no admin panel left to maintain.
+My client's first published update is dated yesterday. He has never been more autonomous, and there is nothing left to maintain.
