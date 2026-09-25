@@ -58,7 +58,11 @@ Ensuite, il a pu checker directement sur l'URL de mon GitHub Pages pour voir si 
 
 ## Les retours, pareil
 
-Il me dit : « j'ai des retours ». Je lui dis : écoute, tu reprends ton chatbot et tu fais tes retours avec lui — tu me réécris un cahier des charges à la voix, sur tes envies, sur ce que tu vois. Moi, je lui ai donné des conseils, mais mon rôle de base, c'était surtout de bâtir l'architecture : celle qui permet de sortir des sites web solides en cinq minutes, avec une interface IA pour faire les modifications directement.
+Il me dit :
+« J'ai des retours. »
+Je lui dis :
+« Écoute, tu reprends ton chatbot et tu fais tes retours avec lui — tu me réécris un cahier des charges à la voix, sur tes envies, sur ce que tu vois. »
+Moi, je lui ai donné des conseils, mais mon rôle de base, c'était surtout de bâtir l'architecture : celle qui permet de sortir des sites web solides en cinq minutes, avec une interface IA pour faire les modifications directement.
 
 ## Ce qu'on dégage
 
