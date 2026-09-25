@@ -12,17 +12,17 @@ draft: false
 
 Mathieu, c'est un vieil ami de la maternelle, je le connais depuis toujours. Je voulais lui rendre ce service, et ça m'a permis d'expérimenter une nouvelle architecture qui permet de propulser des sites de type portfolio personnel ultra rapidement et gratuitement. Sound designer de talent, très belle carrière : des jeux vidéo réalistes dans des studios de pointe à Paris, de la mise en scène sonore digne de films. Profil technique, mais il avait jamais fait de git et jamais fait de site web. Son ambition : remplacer son vieux site déployé sur Wordpress.com.
 
-Et dès le premier jour, il a publié sa première mise à jour lui-même, aidé par Copilot. Ce moment, c'est tout le propos de cet article.
+Dès le premier jour, il a publié sa première mise à jour lui-même, aidé par Copilot. Ce moment, c'est tout le propos de cet article.
 
 J'ai raconté la boucle de déploiement de ce même site dans [This website deploys itself](/writing/2026-09-12-this-website-deploys-itself/). Ceci en est la suite, avec un vrai cas pour prouver que ça marche hors de mon propre setup.
 
 ![L'app GitHub Copilot : une invite, le mode agent, relié au repo](/writing/copilot-is-the-new-wordpress/copilot.png)
 
-Voilà toute l'interface dont il a besoin : pas de tableau de bord, pas de menus à apprendre. Une boîte de dialogue reliée au site. Il décrit ce qu'il veut avec ses mots, Copilot modifie le site de l'intérieur. Même depuis un téléphone. Et avec l'appli GitHub connectée, il pourra modifier le site directement depuis l'application — hyper pratique.
+Voilà toute l'interface dont il a besoin : pas de tableau de bord, pas de menus à apprendre. Une boîte de dialogue reliée au site. Il décrit ce qu'il veut avec ses mots, Copilot modifie le site de l'intérieur. Même depuis un téléphone. Et avec l'appli GitHub connectée, il pourra modifier le site directement depuis l'application — sacrément pratique.
 
 ## L'idée : un site très très propre pour zéro euro
 
-L'idée, c'était de voir comment, avec l'IA pour un coût de zéro euro, une stack <a href="https://astro.build" target="_blank" rel="noopener">Astro.js</a> + <a href="https://tailwindcss.com" target="_blank" rel="noopener">Tailwind CSS</a> + GitHub Actions + GitHub Pages + <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> permet de jeter les bases d'un site internet très très propre — sur lequel lui, via la fenêtre Copilot, allait ensuite pouvoir interagir pour ajouter ou enlever du contenu.
+L'idée, c'était de voir comment, avec l'IA pour un coût de zéro euro, une stack <a href="https://astro.build" target="_blank" rel="noopener">Astro.js</a> + <a href="https://tailwindcss.com" target="_blank" rel="noopener">Tailwind CSS</a> + GitHub Actions + GitHub Pages + <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> permet de jeter les bases d'un site internet très propre. Lui, via la fenêtre Copilot, allait ensuite pouvoir interagir pour ajouter ou enlever du contenu.
 
 Le pacte tient en trois points :
 
@@ -34,11 +34,11 @@ Et une clarification honnête sur les rôles : **je pose les fondations une fois
 
 ## Pourquoi cette stack
 
-Astro.js, c'est du JS statique : pas besoin de base de données. Et c'est ça, la grande force du montage : il suffit de pousser des petits fichiers `.md` qui font office de base de données. Un `mon-projet.md` contient toutes les informations et s'incrémente directement sur le site. Très facile à faire.
+Astro.js, c'est du JS statique : pas besoin de base de données. Et c'est ça, la grande force du montage : il suffit de pousser des petits fichiers `.md` qui font office de base de données. Un `mon-projet.md` contient toutes les informations et s'incrémente directement sur le site. Facile à faire.
 
-Pas de rôles à gérer non plus, on est sur du statique. Et on rajoute Tailwind CSS, qui solidifie toute la partie style — avec un responsive impeccable tout de suite. Les LLM maîtrisent particulièrement bien Tailwind, donc ça rend tout de suite quelque chose de bien.
+Pas de rôles à gérer non plus, on est sur du statique. Et on rajoute Tailwind CSS, qui solidifie toute la partie style — avec un responsive impeccable tout de suite. Les LLM maîtrisent particulièrement bien Tailwind, donc ça rend d'emblée quelque chose de bien.
 
-Côté chiffres, le site de Mathieu aujourd'hui : 17 projets en deux langues, anglais et français. Des pages plume qui s'affichent instantanément, sur téléphone comme sur desktop — les scores Core Web Vitals sont très bons. Pas de cookies, pas de traceurs. Formulaire de contact inclus grâce à Formspree, qui permet de générer des formulaires très facilement — avec un plan gratuit à cinquante envois par mois — adresse cachée des robots. Le plan gratuit GitHub suffit largement pour les prompts qui modifient le contenu au quotidien.
+Côté chiffres, le site de Mathieu aujourd'hui : 17 projets en deux langues, anglais et français. Des pages plume qui s'affichent instantanément, sur téléphone comme sur desktop — les scores Core Web Vitals sont excellents. Pas de cookies, pas de traceurs. Formulaire de contact inclus grâce à Formspree, qui permet de générer des formulaires très facilement — avec un plan gratuit à cinquante envois par mois — adresse cachée des robots. Le plan gratuit GitHub suffit largement pour les prompts qui modifient le contenu au quotidien.
 
 Chaque mise à jour laisse une trace publique : un historique de coches vertes, une par publication — dont plusieurs lancées par Mathieu lui-même.
 
@@ -52,7 +52,7 @@ Et voici ce que ça produit :
 
 Premier prompt avec ton chatbot — un ChatGPT, un Claude, un DeepSeek, un Mistral : tu lui demandes de te faire le cahier des charges de ton site internet. Et là, c'est vraiment la partie client. Mathieu avait son inspiration, il voulait un site web qui lui ressemble — à lui de l'exprimer dans ses mots : ses envies, ses inspirations, son univers graphique, sa police.
 
-Moi, j'ai rien eu à faire : il a fait son cahier des charges tout seul avec son chatbot. Au moment où j'avais mis l'infrastructure en place, il a suffi de donner le cahier des charges à Copilot pour que tout le code se forme par la magie du LLM — et la V1 était tout de suite très correcte.
+Moi, j'ai rien eu à faire : il a fait son cahier des charges tout seul avec son chatbot. Au moment où j'avais mis l'infrastructure en place, il a suffi de donner le cahier des charges à Copilot pour que tout le code se forme par la magie du LLM — et la V1 était immédiatement correcte.
 
 Ensuite, il a pu checker directement sur l'URL de mon GitHub Pages pour voir si ça lui convenait.
 
@@ -62,11 +62,11 @@ Il me dit :
 « J'ai des retours. »
 Je lui dis :
 « Écoute, tu reprends ton chatbot et tu fais tes retours avec lui — tu me réécris un cahier des charges à la voix, sur tes envies, sur ce que tu vois. »
-Moi, je lui ai donné des conseils, mais mon rôle de base, c'était surtout de bâtir l'architecture : celle qui permet de sortir des sites web solides en cinq minutes, avec une interface IA pour faire les modifications directement.
+Je lui ai donné des conseils, mais mon rôle de base, c'était surtout de bâtir l'architecture : celle qui permet de sortir des sites web solides en cinq minutes, avec une interface IA pour faire les modifications directement.
 
 ## Ce qu'on dégage
 
-Et surtout, on enlève ce CMS Wordpress qui a un peu mal vieilli, avec sa vieille interface. Elle déçoit quand même beaucoup de gens : un peu austère, un peu dure à prendre en main. Elle peut rester indispensable si vous avez un site plus gros, un bloc d'actualité à remplir régulièrement. Mais pour un portfolio simple, une simple petite interface IA comme celle que propose gratuitement GitHub Copilot vous permet aisément de manager le contenu de votre site internet.
+Surtout, on enlève ce CMS Wordpress qui a un peu mal vieilli, avec sa vieille interface. Elle déçoit quand même beaucoup de gens : un peu austère, un peu dure à prendre en main. Elle peut rester indispensable si vous avez un site plus gros, un bloc d'actualité à remplir régulièrement. Mais pour un portfolio simple, une simple petite interface IA comme celle que propose gratuitement GitHub Copilot vous permet aisément de manager le contenu de votre site internet.
 
 Dernière petite difficulté : le domaine. Quinze à vingt euros par an, qu'il a gardés — on l'a plugué directement depuis GitHub Pages. Résultat : un site hébergé gratuitement, sur lequel on fait des pull requests à volonté avec des cahiers des charges écrits avec son chatbot.
 
@@ -76,6 +76,6 @@ Et les bricoles du jour de la bascule — certificat bloqué par une entrée ré
 
 ## Conclusion
 
-L'interface IA de Copilot, qui a accès au repository, est devenue le nouveau CMS — avec un contrôle quasiment à la voix, pour un coût de zéro euro. Je jette les bases une fois — quelques heures — et ensuite c'est hyper basique pour lui : remplir une fiche, l'envoyer en ligne. Et maintenant que je connais cette architecture, je peux la refaire à l'infini pour tous les portfolios qui voudront — c'est quasiment un Lovable gratuit que je propose : une alternative à Lovable, gratuite.
+L'interface IA de Copilot, qui a accès au repository, est devenue le nouveau CMS — avec un pilotage à la parole, pour un coût de zéro euro. Je jette les bases une fois — quelques heures — et ensuite c'est hyper basique pour lui : remplir une fiche, l'envoyer en ligne. Maintenant que je connais cette architecture, je peux la refaire à l'infini pour tous les portfolios qui voudront — c'est quasiment un Lovable gratuit que je propose : une alternative à Lovable, gratuite.
 
 Si vous voulez voir le résultat, c'est ici sur <a href="https://earlyreflect.com" target="_blank" rel="noopener">earlyreflect.com</a>, allez voir, ça rend super bien.
