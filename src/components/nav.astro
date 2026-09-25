@@ -208,6 +208,63 @@ const navItems: NavItem[] = [
      voir explication). La transition transform/opacity est conservée
      pour le reveal d'entrée. */
 
+  /* Mobile: fixed-width dock with equal slots. Labels float above the active
+     item, so their text can never widen the bar or push items off-screen. */
+  @media (max-width: 767px) {
+    .dock-wrap {
+      box-sizing: border-box;
+      padding-inline: 0.5rem;
+    }
+
+    nav {
+      width: 100%;
+      max-width: 420px;
+      overflow: visible;
+      background-color: color-mix(in srgb, var(--color-background) 72%, transparent);
+      border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      box-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
+    }
+
+    nav ul {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    nav li {
+      flex: 1 1 0;
+    }
+
+    .dock-link {
+      position: relative;
+      width: 100%;
+      padding-inline: 0;
+    }
+
+    .dock-link.active .dock-label {
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      z-index: 1;
+      width: max-content;
+      max-width: none;
+      margin-left: 0;
+      padding: 0.4rem 0.6rem;
+      transform: translateX(-50%);
+      overflow: visible;
+      border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+      border-radius: 9999px;
+      background-color: color-mix(in srgb, var(--color-background) 88%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-size: 0.6875rem;
+      line-height: 1;
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.25);
+    }
+  }
+
   /* Space so the floating dock never covers the contact section end */
   @media (max-width: 767px) {
     body {
@@ -250,9 +307,24 @@ const navItems: NavItem[] = [
     }
 
     .dock-label {
+      position: static;
+      top: auto;
+      left: auto;
+      z-index: auto;
+      width: auto;
       max-width: none;
       opacity: 1;
+      margin-left: 0;
+      padding: 0;
+      transform: none;
       overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
+      font-size: inherit;
     }
 
     /* Ancien état actif desktop : pas de pastille, label en gras + glow */
