@@ -72,6 +72,6 @@ Et les bricoles du jour de la bascule — certificat bloqué par une entrée ré
 
 ## Conclusion
 
-L'interface IA de Copilot, qui a accès au repository, est devenue le nouveau CMS — avec un contrôle quasiment à la voix, pour un coût de zéro euro. Je jette les bases une fois — quelques heures — et ensuite c'est hyper basique pour lui : remplir une fiche, l'envoyer en ligne. Et maintenant que je connais cette architecture, je peux la refaire à l'infini pour tous les portfolios qui voudront — une alternative gratuite à Wordpress.
+L'interface IA de Copilot, qui a accès au repository, est devenue le nouveau CMS — avec un contrôle quasiment à la voix, pour un coût de zéro euro. Je jette les bases une fois — quelques heures — et ensuite c'est hyper basique pour lui : remplir une fiche, l'envoyer en ligne. Et maintenant que je connais cette architecture, je peux la refaire à l'infini pour tous les portfolios qui voudront — c'est quasiment un Lovable gratuit que je propose : une alternative à Lovable, gratuite.
 
 Si vous voulez voir le résultat, c'est ici sur <a href="https://earlyreflect.com" target="_blank" rel="noopener">earlyreflect.com</a>, allez voir, ça rend super bien.
