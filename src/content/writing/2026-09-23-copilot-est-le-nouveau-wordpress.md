@@ -2,7 +2,7 @@
 title: "Copilot est le nouveau WordPress"
 date: 2026-09-23
 dateModified: 2026-09-24
-excerpt: "Mathieu n'est pas mon client : c'est un vieil ami sound designer qui n'avait jamais fait ni git ni site web. Pour zéro euro, une archi Astro + Tailwind + Pages — et Copilot comme CMS. Il parle au site, le site change."
+excerpt: "Mathieu, vieil ami sound designer qui n'avait jamais fait ni git ni site web, voulait dégager son Wordpress.com. Pour zéro euro : une archi Astro + Tailwind + Pages — et Copilot comme CMS. Il parle au site, le site change."
 lang: fr
 translationOf: 2026-09-23-copilot-is-the-new-wordpress
 draft: false
@@ -10,7 +10,7 @@ draft: false
 
 ![Couverture cartoon : un robot joyeux poussant dehors le vieux logo WordPress poussiéreux](/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg)
 
-Mathieu, c'est pas mon client — je me suis pas fait payer. C'est un vieil ami, de la maternelle, je le connais depuis toujours, je pouvais pas lui refuser ce service. Sound designer de talent, très belle carrière : des jeux vidéo réalistes dans des studios de pointe à Paris, de la mise en scène sonore digne de films. Profil technique, mais il avait jamais fait de git et jamais fait de site web. Son ambition : remplacer son vieux site déployé sur Wordpress.com.
+Mathieu, c'est un vieil ami de la maternelle, je le connais depuis toujours, je pouvais pas lui refuser ce service — et je me suis pas fait payer. Sound designer de talent, très belle carrière : des jeux vidéo réalistes dans des studios de pointe à Paris, de la mise en scène sonore digne de films. Profil technique, mais il avait jamais fait de git et jamais fait de site web. Son ambition : remplacer son vieux site déployé sur Wordpress.com.
 
 Et dès le premier jour, il a publié sa première mise à jour lui-même, aidé par Copilot. Ce moment, c'est tout le propos de cet article.
 
@@ -18,7 +18,7 @@ J'ai raconté la boucle de déploiement de ce même site dans [This website depl
 
 ![L'app GitHub Copilot : une invite, le mode agent, relié au repo](/writing/copilot-is-the-new-wordpress/copilot.png)
 
-Voilà toute l'interface dont il a besoin : pas de tableau de bord, pas de menus à apprendre. Une boîte de dialogue reliée au site. Il décrit ce qu'il veut avec ses mots, Copilot modifie le site de l'intérieur. Même depuis un téléphone.
+Voilà toute l'interface dont il a besoin : pas de tableau de bord, pas de menus à apprendre. Une boîte de dialogue reliée au site. Il décrit ce qu'il veut avec ses mots, Copilot modifie le site de l'intérieur. Même depuis un téléphone. Et avec l'appli GitHub connectée, il pourra modifier le site directement depuis l'application — hyper pratique.
 
 ## L'idée : un site très très propre pour zéro euro
 
@@ -30,7 +30,7 @@ Le pacte tient en trois points :
 - **Il n'y a rien à apprendre.** Pas de panneau d'admin, pas de formation. Il modifie le site de l'intérieur, en lui parlant : « ajoute ce jeu », « change cette photo », « relis ma bio ». Copilot modifie, le site se met à jour quelques minutes plus tard.
 - **Il n'y a rien à entretenir.** Pas de mises à jour, pas de correctifs, pas de sauvegardes à surveiller. Des pages statiques ne se piratent pas comme un CMS.
 
-Et une clarification honnête sur les rôles : **un développeur pose les fondations une fois** — design, structure, publication automatique. Quelques jours de travail. Ensuite, ni développeur, ni formation, ni contrat de maintenance. Tout le travail du client : remplir une fiche prête à l'emploi, l'envoyer en ligne.
+Et une clarification honnête sur les rôles : **je pose les fondations une fois** — design, structure, publication automatique. Quelques heures de travail : moi, je suis architecte IA, spécialisé dans la mise en place de processus automatisés boostés à l'IA. Ensuite, ni développeur, ni formation, ni contrat de maintenance. Tout son travail : remplir une fiche prête à l'emploi, l'envoyer en ligne.
 
 ## Pourquoi cette stack
 
@@ -72,6 +72,6 @@ Et les bricoles du jour de la bascule — certificat bloqué par une entrée ré
 
 ## Conclusion
 
-L'interface IA de Copilot, qui a accès au repository, est devenue le nouveau CMS — avec un contrôle quasiment à la voix, pour un coût de zéro euro. Un développeur jette les bases une fois, et ensuite c'est hyper basique pour le client : remplir une fiche, l'envoyer en ligne.
+L'interface IA de Copilot, qui a accès au repository, est devenue le nouveau CMS — avec un contrôle quasiment à la voix, pour un coût de zéro euro. Je jette les bases une fois — quelques heures — et ensuite c'est hyper basique pour lui : remplir une fiche, l'envoyer en ligne. Et maintenant que je connais cette architecture, je peux la refaire à l'infini pour tous les portfolios qui voudront — une alternative gratuite à Wordpress.
 
 Si vous voulez voir le résultat, c'est ici sur <a href="https://earlyreflect.com" target="_blank" rel="noopener">earlyreflect.com</a>, allez voir, ça rend super bien.
