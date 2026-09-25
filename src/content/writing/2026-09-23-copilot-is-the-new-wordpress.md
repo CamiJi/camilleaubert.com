@@ -80,4 +80,4 @@ And the launch-day gremlins — certificate stuck on a leftover entry, images br
 
 The Copilot AI interface, with repository access, has become the new CMS — voice-driven, at zero cost. I lay the foundations once — a few hours — and after that it's dead basic for him: fill in a card, send it online. And now that I know this architecture, I can rebuild it endlessly for any portfolio that wants one — basically a free Lovable: a free alternative to Lovable.
 
-If you want to see the result, it's right here on <a href="https://earlyreflect.com" target="_blank" rel="noopener">earlyreflect.com</a> — go look, it turned out great.
+If you want to see the result, it's right here on <a href="https://earlyreflect.com" target="_blank" rel="noopener">earlyreflect.com</a> — go look, it turned out great. And if you want to check how it's built, the Git repo is public — go dig around: <a href="https://github.com/CamiJi/earlyreflect" target="_blank" rel="noopener">github.com/CamiJi/earlyreflect</a>.
