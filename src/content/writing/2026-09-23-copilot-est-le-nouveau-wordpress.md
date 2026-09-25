@@ -10,7 +10,7 @@ draft: false
 
 ![Couverture cartoon : un robot joyeux poussant dehors le vieux logo WordPress poussiéreux](/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg)
 
-Mathieu, c'est un vieil ami de la maternelle, je le connais depuis toujours, je pouvais pas lui refuser ce service — et je me suis pas fait payer. Sound designer de talent, très belle carrière : des jeux vidéo réalistes dans des studios de pointe à Paris, de la mise en scène sonore digne de films. Profil technique, mais il avait jamais fait de git et jamais fait de site web. Son ambition : remplacer son vieux site déployé sur Wordpress.com.
+Mathieu, c'est un vieil ami de la maternelle, je le connais depuis toujours. Je voulais lui rendre ce service, et ça m'a permis d'expérimenter une nouvelle architecture qui permet de propulser des sites de type portfolio personnel ultra rapidement et gratuitement. Sound designer de talent, très belle carrière : des jeux vidéo réalistes dans des studios de pointe à Paris, de la mise en scène sonore digne de films. Profil technique, mais il avait jamais fait de git et jamais fait de site web. Son ambition : remplacer son vieux site déployé sur Wordpress.com.
 
 Et dès le premier jour, il a publié sa première mise à jour lui-même, aidé par Copilot. Ce moment, c'est tout le propos de cet article.
 
