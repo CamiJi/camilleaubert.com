@@ -208,17 +208,12 @@ const navItems: NavItem[] = [
      voir explication). La transition transform/opacity est conservée
      pour le reveal d'entrée. */
 
-  /* Mobile: fixed-width dock with equal slots. Labels float above the active
-     item, so their text can never widen the bar or push items off-screen. */
+  /* Mobile: compact dock sized to its icon targets. Active labels float above
+     the item, so text never widens the bar or pushes other links off-screen. */
   @media (max-width: 767px) {
-    .dock-wrap {
-      box-sizing: border-box;
-      padding-inline: 0.5rem;
-    }
-
     nav {
-      width: 100%;
-      max-width: 420px;
+      width: fit-content;
+      max-width: calc(100vw - 1.5rem);
       overflow: visible;
       background-color: color-mix(in srgb, var(--color-background) 72%, transparent);
       border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
@@ -227,19 +222,13 @@ const navItems: NavItem[] = [
       box-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
     }
 
-    nav ul {
-      width: 100%;
-      justify-content: space-between;
-      gap: 0;
-    }
-
     nav li {
-      flex: 1 1 0;
+      flex: none;
     }
 
     .dock-link {
       position: relative;
-      width: 100%;
+      min-width: 40px;
       padding-inline: 0;
     }
 
@@ -275,9 +264,7 @@ const navItems: NavItem[] = [
   /* Très petits écrans (< 360px) : resserre encore pour rester centré */
   @media (max-width: 359px) {
     .dock-link {
-      padding-inline: 6px;
-    }
-    .dock-link {
+      min-width: 36px;
       font-size: 0.6875rem;
     }
   }

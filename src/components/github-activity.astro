@@ -63,9 +63,9 @@ const fmtPushed = (d: string) => {
 };
 ---
 
-<div class="grid lg:grid-cols-[1.7fr_1fr] gap-6">
+<div class="grid min-w-0 lg:grid-cols-[1.7fr_1fr] gap-6">
   <!-- Contribution graph -->
-  <div class="bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6">
+  <div class="min-w-0 bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6">
     <div class="flex items-baseline justify-between gap-4 mb-4">
       <p class="text-maintext font-body text-sm font-medium">
         <span class="text-accent font-semibold">{activity.totalContributions}</span> contributions on GitHub
@@ -106,7 +106,7 @@ const fmtPushed = (d: string) => {
   </div>
 
   <!-- Recent repos -->
-  <div class="bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6">
+  <div class="min-w-0 bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6">
     <p class="text-maintext font-body text-sm font-medium mb-4">
       Recently pushed <span class="text-subtext">· live repos</span>
     </p>
