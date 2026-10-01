@@ -5,6 +5,7 @@ dateModified: 2026-09-17
 excerpt: "Quand un agent IA travaille 30 minutes en autonomie, attendre ne sert à rien. J'ai appris à organiser mon attention en trois fils hiérarchisés : la logique prod, un POC léger, et le récit. Explication simple d'une méthode du quotidien."
 lang: fr
 translationOf: 2026-09-17-from-single-task-to-hierarchical-multithreading
+linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7508782547498307584/"
 draft: false
 ---
 

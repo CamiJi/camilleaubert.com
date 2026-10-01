@@ -5,6 +5,7 @@ dateModified: 2026-09-24
 excerpt: "Mathieu, a sound designer friend who had never used git or built a website, wanted to ditch his Wordpress.com. For zero euros: an Astro.js + Tailwind + Pages setup — with Copilot as the CMS. He talks to the site, the site changes."
 lang: en
 translationOf: 2026-09-23-copilot-est-le-nouveau-wordpress
+linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:share:7511080311754240000/"
 draft: false
 ---
 

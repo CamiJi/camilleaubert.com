@@ -5,6 +5,7 @@ dateModified: 2026-09-17
 excerpt: "When an AI agent works 30 minutes on its own, waiting achieves nothing. I organize my attention into three ranked threads: prod logic, a light POC, and writing. A simple method for everyday work."
 lang: en
 translationOf: 2026-09-17-dev-multithreading-hierarchise
+linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7508782547498307584/"
 draft: false
 ---
 
