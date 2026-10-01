@@ -34,4 +34,4 @@ L'histoire complète de cette simplification sur le blog : https://camilleaubert
 
 **Illustration** : photo d'un vrai post-it avec les 3 règles manuscrites — simple, humain, très engageant. Variante : graphique barres « nombre de réglages nécessaires pour expliquer un classement : ancien moteur / V1 Weights / V2 actuelle ».
 
-**URL LinkedIn (après publication)** : _à compléter_
+**URL LinkedIn (après publication)** : https://www.linkedin.com/feed/update/urn:li:activity:7510952979533852672/ (publié mer 30/09)

@@ -37,7 +37,7 @@ Repo GitHub : https://github.com/CamiJi/earlyreflect
 
 **Illustration** : `public/writing/copilot-is-the-new-wordpress/cover-cartoon.jpg` (robot qui pousse le vieux logo WordPress) — recrop 1080×1350 portrait 4:5 à la publication.
 
-**URL LinkedIn (après publication)** : _à compléter_
+**URL LinkedIn (après publication)** : https://www.linkedin.com/feed/update/urn:li:activity:7511315286399148032/ (publié jeu 01/10 8h45 — frontmatters FR+EN gardent l'URL share: posée par un autre fil)
 
 **Checklist** :
 - [ ] Visuel 1080×1350 attaché
