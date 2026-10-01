@@ -6,6 +6,8 @@ ENV NODE_OPTIONS=--max-old-space-size=512
 RUN npm ci
 
 COPY . .
+ARG PUBLIC_CF_BEACON_TOKEN=""
+ENV PUBLIC_CF_BEACON_TOKEN=$PUBLIC_CF_BEACON_TOKEN
 RUN npm run build
 
 FROM nginx:alpine
