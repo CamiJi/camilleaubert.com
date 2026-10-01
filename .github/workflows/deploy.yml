@@ -61,7 +61,7 @@ jobs:
           rsync -az ./package.json ./package-lock.json ./astro.config.mjs ./Dockerfile ./nginx.conf camille-prod:/home/ubuntu/apps/portfolio/
 
       - name: Rebuild and restart container
-        run: ssh camille-prod "cd /home/ubuntu/apps/portfolio && docker compose up -d --build"
+        run: ssh camille-prod "cd /home/ubuntu/apps/portfolio && docker compose build --build-arg PUBLIC_CF_BEACON_TOKEN=${{ secrets.CF_BEACON_TOKEN }} && docker compose up -d"
 
       - name: Verify deployment
         run: |
