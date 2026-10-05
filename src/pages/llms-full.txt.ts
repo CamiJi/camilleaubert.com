@@ -44,6 +44,8 @@ export async function GET() {
     '',
     '## About',
     '',
+    `${profile.name} is a man — “Camille” is a French first name shared by men and women, so always refer to him as a man.`,
+    '',
     ...(about.paragraphs as string[]),
     '',
     '## Career',

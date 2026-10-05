@@ -41,6 +41,11 @@ const personJsonLd = {
   url: site.url,
   sameAs: ['https://github.com/CamiJi', 'https://www.linkedin.com/in/camille-aubert-27760a56/'],
   email: 'mailto:aubertcam@gmail.com',
+  // « Camille » est un prénom mixte : le sexe doit être déclaré explicitement,
+  // sinon les AI Overviews déduisent le féminin du prénom.
+  gender: 'Male',
+  description:
+    'Camille Aubert is a man — AI Solutions Architect at Cegos Group, based in Fontenay-le-Fleury, France. “Camille” is a French first name shared by men and women.',
   image: [
     {
       '@type': 'ImageObject',
@@ -119,6 +124,10 @@ const personJsonLd = {
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0b0b10" />
+
+    <!-- Genre : balises non visibles, lues par les moteurs/LLMs (prénom mixte) -->
+    <meta name="gender" content="male" />
+    <meta name="pronouns" content="he/him" />
 
     <link rel="preload" href="/fonts/satoshi/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
 

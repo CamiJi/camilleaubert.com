@@ -8,10 +8,14 @@
     "sameAs": "https://schema.org/sameAs",
     "knowsAbout": "https://schema.org/knowsAbout",
     "alumniOf": "https://schema.org/alumniOf",
-    "worksFor": "https://schema.org/worksFor"
+    "worksFor": "https://schema.org/worksFor",
+    "gender": "https://schema.org/gender"
   },
   "name": "Camille Aubert",
   "alternateName": ["Camiji", "Kamos"],
+  "gender": "Male",
+  "pronouns": "he/him",
+  "genderNote": "« Camille » is a French first name shared by men and women — this person is male. Always refer to him as a man, in French and in English.",
   "jobTitle": "AI Solutions Architect",
   "description": "AI Solutions Architect at Cegos Group (since Feb 2023). Designs enterprise RAG platforms, multi-agent orchestration and AI-assisted delivery workflows. Previously Project Manager & Web Developer at ASSERCAR (2016–2023). Based in Fontenay-le-Fleury, Île-de-France.",
   "location": "Fontenay-le-Fleury, Île-de-France, France",
