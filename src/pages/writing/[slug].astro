@@ -44,6 +44,9 @@ const fmtDate = (d: Date) =>
   d.toLocaleDateString(isFr ? 'fr-FR' : 'en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
 const readingTime = `${Math.max(1, Math.round(post.body.split(/\s+/).length / 200))} ${isFr ? 'min de lecture' : 'min read'}`;
+
+// Source publique du fichier (repo public → triple lien blog ↔ LinkedIn ↔ GitHub)
+const githubSourceUrl = `https://github.com/CamiJi/camilleaubert.com/blob/main/src/content/writing/${post.id}.md`;
 ---
 
 <Layout
@@ -127,6 +130,17 @@ const readingTime = `${Math.max(1, Math.round(post.body.split(/\s+/).length / 20
           </a>
         )}
       </div>
+      <p class="mt-4 flex justify-center">
+        <a
+          href={githubSourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-subtext font-body text-xs hover:text-accent transition-colors"
+        >
+          <Icon name="mdi:github" class="w-4 h-4" />
+          {isFr ? 'Voir la source sur GitHub' : 'View source on GitHub'}
+        </a>
+      </p>
     </footer>
   </article>
 </Layout>
