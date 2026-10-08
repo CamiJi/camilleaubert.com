@@ -1,7 +1,7 @@
 ---
 title: "Harness Engineering: How I Wired My Coding Setup in October 2026"
 date: 2026-10-06
-excerpt: "A snapshot of my coding-agent setup on October 6, 2026: AGENTS.md, Docker, worktrees, MCP, OpenCode, and the harness holding it together. Verdict: 10x on code throughput — not on all dev work."
+excerpt: "My coding-agent setup on October 6, 2026: AGENTS.md, Docker, worktrees, MCP, OpenCode — and the harness holding it together. Result: 10x code throughput, without speeding up all dev work."
 lang: en
 translationOf: 2026-10-06-harness-engineering
 draft: false
@@ -9,7 +9,7 @@ draft: false
 
 ![A small sturdy go-kart channeling a huge rocket engine — the harness keeps the power on track](/writing/harness-engineering/cover-cartoon.jpg)
 
-*A snapshot dated October 6, 2026: this year, every month brings its share of surprises — new models, rising and falling costs. Here is where my setup stands, and the harness that holds it together.*
+*Status as of October 6, 2026: every month brings new models and cost shifts. Here is my current setup, and the harness that makes it usable.*
 
 ## In 2026, every month changes the game
 
@@ -27,7 +27,7 @@ First, the term. These are not my words, but they are the definition I work from
 >
 > *3. Harness Engineering — designing, observing and improving that setup so the agent does better work and its mistakes get caught earlier.*
 
-In my own words: **the harness contains the agent's power to point it in the right direction. It is the chassis, the wheels, the brakes and the airbag of an overpowered engine.**
+In my own words: **the harness channels the agent's power in the right direction. It is the chassis, brakes and airbag around an overpowered engine.**
 
 Agents have become more and more autonomous: they loop, they retest themselves. My job now is to put them on the right track. Given the right path and the right target, they carry the work through almost to the end. When the harness is properly in place, the agent loops on its own until the task succeeds — tests green, errors spotted then fixed.
 
@@ -53,7 +53,7 @@ Written and modified by us. They know our process, our infrastructure, our team 
 
 ### Docker everywhere
 
-Everything is containerized, on my machine and on servers. Same image, same services — preprod, prod, localhost: I ship similar apps fast across environments, and the agent always works under the same conditions as prod.
+Everything is containerized, on my machine and on servers. Same image, same services — preprod, prod, localhost: I ship the same app fast to localhost, preprod and prod, and the agent always works under prod-identical conditions.
 
 ### Worktrees: hierarchical multithreading
 
@@ -61,13 +61,13 @@ One worktree per task, one agent per worktree, in parallel. The move from single
 
 ### MCP: the agent plugged into my world
 
-MCP servers connect the agent to my whole code universe and the outside services I need: Jira and Bitbucket first, then Chrome DevTools and Playwright for testing. The agent sees what it codes rendered, and loops until it can confirm no error remains, neither in the UI nor in the code.
+MCP servers plug the agent into my codebase and external services: Jira and Bitbucket first, then Chrome DevTools and Playwright for testing the rendering. The agent sees what it codes rendered, and loops until it can confirm no error remains, neither in the UI nor in the code.
 
 ### OpenCode on pay-as-you-go + the reference board
 
 I use <a href="https://opencode.ai" target="_blank" rel="noopener">OpenCode</a> — an open-source, model-agnostic agent, billed per call. That means picking the cheapest models of the moment, even free ones, and switching with a one-line config edit.
 
-I keep a reference board I check almost daily to arbitrate cost vs. quality: we started on DeepSeek, spent the summer on GLM 5.3, and are now on GPT-6 Luna. Every day brings new models to compare — the choice is temporary, and assumed as such.
+I keep a reference board I check almost daily to arbitrate cost vs. quality: DeepSeek early this year, GLM 5.3 this summer, GPT-6 Luna today. I compare new models almost daily and assume a provisional, best-value choice.
 
 ## Framing the agent: TDD, tests, builds, review, docs
 
@@ -75,7 +75,7 @@ No good harness without TDD: putting tests first works very well with an agent. 
 
 On our side: Dusk tests in our architecture, lints and builds to catch gross mistakes — though with today's agent performance, those get rarer.
 
-Human review stays mandatory: our name is on the commit, we are responsible for the code we ship. That is our stamp.
+Human review stays mandatory: our name is on the commit, we are responsible for the code we ship. That is our final sign-off.
 
 And so the next agent has everything at hand, documentation is mandatory everywhere. New models advertise million-token context windows — documenting our processes heavily speeds up future development.
 
@@ -83,7 +83,7 @@ And so the next agent has everything at hand, documentation is mandatory everywh
 
 The bottleneck moved. We are very fast on code and on the app as such, but spec writing, business-need definition, aesthetic choices and art direction do not always keep up. Product and product innovation become the limiting factor.
 
-And on the brain-time side: what feels like "AI fatigue". Long days, five or six topics in parallel — like playing slots, feeding another coin into the thread to go a little further. AI multiplied my execution capacity, not my understanding and decision capacity.
+On the mental-load side: what feels like "AI fatigue". Long days, five or six topics in parallel — like slots, feeding another coin to push the agent a little further. AI multiplied my execution capacity, not my understanding and decision capacity.
 
 ## Conclusion
 
@@ -93,7 +93,7 @@ The tally, dated October 6, 2026:
 
 - **10x on code throughput**, not on all dev work;
 - models that keep changing — DeepSeek, then GLM 5.3, then GPT-6 Luna — arbitrated daily for the best value;
-- **2 structural limits**: product / business need that does not always keep up, and my brain time — the only thing that does not scale.
+- **2 structural limits**: product / business need that does not always keep up, and my mental load — the only thing that does not scale.
 
 Next? Another article, on this new multi-threaded way of working: how to supervise several agents without losing the thread — or your evenings.
 
